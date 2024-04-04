@@ -1,5 +1,5 @@
 body{
-    background-color: #F6D860;
+    background-color: #95CD41;
 }
 
 @media all and (max-width: 575px){
@@ -14,10 +14,14 @@ body{
     .contenedor-filas > .filas:first-child{
         background-color: #95CD41
     }
+
 }
 @media all and (min-width: 768px) and (max-width: 991px){
     .contenedor-filas > .filas:first-child{
         background-color: #95CD41
+    }
+    .filas > .columna:nth-child(6){
+        display: flex;
     }
 }
 @media all and (min-width: 992px) and (max-width: 1999px){
