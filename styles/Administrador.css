@@ -1,7 +1,11 @@
 body{
     background-color: #95CD41;
 }
-
+.imgAmdin{
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
 @media all and (max-width: 575px){
     .filas{
         margin: 10px 0 25px 0;

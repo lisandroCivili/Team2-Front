@@ -1,0 +1,28 @@
+{
+  "productos": [
+    {
+      "nombreProducto": "Hamburguesa con Papas Fritas",
+      "precio": "1",
+      "imagen": "https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg",
+      "categoria": "Cena",
+      "detalle": "Hamburguesa con cheddar y papas fritas.",
+      "id": "f0a2"
+    },
+    {
+      "id": "48fe",
+      "nombreProducto": "Te de Boldo",
+      "precio": "3242",
+      "imagen": "https://images.pexels.com/photos/905485/pexels-photo-905485.jpeg",
+      "categoria": "Entradas",
+      "detalle": "dsfffffffffffffffffffffffffffffffffffffffffffffff"
+    },
+    {
+      "id": "1233",
+      "nombreProducto": "Algo bla bla",
+      "precio": "1234",
+      "imagen": "https://images.pexels.com/photos/905485/pexels-photo-905485.jpeg",
+      "categoria": "Entradas",
+      "detalle": "dsfffffffffffffffffffffffffffffffffffffffffffffff"
+    }
+  ]
+}
