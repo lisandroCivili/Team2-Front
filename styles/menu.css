@@ -1,0 +1,16 @@
+.navbar, .footer{
+    border-bottom: 1px #ecdba1 solid;
+    background-color: #e8652d;
+}
+.nav *{
+    color: #ecdba1;
+    font-weight: 500;
+}
+.nav-link:hover,
+.nav-link:focus{
+    background-color: #ecdba1;
+    border-radius: 0;
+    padding: 5px;
+    color: #e8652d;
+    transition: background-color 0.3s, color 0.3s;
+}

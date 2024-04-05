@@ -1,8 +1,26 @@
-import { useState } from 'react';
-import '../../../styles/Administrador.css'
+import { useEffect, useState } from 'react';
+import '../../../../styles/administrador.css'
 import { Button, Container, Row, Col,Form } from "react-bootstrap";
+import {leerProductos} from '../../../helpers/queries'
+import ItemProducto from './ItemProducto';
 
 const Administrador = () => {
+
+  const [productos, setProductos] = useState([])
+
+  useEffect(()=>{
+    recibirProductos()
+  },[])
+
+  const recibirProductos = async()=>{
+      const respuesta = await leerProductos();
+      if (respuesta.status===200) {
+        const datos = await respuesta.json()
+        setProductos(datos)
+      }else{
+        console.log('No se encontraron productos')
+      }
+  }
 
   return (
     <Container>
@@ -12,9 +30,9 @@ const Administrador = () => {
       <hr />
       
       <Form className="mb-3">
-              <Button className="btn btn-success float-end">
-                  <i className="bi bi-plus-circle"></i>
-              </Button>
+        <Button className="btn btn-success float-end">
+            <i className="bi bi-plus-circle"></i>
+        </Button>
         <Form.Group controlId="formBusqueda" className="mb-3">
           <Form.Label className='display-6'>Buscar un producto</Form.Label>
           <Row>
@@ -42,7 +60,10 @@ const Administrador = () => {
             <Col sm={2} className="columna border border-success p-3 text-center fs-4">Imagen</Col>
             <Col sm={2} className="columna border border-success p-3 text-center fs-4">Opciones</Col>
         </Row>
-        <Row className='filas'>
+        {
+          productos.map((producto)=><ItemProducto key={producto.id} producto={producto}></ItemProducto>)
+        }
+        {/* <Row className='filas'>
             <Col sm={2} className="columna border-bottom border-success p-2 text-center">Papas</Col>
             <Col sm={2} className="columna border-bottom border-success p-2 text-center">Estado</Col>
             <Col sm={2} className="columna border-bottom border-success p-2 text-center">Precio</Col>
@@ -101,7 +122,7 @@ const Administrador = () => {
                     <i className="bi bi-trash"></i>
                 </Button>
             </Col>
-        </Row>
+        </Row> */}
       </div>
     </Container>
   );
