@@ -8,11 +8,12 @@ import Menu from './components/common/Menu'
 import Footer from './components/common/Footer'
 import FomularioProducto from "./components/pages/productos/FomularioProducto";
 import Administrador from "./components/pages/productos/Administrador";
+
 const App = () => {
   return (
     <>
       <Menu></Menu>
-      <Administrador></Administrador>
+      <FomularioProducto></FomularioProducto>
       <Footer></Footer>
     </>
   );

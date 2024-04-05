@@ -35,12 +35,13 @@ const FomularioProducto = () => {
   return (
     <div>
       <section className="container mainSection">
-        <h1 className="display-4 mt-5">Titulo</h1>
+        <h1 className="display-4 mt-5 tituloForm">TITULO</h1>
         <hr />
         <Form className="my-4" onSubmit={handleSubmit(datosValidados)}>
           <Form.Group className="mb-3" controlId="formNombreProducto">
-            <Form.Label>Nombre del producto*</Form.Label>
+            <Form.Label className="labels">NOMBRE DEL PRODUCTO*</Form.Label>
             <Form.Control
+            className="inputs"
               type="text"
               placeholder="Ej: Hamburguesa con papas"
               {...register("nombreProducto", {
@@ -62,8 +63,9 @@ const FomularioProducto = () => {
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formPrecio">
-            <Form.Label>Precio*</Form.Label>
+            <Form.Label className="labels">PRECIO*</Form.Label>
             <Form.Control
+            className="inputs"
               type="number"
               placeholder="Ej: 6"
               {...register("precio", {
@@ -83,8 +85,9 @@ const FomularioProducto = () => {
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formImagen">
-            <Form.Label>Imagen URL*</Form.Label>
+            <Form.Label className="labels">IMAGEN URL*</Form.Label>
             <Form.Control
+            className="inputs"
               type="text"
               placeholder="Ej: https://images.pexels.com/photos/3090274/pexels-photo-3090274.jpeg"
               {...register("imagen", {
@@ -100,9 +103,10 @@ const FomularioProducto = () => {
               {errors.imagen?.message}
             </Form.Text>
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formPrecio">
-            <Form.Label>Categoría*</Form.Label>
+          <Form.Group className="mb-3" controlId="formCategoria">
+            <Form.Label className="labels">CATEGORIA*</Form.Label>
             <Form.Select
+            className="inputs"
               {...register("categoria", {
                 required: "Debe seleccionar una categoria.",
               })}
@@ -121,9 +125,10 @@ const FomularioProducto = () => {
               {errors.categoria?.message}
             </Form.Text>
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formImagen">
-            <Form.Label>Detalle*</Form.Label>
+          <Form.Group className="mb-3" controlId="formDetalle">
+            <Form.Label className="labels">DETALLE*</Form.Label>
             <Form.Control
+            className="inputs"
               type="text"
               placeholder="Describe el producto..."
               as="textarea"
@@ -145,8 +150,8 @@ const FomularioProducto = () => {
               {errors.detalle?.message}
             </Form.Text>
           </Form.Group>
-          <Button type="submit" variant="success">
-            Agregar
+          <Button type="submit" variant="success" className="agregarBoton">
+            AGREGAR
           </Button>
         </Form>
       </section>

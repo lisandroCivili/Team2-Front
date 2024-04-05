@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import '../../../../styles/Administrador.css'
+import '../../../../styles/administrador.css'
 import { Button, Container, Row, Col,Form } from "react-bootstrap";
 import {leerProductos} from '../../../helpers/queries'
 import ItemProducto from './ItemProducto';
