@@ -43,6 +43,14 @@ export const obtenerProducto = async(id) =>{
         console.log(error)
     }
 }
+export const mostrarProducto = async(nombreProducto) =>{
+    try {
+        const respuesta = await fetch(`${APIProductos}?nombreProducto=${nombreProducto}`)
+        return respuesta
+    } catch (error) {
+        console.log(error)
+    }
+}
 
 export const editarProducto = async(nuevosDatosProducto, id) =>{
     try {

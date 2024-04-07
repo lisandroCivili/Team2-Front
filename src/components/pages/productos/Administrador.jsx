@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
-import '../../../../styles/administrador.css'
+import '../../../../styles/Administrador.css'
 import { Button, Container, Row, Col,Form } from "react-bootstrap";
-import {leerProductos} from '../../../helpers/queries'
+import {leerProductos, mostrarProducto} from '../../../helpers/queries'
 import ItemProducto from './ItemProducto';
 
 const Administrador = () => {
 
   const [productos, setProductos] = useState([])
+  const [busqueda, setBusqueda] = useState('')
+  const [filtro, setFiltro] = useState([])
 
   useEffect(()=>{
     recibirProductos()
@@ -21,7 +23,23 @@ const Administrador = () => {
         console.log('No se encontraron productos')
       }
   }
-
+ 
+  
+  const handleBuscar = async ()=>{
+    const respuesta = await mostrarProducto(busqueda)
+    if (respuesta.status === 200) {
+      const datos = await respuesta.json()
+      setFiltro(datos)
+      }else{
+        console.log('Error al buscar producto')
+        setFiltro([])
+      }
+    }
+    
+    
+    const busquedaUsuario = (e)=>{
+      setBusqueda(e.target.value)
+    }
   return (
     <Container>
       <div className="d-flex justify-content-between align-items-center mt-5">
@@ -29,8 +47,8 @@ const Administrador = () => {
       </div>
       <hr />
       
-      <Form className="mb-3">
-        <Button className="btn btn-success float-end">
+      <Form className="mb-3" onSubmit={(e)=>{e.preventDefault(); handleBuscar()}}>
+        <Button className="btn btnAgregar float-end">
             <i className="bi bi-plus-circle"></i>
         </Button>
         <Form.Group controlId="formBusqueda" className="mb-3">
@@ -40,10 +58,11 @@ const Administrador = () => {
               <Form.Control
                 type="text"
                 placeholder="Ingresa el nombre del producto"
+                onChange={busquedaUsuario}
               />
             </Col>
             <Col sm={4}>
-              <Button variant="success">
+              <Button className='btnBuscar' onClick={handleBuscar}>
                 Buscar
               </Button>
             </Col>
@@ -61,7 +80,15 @@ const Administrador = () => {
             <Col sm={2} className="columna border p-3 text-center fs-4">Opciones</Col>
         </Row>
         {
-          productos.map((producto)=><ItemProducto key={producto.id} producto={producto}></ItemProducto>)
+          filtro.length > 0 ? (
+            filtro.map((producto) => (
+              <ItemProducto key={producto.id} producto={producto}></ItemProducto>
+            ))
+          ) : (
+            productos.map((producto) => (
+              <ItemProducto key={producto.id} producto={producto}></ItemProducto>
+            ))
+          )
         }
       </div>
     </Container>

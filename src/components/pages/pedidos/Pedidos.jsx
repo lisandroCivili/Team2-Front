@@ -1,4 +1,4 @@
-import '../../../../styles/administrador.css'
+import '../../../../styles/Administrador.css'
 import { Button, Container, Row, Col,Form } from "react-bootstrap";
 
 const Pedidos = () => {
