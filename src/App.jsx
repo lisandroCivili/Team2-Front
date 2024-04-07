@@ -13,7 +13,7 @@ const App = () => {
   return (
     <>
       <Menu></Menu>
-      <FomularioProducto></FomularioProducto>
+      <Administrador></Administrador>
       <Footer></Footer>
     </>
   );

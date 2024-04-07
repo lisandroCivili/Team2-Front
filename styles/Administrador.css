@@ -1,11 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Tilt+Neon&display=swap');
-
-/* .bebas-neue-regular {
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 00;
-    font-style: normal;
-  }
-   */
 body{
     background-color: rgba(28,42,77,255);
     font-family: "Tilt Neon", sans-serif;
@@ -15,6 +8,7 @@ body{
   font-variation-settings:
     "XROT" 0,
     "YROT" 0;
+    color: #ecdba1;
 }
 .imgAmdin{
   width: 150px;
@@ -54,7 +48,7 @@ body{
 }
 @media all and (min-width: 576px) and (max-width: 767px){
     .contenedor-filas > .filas:first-child{
-        background-color: #95CD41
+        background-color: #e8652d
     }
     .inputs{
         padding: 15px;
@@ -62,7 +56,7 @@ body{
 }
 @media all and (min-width: 768px) and (max-width: 991px){
     .contenedor-filas > .filas:first-child{
-        background-color: #95CD41
+        background-color: #e8652d
     }
     .filas > .columna:nth-child(6){
         display: flex;
@@ -73,7 +67,7 @@ body{
 }
 @media all and (min-width: 992px) and (max-width: 1999px){
     .contenedor-filas > .filas:first-child{
-        background-color: #95CD41
+        background-color: #e8652d
     }
     .inputs{
         padding: 15px;
@@ -81,7 +75,7 @@ body{
 }
 @media all and (min-width: 1200px) and (max-width: 1400){
     .contenedor-filas > .filas:first-child{
-        background-color: #95CD41
+        background-color: #e8652d
     }
     .inputs{
         padding: 15px;
