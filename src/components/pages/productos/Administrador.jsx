@@ -53,76 +53,16 @@ const Administrador = () => {
 
       <div className='contenedor-filas'>
         <Row className='filas'>
-            <Col sm={2} className="columna border border-success p-3 text-center fs-4">Producto</Col>
-            <Col sm={2} className="columna border-top border-bottom border-success p-3 text-center fs-4">Estado</Col>
-            <Col sm={2} className="columna border border-success p-3 text-center fs-4">Precio</Col>
-            <Col sm={2} className="columna border-top border-bottom border-success p-3 text-center fs-4">Categoria</Col>
-            <Col sm={2} className="columna border border-success p-3 text-center fs-4">Imagen</Col>
-            <Col sm={2} className="columna border border-success p-3 text-center fs-4">Opciones</Col>
+            <Col sm={2} className="columna border p-3 text-center fs-4">Producto</Col>
+            <Col sm={2} className="columna border-top border-bottom p-3 text-center fs-4">Estado</Col>
+            <Col sm={2} className="columna border p-3 text-center fs-4">Precio</Col>
+            <Col sm={2} className="columna border-top border-bottom p-3 text-center fs-4">Categoria</Col>
+            <Col sm={2} className="columna border p-3 text-center fs-4">Imagen</Col>
+            <Col sm={2} className="columna border p-3 text-center fs-4">Opciones</Col>
         </Row>
         {
           productos.map((producto)=><ItemProducto key={producto.id} producto={producto}></ItemProducto>)
         }
-        {/* <Row className='filas'>
-            <Col sm={2} className="columna border-bottom border-success p-2 text-center">Papas</Col>
-            <Col sm={2} className="columna border-bottom border-success p-2 text-center">Estado</Col>
-            <Col sm={2} className="columna border-bottom border-success p-2 text-center">Precio</Col>
-            <Col sm={2} className="columna border-bottom border-success p-2 text-center">Categoria</Col>
-            <Col sm={2} className="columna border-bottom border-success p-2 text-center">Imagen</Col>
-            <Col sm={2} className="columna border border-top-0 border-success p-2 text-center">
-                <Button className='btn btn-warning me-4'>
-                    <i className="bi bi-pencil-square"></i>
-                </Button>
-                <Button className='btn btn-danger'>
-                    <i className="bi bi-trash"></i>
-                </Button>
-            </Col>
-        </Row>
-        <Row className='filas'>
-            <Col sm={2} className="columna border-bottom border-success p-2 text-center">Hamburguesa</Col>
-            <Col sm={2} className="columna border-bottom border-success p-2 text-center">Estado</Col>
-            <Col sm={2} className="columna border-bottom border-success p-2 text-center">Precio</Col>
-            <Col sm={2} className="columna border-bottom border-success p-2 text-center">Categoria</Col>
-            <Col sm={2} className="columna border-bottom border-success p-2 text-center">Imagen</Col>
-            <Col sm={2} className="columna border border-top-0 border-success p-2 text-center">
-                <Button className='btn btn-warning me-4'>
-                    <i className="bi bi-pencil-square"></i>
-                </Button>
-                <Button className='btn btn-danger'>
-                    <i className="bi bi-trash"></i>
-                </Button>
-            </Col>
-        </Row>
-        <Row className='filas'>
-            <Col sm={2} className="columna border-bottom border-success p-2 text-center">Panchos</Col>
-            <Col sm={2} className="columna border-bottom border-success p-2 text-center">Estado</Col>
-            <Col sm={2} className="columna border-bottom border-success p-2 text-center">Precio</Col>
-            <Col sm={2} className="columna border-bottom border-success p-2 text-center">Categoria</Col>
-            <Col sm={2} className="columna border-bottom border-success p-2 text-center">Imagen</Col>
-            <Col sm={2} className="columna border border-top-0 border-success p-2 text-center">
-                <Button className='btn btn-warning me-4'>
-                    <i className="bi bi-pencil-square"></i>
-                </Button>
-                <Button className='btn btn-danger'>
-                    <i className="bi bi-trash"></i>
-                </Button>
-            </Col>
-        </Row>
-        <Row className='filas'>
-            <Col sm={2} className="columna border-bottom border-success p-2 text-center">Patas</Col>
-            <Col sm={2} className="columna border-bottom border-success p-2 text-center">Estado</Col>
-            <Col sm={2} className="columna border-bottom border-success p-2 text-center">Precio</Col>
-            <Col sm={2} className="columna border-bottom border-success p-2 text-center">Categoria</Col>
-            <Col sm={2} className="columna border-bottom border-success p-2 text-center">Imagen</Col>
-            <Col sm={2} className="columna border border-top-0 border-success p-2 text-center">
-                <Button className='btn btn-warning me-4'>
-                    <i className="bi bi-pencil-square"></i>
-                </Button>
-                <Button className='btn btn-danger'>
-                    <i className="bi bi-trash"></i>
-                </Button>
-            </Col>
-        </Row> */}
       </div>
     </Container>
   );
