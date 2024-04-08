@@ -1,4 +1,4 @@
-import '../../../styles/Administrador.css'
+import '../../../../styles/Administrador.css'
 import { Button, Container, Row, Col,Form } from "react-bootstrap";
 
 const Usuarios = () => {
@@ -7,7 +7,7 @@ const Usuarios = () => {
     <Container>
       <div className="d-flex justify-content-between align-items-center mt-5">
         <h1 className="display-4">Listado de usuarios</h1>
-      <Button className="btn btn-success float-end">
+      <Button className="btn btnAgregar float-end">
           <i className="bi bi-plus-circle"></i>
       </Button>
       </div>

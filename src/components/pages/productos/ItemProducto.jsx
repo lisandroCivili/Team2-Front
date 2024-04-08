@@ -9,10 +9,10 @@ const ItemProducto = ({producto}) => {
             <Col sm={2} className="columna border-bottom p-2 d-flex align-items-center justify-content-center">{producto.categoria}</Col>
             <Col sm={2} className="columna border-bottom p-2 d-flex align-items-center justify-content-center"><img src={producto.imagen} alt="" className="imgAmdin"/></Col>
             <Col sm={2} className="columna border border-top-0 p-2 d-flex align-items-center justify-content-center">
-                <Button className='btn btn-warning me-4'>
+                <Button className='btn editar me-4'>
                     <i className="bi bi-pencil-square"></i>
                 </Button>
-                <Button className='btn btn-danger'>
+                <Button className='btn eliminar'>
                     <i className="bi bi-trash"></i>
                 </Button>
             </Col>

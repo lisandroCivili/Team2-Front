@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Tilt+Neon&display=swap');
 body{
-    background-color: rgba(28,42,77,255);
+    background-color: #1C2A4D;
     font-family: "Tilt Neon", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -21,7 +21,7 @@ body{
 .inputs{
     border-radius: 0;
     border-color: #ecdba1;
-    background: rgba(28,42,77,255);
+    background: #1C2A4D;
     color: #ecdba1;
 }
 .inputs::placeholder{
@@ -34,6 +34,48 @@ body{
     font-size: 18px;
     transition: background-color 0.3s, color 0.9s;
     background-color: #e8652d;
+}
+.editar{
+    color: #ecdba1;
+    border-color: #ecdba1;
+    font-size: 20px;
+    border-width: 2px;
+    background-color: #1C2A4D;
+}
+.eliminar{
+    color: red;
+    border-color: red;
+    font-size: 20px;
+    border-width: 2px;
+    background-color: #1C2A4D;
+}
+.editar:hover, .editar:focus{
+    font-size: 18px;
+    transition: background-color 0.3s, color 0.4s;
+    color: #1C2A4D;
+    border: #1C2A4D;
+    background-color: #ecdba1;
+}
+.eliminar:hover, .eliminar:focus{
+    font-size: 18px;
+    transition: background-color 0.3s, color 0.4s;
+    color: #1C2A4D;
+    border: #1C2A4D;
+    background-color: red;
+}
+.btnBuscar, .btnAgregar{
+    background-color: #1C2A4D;
+    color: #ecdba1;
+    border-color: #ecdba1;
+    font-weight: 600;
+}
+.btnBuscar:hover, .btnAgregar:hover{
+    background-color: #1C2A4D;
+    color: #ecdba1;
+    border-color: #ecdba1;
+    font-weight: 600;
+    font-size: 18px;
+    transition: background-color 0.3s, color 0.4s;
 }
 @media all and (max-width: 575px){
     .filas{
