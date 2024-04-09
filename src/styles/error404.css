@@ -1,0 +1,29 @@
+.error404-container {
+    padding: 50px 0;
+    background-color: #1C2A4D;
+}
+
+.error404-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.error404-content {
+    margin-top: 20px;
+}
+
+.error404-heading {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ecdba1; 
+}
+
+.error404-message {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #ecdba1; 
+}
+
+.error404-button {
+    font-size: 1.2rem;
+}

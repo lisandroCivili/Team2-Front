@@ -2,6 +2,7 @@ import { Container, Row } from "react-bootstrap";
 import CardProducto from "./producto/CardProducto";
 import { useState } from "react"; 
 import "../../../styles/Inicio.css"
+
 const Inicio = () => {
   const [productos, setProductos] = useState([]);
 
