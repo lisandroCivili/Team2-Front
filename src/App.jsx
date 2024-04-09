@@ -7,13 +7,15 @@ import Usuarios from "./components/pages/usuarios/Usuarios.jsx";
 import Administrador from "./components/pages/productos/Administrador.jsx";
 import FormularioProducto from "./components/pages/productos/FormularioProducto.jsx";
 import DetalleProducto from "./components/pages/productos/DetalleProducto.jsx";
+import Carrito from "./components/pages/pedidos/carrito.jsx";
+import "../styles/App.css"
 
 
 const App = () => {
   return (
     <>
       <Menu></Menu>
-      <Administrador></Administrador>
+      <Carrito></Carrito>
       <Footer></Footer>
     </>
   );
