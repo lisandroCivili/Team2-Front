@@ -5,7 +5,7 @@ import Registro from './components/Registro';
 const App = () => {
   return (
     <div>
-      <Registro></Registro>
+      <Login></Login>
     </div>
   );
 };
