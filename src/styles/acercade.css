@@ -1,0 +1,75 @@
+/* acercade.css */
+
+body {
+    background-color: #1c2a4d;
+    font-family: 'Roboto', sans-serif;
+    color: #ecdba1;
+  }
+
+.filaAcercaDe{
+    gap: 50px;
+}
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    
+    
+  }
+  
+  .card {
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+    background-color: #ecdba1;
+    border-radius: 10px;
+    border: 2px solid #1c2a4d;
+  }
+  
+  .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .face.front {
+    transform: rotateY(0deg);
+  }
+  
+  .face.back {
+    transform: rotateY(180deg);
+  }
+  
+  .card img {
+    width: 80%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 50%;
+  }
+  
+  .card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .link a {
+    text-decoration: none;
+    color: #1c2a4d;
+  }
+  
+  .link a:hover {
+    text-decoration: underline;
+  }
+  
+  
