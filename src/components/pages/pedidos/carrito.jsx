@@ -14,10 +14,10 @@ const Carrito = () => {
                         <table id="table1" className=" table  table-responsive " >
                             <thead>
                                 <tr>
-                                    <th style={{width:"60%"}}>Producto</th>
-                                    <th style={{width:"12%"}}>Precio</th>
-                                    <th style={{width:"10%"}}>Cantidad</th>
-                                    <th style={{width:"16%"}}></th>
+                                    <th id='th1'>Producto</th>
+                                    <th id='th2'>Precio</th>
+                                    <th id='th3'>Cantidad</th>
+                                    <th id='th4'></th>
                                 </tr>
                             </thead>
                             <tbody>
