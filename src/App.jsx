@@ -1,4 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+
+import "bootstrap-icons/font/bootstrap-icons.min.css";
+import React from "react";
+import Inicio from "./components/common/pages/Inicio";
+import Error404 from "./components/./common/pages/Error404";
+import AcercaDe from "./components/common/pages/AcercaDe";
 import 'bootstrap-icons/font/bootstrap-icons.min.css'
 import Menu from './components/common/Menu'
 import Footer from './components/common/Footer'
@@ -11,7 +17,7 @@ import Carrito from "./components/pages/pedidos/carrito.jsx";
 import "../styles/App.css"
 
 
-const App = () => {
+function App() {
   return (
     <>
       <Menu></Menu>
@@ -19,6 +25,6 @@ const App = () => {
       <Footer></Footer>
     </>
   );
-};
+}
 
 export default App;
