@@ -1,0 +1,11 @@
+#table1{
+    background: #e8652d !important;
+}
+.table th {
+    background: #e8652d !important;
+    color: white;
+}
+.table td {
+    background: #e8652d;
+    color: white;
+}
