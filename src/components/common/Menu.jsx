@@ -1,5 +1,6 @@
-import { Navbar, Nav, Container, Button } from "react-bootstrap";
+import { Navbar, Nav, Container} from "react-bootstrap";
 import '../../../styles/menu.css'
+import { NavLink } from "react-router-dom";
 
 const Menu = () => {
 
@@ -15,19 +16,19 @@ const Menu = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto nav">
-              <Button end className='nav-link'>INICIO</Button>
-              <Button end className='nav-link'>REGISTRO</Button>
+              <NavLink end className='nav-link' to="/">INICIO</NavLink>
+              <NavLink end className='nav-link' to="/registro">REGISTRO</NavLink>
 
-                <Button end className="nav-link">
+                <NavLink end className="nav-link" to="/administrador">
                   ADMINISTRADOR
-                </Button>
-                <Button variant="link" className="nav-link">
+                </NavLink>
+                <NavLink variant="link" className="nav-link">
                   LOGOUT
-                </Button>
+                </NavLink>
 
-              <Button end className="nav-link">
+              <NavLink end className="nav-link" to="/login">
                 LOGIN
-              </Button>
+              </NavLink>
             </Nav>
           </Navbar.Collapse>
         </Container>
