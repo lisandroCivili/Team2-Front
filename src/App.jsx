@@ -1,5 +1,7 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 
+import { useState } from 'react'
+import Login from './components/Login';
+import Registro from './components/Registro';
 import "bootstrap-icons/font/bootstrap-icons.min.css";
 import React from "react";
 import Inicio from "./components/common/pages/Inicio";
