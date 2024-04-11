@@ -1,82 +1,41 @@
-import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import '../../../styles/acercade.css'; 
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import "../../../styles/acercade.css";
+
+import imagen1 from "../../../assets/hombrear.jpg";
+import imagen2 from "../../../assets/hombre-joven-barba-telefono-inteligente_25030-29862.jpg";
+import imagen3 from "../../../assets/hombre-joven-barba-telefono-inteligente_25030-29860.jpg";
+import imagen4 from "../../../assets/mujer-joven-blanco_25030-39547.jpg";
 
 const AcercaDe = () => {
-    return (
-      <main>
-        <Container>
-          <Row xs={1} md={2} lg={4} className="filaAcercaDe">
-            
-            <Col>
+  const nombres = ["Lisandro", "Pablo", "Ramiro", "Cynthia"];
+  const imagenes = [imagen1, imagen2, imagen3, imagen4];
+  const parrafos = [
+    "Si no estoy programando, probablemente estoy pensando en qué programar a continuación.",
+    "Mi habilidad secreta: escribir código mientras duermo. Aunque luego se vea alocado.",
+    "Cuando no estoy frente a la pantalla, estoy soñando despierto con líneas de código.",
+    "Me llaman la Reina del Debugging. No porque lo haga bien, sino porque lo hago a menudo.",
+  ];
+
+  return (
+    <main>
+      <Container>
+        <Row xs={1} md={2} lg={4} className="container">
+          {nombres.map((nombre, index) => (
+            <Col key={index}>
               <div className="card">
-                <div className="face front">
-                  <img src="../../../assets/hombrear.avif" alt="Lisandro" />
-                  <h3>Lisandro</h3>
-                </div>
-                <div className="face back">
-                  <h3>Lisandro</h3>
-                  <p>Soy Lisandro, estudiante de programación en Rolling Code</p>
-                  <div className="link">
-                    <a href="#">Detalles</a>
-                  </div>
+                <img src={imagenes[index]} alt={nombre} />
+                <div className="content">
+                  <h3>{nombre}</h3>
+                  <p>{parrafos[index]}</p>
                 </div>
               </div>
             </Col>
-          
-            <Col>
-              <div className="card">
-                <div className="face front">
-                  <img src="../../../assets/hombre-joven-barba-telefono-inteligente_25030-29860.jpg" alt="Pablo" />
-                  <h3>Pablo</h3>
-                </div>
-                <div className="face back">
-                  <h3>Pablo</h3>
-                  <p>Soy Pablo, estudiante de programación en Rolling Code</p>
-                  <div className="link">
-                    <a href="#">Detalles</a>
-                  </div>
-                </div>
-              </div>
-            </Col>
-            
-            <Col>
-              <div className="card">
-                <div className="face front">
-                  <img src="../img/mujer-joven-blanco_25030-39547.avif" alt="Cynthia Ortiz" />
-                  <h3>Cynthia </h3>
-                </div>
-                <div className="face back">
-                  <h3>Cynthia </h3>
-                  <p>Soy Cynthia , estudiante de programación, con esta página de películas concluimos el módulo 2 del curso full stack.</p>
-                  <div className="link">
-                    <a href="#">Detalles</a>
-                  </div>
-                </div>
-              </div>
-            </Col>
-           
-  
-            <Col>
-              <div className="card">
-                <div className="face front">
-                  <img src="../img/hombresanbarba.jpeg" alt="Ramiro" />
-                  <h3>Ramiro</h3>
-                </div>
-                <div className="face back">
-                  <h3>Ramiro</h3>
-                  <p>Soy Ramiro, estudiante de programación, con esta página de películas concluimos el módulo 2 del curso full stack.</p>
-                  <div className="link">
-                    <a href="#">Detalles</a>
-                  </div>
-                </div>
-              </div>
-            </Col>
-            {/* Fin del cuarto bloque */}
-          </Row>
-        </Container>
-      </main>
-    );
-  };
-  
-  export default AcercaDe;
+          ))}
+        </Row>
+      </Container>
+    </main>
+  );
+};
+
+export default AcercaDe;
