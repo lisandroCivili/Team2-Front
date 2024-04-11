@@ -11,6 +11,7 @@ import Inicio from "./components/pages/Inicio.jsx";
 import Registro from "./components/pages/usuarios/Registro.jsx";
 import Login from "./components/pages/usuarios/Login.jsx";
 import Administrador from "./components/pages/productos/Administrador.jsx";
+import FormularioProducto from "./components/pages/productos/FormularioProducto.jsx";
 
 
 function App() {
@@ -22,6 +23,8 @@ function App() {
           <Route exact path="/registro" element={<Registro/>}></Route>
           <Route exact path="/login" element={<Login/>}></Route>
           <Route exact path="/administrador" element={<Administrador/>}></Route>
+          <Route exact path="/administrador/agregarProducto" element={<FormularioProducto editando={false} titulo='Nuevo producto' botonFinal='Agregar'/>}></Route>
+          <Route exact path="/administrador/editarProducto/:id" element={<FormularioProducto editando={true} titulo='Editar producto' botonFinal='Editar'/>}></Route>
       </Routes>
     <Footer/>
     </BrowserRouter>
