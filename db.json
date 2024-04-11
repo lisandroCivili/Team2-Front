@@ -2,27 +2,35 @@
   "productos": [
     {
       "nombreProducto": "Hamburguesa con Papas Fritas",
-      "precio": "1",
+      "precio": "8500",
       "imagen": "https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg",
-      "categoria": "Cena",
+      "categoria": "Combo",
       "detalle": "Hamburguesa con cheddar y papas fritas.",
       "id": "f0a2"
     },
     {
-      "id": "48fe",
-      "nombreProducto": "Te de Boldo",
-      "precio": "3242",
-      "imagen": "https://images.pexels.com/photos/905485/pexels-photo-905485.jpeg",
-      "categoria": "Entradas",
-      "detalle": "dsfffffffffffffffffffffffffffffffffffffffffffffff"
+      "nombreProducto": "Pizza con huevo",
+      "precio": "3000",
+      "imagen": "https://images.pexels.com/photos/845812/pexels-photo-845812.jpeg",
+      "categoria": "Otros",
+      "detalle": "Irresistible, fresca y llena de sabor, nuestra Pizza de Huevo te conquistará en cada bocado. Con una base crujiente y huevos frescos, es perfecta para cualquier momento del día. ¡Haz tu pedido y disfruta de esta delicia hoy mismo!",
+      "id": "dc20"
     },
     {
-      "id": "1233",
-      "nombreProducto": "Algo bla bla",
-      "precio": "1234",
+      "nombreProducto": "Cheeseburger y coca cola chica",
+      "precio": "10000",
+      "imagen": "https://images.pexels.com/photos/2983104/pexels-photo-2983104.jpeg",
+      "categoria": "Combo",
+      "detalle": "¿Listo para una explosión de sabor? Nuestro Combo de Cheeseburger con Coca-Cola es la combinación perfecta para satisfacer tu antojo.",
+      "id": "2cd9"
+    },
+    {
+      "id": "d7b3",
+      "nombreProducto": "Brownie",
+      "precio": "3344",
       "imagen": "https://images.pexels.com/photos/905485/pexels-photo-905485.jpeg",
-      "categoria": "Entradas",
-      "detalle": "dsfffffffffffffffffffffffffffffffffffffffffffffff"
+      "categoria": "Postre",
+      "detalle": "asddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
     }
   ]
 }

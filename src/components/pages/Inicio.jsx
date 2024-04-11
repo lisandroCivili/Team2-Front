@@ -1,13 +1,27 @@
 import { Container, Row } from "react-bootstrap";
 import CardProducto from "./productos/CardProducto";
-import { useState } from "react"; 
-import banner from "../../assets/banner.png"
+import { useEffect, useState } from "react"; 
+import banner from "../../assets/banner.webp"
 import bannerSmall from "../../assets/bannerSmall.png"
 import "../../../styles/Inicio.css"
+import { leerProductos } from "../../helpers/queries";
 
 const Inicio = () => {
   const [productos, setProductos] = useState([]);
 
+  useEffect(()=>{
+    recibirProductos()
+  },[])
+
+  const recibirProductos = async()=>{
+    const respuesta = await leerProductos()
+    if (respuesta.status === 200 ) {
+      const datos = await respuesta.json()
+      setProductos(datos)
+    }else{
+    console.log('No se encontraron productos')
+  }
+}
  
 
   return (
@@ -24,19 +38,20 @@ const Inicio = () => {
         alt="fondo comida"
       />
       </div>
-      <Container className="mt-5">
+      <Container className="mt-5 text-center">
         <h1 className="display-4">Nuestros Productos</h1>
         <hr />
     
           <Row> 
-            <CardProducto>
-
-            </CardProducto>
+            {
+            productos.map((producto)=><CardProducto key={producto.id} producto={producto}/>)
+            }
           </Row>
        
       </Container>
     </section>
   );
 };
+
 
 export default Inicio;

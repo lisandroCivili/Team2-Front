@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import '../../../../styles/Administrador.css'
-import { Button, Container, Row, Col,Form } from "react-bootstrap";
+import { Button, Container, Row, Col,Form} from "react-bootstrap";
 import {leerProductos, mostrarProducto} from '../../../helpers/queries'
 import ItemProducto from './ItemProducto';
+import { Link } from 'react-router-dom';
+import { BiX } from 'react-icons/bi';
 
 const Administrador = () => {
 
@@ -40,6 +42,7 @@ const Administrador = () => {
     const busquedaUsuario = (e)=>{
       setBusqueda(e.target.value)
     }
+
   return (
     <Container>
       <div className="d-flex justify-content-between align-items-center mt-5">
@@ -48,9 +51,10 @@ const Administrador = () => {
       <hr />
       
       <Form className="mb-3" onSubmit={(e)=>{e.preventDefault(); handleBuscar()}}>
-        <Button className="btn btnAgregar float-end">
+        <Button className="btn btnAgregar float-end" as={Link} to="/administrador/agregarProducto">
             <i className="bi bi-plus-circle"></i>
         </Button>
+        InputGr
         <Form.Group controlId="formBusqueda" className="mb-3">
           <Form.Label className='display-6'>Buscar un producto</Form.Label>
           <Row>
@@ -60,6 +64,11 @@ const Administrador = () => {
                 placeholder="Ingresa el nombre del producto"
                 onChange={busquedaUsuario}
               />
+              {
+                busqueda.length>0 && (
+                  Form.Control.Append
+                )
+              }
             </Col>
             <Col sm={4}>
               <Button className='btnBuscar' onClick={handleBuscar}>
@@ -82,11 +91,11 @@ const Administrador = () => {
         {
           filtro.length > 0 ? (
             filtro.map((producto) => (
-              <ItemProducto key={producto.id} producto={producto}></ItemProducto>
+              <ItemProducto key={producto.id} producto={producto} setProductos={setProductos}></ItemProducto>
             ))
           ) : (
             productos.map((producto) => (
-              <ItemProducto key={producto.id} producto={producto}></ItemProducto>
+              <ItemProducto key={producto.id} producto={producto} setProductos={setProductos}></ItemProducto>
             ))
           )
         }
