@@ -1,12 +1,12 @@
+// import '../../../styles/menu.css'
 import { Navbar, Nav, Container} from "react-bootstrap";
-import '../../../styles/menu.css'
 import { NavLink } from "react-router-dom";
 
 const Menu = () => {
 
     return (
       <Navbar expand="lg" className="navbar">
-        <Container className="d-flex flex-column">
+        <Container className="">
           {/* <Navbar.Brand>
             <img
               className="img-fluid"
@@ -16,17 +16,17 @@ const Menu = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto nav">
-              <NavLink end className='nav-link' to="/">INICIO</NavLink>
-              <NavLink end className='nav-link' to="/registro">REGISTRO</NavLink>
+              <NavLink end className='nav-link' id="inicioBoton" to="/">INICIO</NavLink>
+              <NavLink end className='nav-link' id="registroBoton" to="/registro">REGISTRO</NavLink>
 
-                <NavLink end className="nav-link" to="/administrador">
+                <NavLink end className="nav-link" id="adminBoton" to="/administrador">
                   ADMINISTRADOR
                 </NavLink>
-                <NavLink variant="link" className="nav-link">
+                <NavLink variant="link" id="logoutBoton" className="nav-link">
                   LOGOUT
                 </NavLink>
 
-              <NavLink end className="nav-link" to="/login">
+              <NavLink end className="nav-link" id="loginBoton" to="/login">
                 LOGIN
               </NavLink>
             </Nav>

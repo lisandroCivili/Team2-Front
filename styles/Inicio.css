@@ -12,22 +12,13 @@
 
 .mainSection {
   flex-grow: 1;
-  background-color: #000; 
-}
-
-.banner {
-  object-fit: cover;
-  height: 700px;
-  width: 100%;
+  background-color: #1C2A4D; 
 }
 
 .primary-font {
   color: #ea5c2b; 
   text-shadow: 3px 1px 4px #fff; 
 }
-
-
-
 .card {
   width: var(--max);
 }
@@ -42,4 +33,45 @@
   width: 200px;
   height: 200px;
   object-fit: cover;
+}
+@media all and (max-width: 575px){
+  .contBanner{
+    display: none;
+  }
+  .bannerSmall{
+    width: 100%;
+  }
+}
+@media all and (min-width: 576px) and (max-width: 767px){
+  .contBanner{
+    display: none;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 991px){
+  .contBannerSmall{
+    display: none;
+  }
+  .banner{
+    width: 100%;
+    object-fit: cover;
+  }
+}
+@media all and (min-width: 992px) and (max-width: 1999px){
+  .contBannerSmall{
+    display: none;
+  }
+
+  .banner{
+    width: 100%;
+    object-fit: cover;
+  }
+}
+@media all and (min-width: 1200px) and (max-width: 1400){
+  .contBannerSmall{
+    display: none;
+  }
+  .banner{
+    width: 100%;
+    object-fit: cover;
+  }
 }

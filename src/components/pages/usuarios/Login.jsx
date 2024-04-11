@@ -14,12 +14,12 @@ const Login = () => {
         <div className='col-12 col-lg-6 mt-5'>
             <h1 className='text-center mb-5'>Login</h1>
             <form className='w-75 mx-auto' action="">
-                <div class="mb-3">
-                    <label for="inputEmail" className="form-label">E-mail</label>
+                <div className="mb-3">
+                    <label htmlFor="inputEmail" className="form-label">E-mail</label>
                     <input type="email" className='form-control' id='inputEmail' required maxLength={100} minLength={5}/>
                 </div>
-                <div class="mb-3">
-                    <label for="inputPassword" className="form-label">Contraseña</label>
+                <div className="mb-3">
+                    <label htmlFor="inputPassword" className="form-label">Contraseña</label>
                     <input type="password" className='form-control' id='inputPassword' required maxLength={100} minLength={8}/>
                 </div>
                 <button type='submit' className='btn btn-primary mx-auto mb-4'>Acceder</button>

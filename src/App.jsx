@@ -2,6 +2,7 @@
 import React from "react";
 import "bootstrap-icons/font/bootstrap-icons.min.css";
 import "../styles/App.css"
+import "../styles/menu.css"
 import { useState } from 'react'
 import Menu from './components/common/Menu.jsx';
 import Footer from './components/common/Footer.jsx';
