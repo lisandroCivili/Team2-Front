@@ -1,7 +1,7 @@
 import '../../../../styles/carrito.css'
 import React from 'react';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faSync, faTrash, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSync, faTrash, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import "../../../../styles/App.css"
 
 

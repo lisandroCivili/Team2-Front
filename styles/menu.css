@@ -4,7 +4,7 @@
     border-bottom: 1px #ecdba1 solid;
     background-color: #e8652d;
 }
-#inicioBoton, #registroBoton, #adminBoton, #logoutBoton, #loginBoton{
+#inicioBoton, #registroBoton, #adminBoton, #logoutBoton, #loginBoton, #carritoBoton{
     color: #1C2A4D;
     font-weight: 600;
 }
