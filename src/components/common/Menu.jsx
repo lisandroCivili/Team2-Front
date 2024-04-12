@@ -1,4 +1,4 @@
-// import '../../../styles/menu.css'
+import '../../../styles/menu.css'
 import { Navbar, Nav, Container} from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
@@ -21,6 +21,9 @@ const Menu = () => {
 
                 <NavLink end className="nav-link" id="adminBoton" to="/administrador">
                   ADMINISTRADOR
+                </NavLink>
+                <NavLink end className="nav-link" id="carritoBoton" to="/carrito">
+                  CARRITO
                 </NavLink>
                 <NavLink variant="link" id="logoutBoton" className="nav-link">
                   LOGOUT

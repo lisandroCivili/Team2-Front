@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import errorImage from '../../../assets/pagina-error-404-negocio-comida_51549-73-removebg-preview.png';
+import errorImage from '../../assets/pagina-error-404-negocio-comida_51549-73-removebg-preview.png';
 import '../../../styles/error404.css';
 
 
