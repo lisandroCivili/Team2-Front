@@ -1,4 +1,5 @@
 import { Col, Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const CardProducto = ({producto}) => {
   return (
@@ -18,7 +19,7 @@ const CardProducto = ({producto}) => {
         </Card.Body>
         <Card.Footer className="text-end">
           <div className="d-flex gap-2 justify-content-center">
-            <Button className="btn">Ver más</Button>
+            <Button className="btn" as={Link} to={`/DetalleProducto/${producto.id}`}>Ver más</Button>
             <Button className="btn"><i class="bi bi-cart-plus-fill"></i></Button>      
           </div>
         </Card.Footer>

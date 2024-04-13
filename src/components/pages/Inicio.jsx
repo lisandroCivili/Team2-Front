@@ -5,6 +5,7 @@ import banner from "../../assets/banner.webp"
 import bannerSmall from "../../assets/bannerSmall.png"
 import "../../../styles/Inicio.css"
 import { leerProductos } from "../../helpers/queries";
+import DetalleProducto from "./productos/DetalleProducto";
 
 const Inicio = () => {
   const [productos, setProductos] = useState([]);
@@ -45,7 +46,8 @@ const Inicio = () => {
           <Row> 
             {
             productos.map((producto)=><CardProducto key={producto.id} producto={producto}/>)
-            }
+            } 
+            
           </Row>
        
       </Container>

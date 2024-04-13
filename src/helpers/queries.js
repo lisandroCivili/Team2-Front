@@ -37,7 +37,9 @@ export const borrarProducto = async(id) =>{
 
 export const obtenerProducto = async(id) =>{
     try {
-        const respuesta = await fetch(APIProductos+'/'+id)
+        // const respuesta = await fetch(APIProductos+'/'+id)
+        // const respuesta = await fetch(`${APIProductos}?nombreProducto=${nombreProducto}`)
+        const respuesta = await fetch(`${APIProductos}/${id}`);
         return respuesta
     } catch (error) {
         console.log(error)
