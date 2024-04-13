@@ -16,6 +16,7 @@ import Error404 from "./components/pages/Error404.jsx";
 import Carrito from "./components/pages/pedidos/Carrito.jsx";
 
 
+
 function App() {
   return (
     <BrowserRouter>
