@@ -1,11 +1,20 @@
 import '../../../../styles/carrito.css'
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSync, faTrash, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import "../../../../styles/App.css"
+import React, { useEffect, useState } from 'react';
+import ItemCarrito from './ItemCarrito';
 
 
 const Carrito = () => {
+
+    const [productosEnCarrito, setProductosEnCarrito] = useState([]);
+
+    useEffect(()=>{
+        const carritoDeStorage = JSON.parse(localStorage.getItem("carrito")) || [];
+        setProductosEnCarrito(carritoDeStorage);
+        console.log(carritoDeStorage);
+    },[])
+
+
     return (
         <section className="pt-5 pb-5">
             <div className="container">
@@ -21,33 +30,9 @@ const Carrito = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {/* Repeat this block for each product */}
-                                <tr>
-                                    <td data-th="Producto">
-                                        <div className="row">
-                                            <div className="col-md-3 text-left">
-                                                <img src="https://images.pexels.com/photos/13998632/pexels-photo-13998632.jpeg" alt="" className=" d-none d-md-block rounded mb-2 shadow " />
-                                            </div>
-                                            <div className="col-md-9 text-center ">
-                                                <h3>Papas fritas</h3>
-                                               
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td data-th="Precio" className='h4 '>$49.00</td>
-                                    <td data-th="Quantity">
-                                        <input type="number" className="form-control form-control-lg text-center"  />
-                                    </td>
-                                    <td className="cantidad" data-th="">
-                                        <div className="text-right">
-                                            
-                                            <button className="btn btn-white border-secondary bg-danger btn-md mb-1">
-                                                <FontAwesomeIcon icon={faTrash} />
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                {/* End of block */}
+                                {
+                                    productosEnCarrito.map(producto => <ItemCarrito key={producto.id} producto={producto}/>)
+                                }
                             </tbody>
                         </table>
                       
