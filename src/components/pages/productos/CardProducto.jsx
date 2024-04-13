@@ -1,4 +1,5 @@
 import { Col, Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const CardProducto = ({ producto, agregarAlCarrito }) => {
@@ -31,7 +32,7 @@ const CardProducto = ({ producto, agregarAlCarrito }) => {
         </Card.Body>
         <Card.Footer className="text-end">
           <div className="d-flex gap-2 justify-content-center">
-            <Button className="btn">
+            <Button className="btn" as={Link} to={`/detalleproducto/${producto.id}`}>
               Ver más
             </Button>
             <Button className="btn" onClick={guardarSessionStorage}>
