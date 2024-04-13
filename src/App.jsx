@@ -14,6 +14,7 @@ import Administrador from "./components/pages/productos/Administrador.jsx";
 import FormularioProducto from "./components/pages/productos/FormularioProducto.jsx";
 import Error404 from "./components/pages/Error404.jsx";
 import Carrito from "./components/pages/pedidos/Carrito.jsx";
+import DetalleProducto from "./components/pages/productos/DetalleProducto.jsx";
 
 
 
@@ -28,7 +29,8 @@ function App() {
           <Route exact path="/administrador" element={<Administrador/>}></Route>
           <Route exact path="/administrador/agregarProducto" element={<FormularioProducto editando={false} titulo='Nuevo producto' botonFinal='Agregar'/>}></Route>
           <Route exact path="/administrador/editarProducto/:id" element={<FormularioProducto editando={true} titulo='Editar producto' botonFinal='Editar'/>}></Route>
-          <Route exact path="/carrito" element={<Carrito/>}></Route>
+          <Route exact path="/Carrito" element={<Carrito/>}></Route>
+          <Route path="/detalleproducto/:id" element={<DetalleProducto></DetalleProducto>} ></Route>
           <Route exact path="*" element={<Error404/>} />
       </Routes>
     <Footer/>
