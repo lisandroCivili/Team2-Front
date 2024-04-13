@@ -46,7 +46,6 @@ const Inicio = () => {
       <Container className="mt-5 text-center">
         <h1 className="display-4">Nuestros Productos</h1>
         <hr />
-
         <Row>
           {productos.map((producto) => (
             <CardProducto
