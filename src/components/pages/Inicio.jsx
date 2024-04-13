@@ -23,28 +23,35 @@ const Inicio = () => {
     }
   };
 
-  
+
   const agregarAlCarrito = (producto) => {
-    console.log("Producto agregado al carrito:", producto);
+   
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    carrito.push(producto);
+    localStorage.setItem("carrito", JSON.stringify(carrito));
   };
 
   return (
     <section className="mainSection">
       <div className="contBanner">
+        {" "}
         <img className="banner" src={banner} alt="fondo comida" />
       </div>
       <div className="contBannerSmall">
+        {" "}
         <img className="bannerSmall" src={bannerSmall} alt="fondo comida" />
       </div>
       <Container className="mt-5 text-center">
         <h1 className="display-4">Nuestros Productos</h1>
         <hr />
+
         <Row>
           {productos.map((producto) => (
             <CardProducto
               key={producto.id}
               producto={producto}
-              agregarAlCarrito={agregarAlCarrito}
+              agregarAlCarrito={agregarAlCarrito} 
             />
           ))}
         </Row>
@@ -54,3 +61,4 @@ const Inicio = () => {
 };
 
 export default Inicio;
+

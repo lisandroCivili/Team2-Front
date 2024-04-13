@@ -1,8 +1,17 @@
 import { Col, Card, Button } from "react-bootstrap";
+import Swal from "sweetalert2";
 
 const CardProducto = ({ producto, agregarAlCarrito }) => {
-  const handleClickAgregarCarrito = () => {
+  const guardarSessionStorage = () => {
     agregarAlCarrito(producto);
+
+      Swal.fire({
+      text:`Se agregó ${producto.nombreProducto} al carrito.`,
+      imageUrl: `${producto.imagen}`,
+      imageHeight: 150,
+      imageWidth: 200,
+      imageAlt: `${producto.nombreProducto}`
+    });
   };
 
   return (
@@ -22,9 +31,11 @@ const CardProducto = ({ producto, agregarAlCarrito }) => {
         </Card.Body>
         <Card.Footer className="text-end">
           <div className="d-flex gap-2 justify-content-center">
-            <Button className="btn">Ver más</Button>
-            <Button className="btn" onClick={handleClickAgregarCarrito}>
-              <i className="bi bi-cart-plus-fill"></i> Agregar al carrito
+            <Button className="btn">
+              Ver más
+            </Button>
+            <Button className="btn" onClick={guardarSessionStorage}>
+              <i className="bi bi-cart-plus-fill"></i>
             </Button>
           </div>
         </Card.Footer>
