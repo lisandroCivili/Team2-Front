@@ -1,17 +1,84 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Tilt+Neon&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Tilt+Neon&display=swap");
 
-.navbar, .footer{
-    border-bottom: 1px #ecdba1 solid;
-    background-color: #e8652d;
+.navbar,
+.footer {
+  border-bottom: 1px #ecdba1 solid;
+  background-color: #e8652d;
 }
-#inicioBoton, #registroBoton, #adminBoton, #logoutBoton, #loginBoton, #carritoBoton{
-    color: #1C2A4D;
-    font-weight: 600;
+#inicioBoton,
+#registroBoton,
+.adminBoton,
+#logoutBoton,
+#loginBoton,
+#carritoBoton {
+  color: #1c2a4d;
+  font-weight: 600;
 }
 .nav-link:hover,
-.nav-link:focus{
-    background-color: #ecdba1;
-    border-radius: 0;
-    color: #e8652d;
-    transition: background-color 0.3s, color 0.3s;
+.nav-link:focus {
+  background-color: #ecdba1;
+  border-radius: 0;
+  color: #e8652d;
+  transition: background-color 0.3s, color 0.3s;
+}
+@media all and (max-width: 575px) {
+  .logoMenu {
+    width: 90px;
+    height: 70px;
+  }
+  #inicioBoton,#registroBoton,.adminBoton, #carritoBoton,#logoutBoton,#loginBoton{
+    font-size: 20px;
+    border-bottom: 1px #ecdba1 solid;
+  }
+  .nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .logoMenu {
+    width: 70px;
+    height: 65px;
+  }
+}
+@media all and (min-width: 576px) and (max-width: 767px) {
+  .logoMenu {
+    width: 75px;
+  }
+  #inicioBoton,#registroBoton,#adminBoton, #carritoBoton,#logoutBoton,#loginBoton{
+    font-size: 20px;
+    border-bottom: 1px #ecdba1 solid;
+  }
+  .nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 991px) {
+  .logoMenu {
+    width: 80px;
+  }
+  #inicioBoton,#registroBoton,#adminBoton, #carritoBoton,#logoutBoton,#loginBoton{
+    font-size: 20px;
+    border-bottom: 1px #ecdba1 solid;
+  }
+  .logoMenu {
+    height: 85px;
+  }
+  .navbar{
+    align-items: center;
+  }
+}
+@media all and (min-width: 992px) and (max-width: 1999px) {
+  .logoMenu {
+    width: 90px;
+  }
+  .logoMenu {
+    height: 85px;
+  }
+}
+@media all and (min-width: 1200px) and (max-width: 1400) {
+  .logoMenu {
+    width: 90px;
+  }
 }

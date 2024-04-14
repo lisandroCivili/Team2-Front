@@ -31,6 +31,7 @@ function App() {
           <Route exact path="/administrador/editarProducto/:id" element={<FormularioProducto editando={true} titulo='Editar producto' botonFinal='Editar'/>}></Route>
           <Route exact path="/Carrito" element={<Carrito/>}></Route>
           <Route path="/detalleproducto/:id" element={<DetalleProducto></DetalleProducto>} ></Route>
+          <Route exact path="/error404" element={<Error404/>} />
           <Route exact path="*" element={<Error404/>} />
       </Routes>
     <Footer/>

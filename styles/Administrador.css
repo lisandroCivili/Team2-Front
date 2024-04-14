@@ -1,125 +1,197 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Tilt+Neon&display=swap');
-body{
-    background-color: #1C2A4D;
-    font-family: "Tilt Neon", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Tilt+Neon&display=swap");
+body {
+  background-color: #1c2a4d;
+  font-family: "Tilt Neon", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-variation-settings:
-    "XROT" 0,
-    "YROT" 0;
-    color: #ecdba1;
+  font-variation-settings: "XROT" 0, "YROT" 0;
+  color: #ecdba1;
 }
-.imgAmdin{
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
+
+.tituloForm,
+.labels {
+  color: #ecdba1;
 }
-.tituloForm, .labels{
-    color: #ecdba1;
+.inputs {
+  border-radius: 0;
+  border-color: #ecdba1;
+  background: #1c2a4d;
+  color: #ecdba1;
 }
-.inputs{
-    border-radius: 0;
-    border-color: #ecdba1;
-    background: #1C2A4D;
-    color: #ecdba1;
+.inputs::placeholder {
+  color: #ecdba1;
 }
-.inputs::placeholder{
-    color: #ecdba1;
+.agregarBoton {
+  background-color: #e8652d;
 }
-.agregarBoton{
+.agregarBoton:hover,
+.agregarBoton:focus {
+  font-size: 18px;
+  transition: background-color 0.3s, color 0.9s;
+  background-color: #e8652d;
+}
+.editar {
+  color: #ecdba1;
+  border-color: #ecdba1;
+  font-size: 20px;
+  border-width: 2px;
+  background-color: #1c2a4d;
+}
+.eliminar {
+  color: red;
+  border-color: red;
+  font-size: 20px;
+  border-width: 2px;
+  background-color: #1c2a4d;
+}
+.editar:hover,
+.editar:focus {
+  font-size: 18px;
+  transition: background-color 0.3s, color 0.4s;
+  color: #1c2a4d;
+  border: #1c2a4d;
+  background-color: #ecdba1;
+}
+.eliminar:hover,
+.eliminar:focus {
+  font-size: 18px;
+  transition: background-color 0.3s, color 0.4s;
+  color: #1c2a4d;
+  border: #1c2a4d;
+  background-color: red;
+}
+.btnBuscar,
+.btnAgregar {
+  background-color: #1c2a4d;
+  color: #ecdba1;
+  border-color: #ecdba1;
+  font-weight: 600;
+}
+.btnBuscar:hover,
+.btnAgregar:hover {
+  background-color: #1c2a4d;
+  color: #ecdba1;
+  border-color: #ecdba1;
+  font-weight: 600;
+  font-size: 18px;
+  transition: background-color 0.3s, color 0.4s;
+}
+@media all and (max-width: 575px) {
+  .filas {
+    margin: 10px 0 25px 0;
+  }
+  .contenedor-filas > .filas:first-child {
+    display: none;
+  }
+  .inputs {
+    padding: 15px;
+  }
+  #columnaOpciones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .editar,
+  .eliminar {
+    width: 30%;
+  }
+  .eliminar {
+    margin-top: 15px;
+  }
+
+}
+@media all and (min-width: 576px) and (max-width: 767px) {
+  .contenedor-filas > .filas:first-child {
     background-color: #e8652d;
+  }
+  .inputs {
+    padding: 15px;
+  }
+  #columnaOpciones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .editar,
+  .eliminar {
+    width: 30%;
+  }
+  .eliminar {
+    margin-top: 15px;
+  }
 }
-.agregarBoton:hover, .agregarBoton:focus{
-    font-size: 18px;
-    transition: background-color 0.3s, color 0.9s;
+@media all and (min-width: 768px) and (max-width: 991px) {
+  .contenedor-filas > .filas:first-child {
     background-color: #e8652d;
+  }
+  .filas > .columna:nth-child(6) {
+    display: flex;
+  }
+  .inputs {
+    padding: 15px;
+  }
+  #columnaOpciones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .editar,
+  .eliminar {
+    margin-top: 15px;
+  }
+  .imgAmdin {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+  }
+  .navbar {
+    height: 95px;
+  }
+ 
+
 }
-.editar{
-    color: #ecdba1;
-    border-color: #ecdba1;
-    font-size: 20px;
-    border-width: 2px;
-    background-color: #1C2A4D;
+@media all and (min-width: 992px) and (max-width: 1199px) {
+  .contenedor-filas > .filas:first-child {
+    background-color: #e8652d;
+  }
+  .inputs {
+    padding: 15px;
+  }
+  #columnaOpciones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .editar,
+  .eliminar {
+    margin-top: 15px;
+  }
+  .imgAmdin {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+  }
 }
-.eliminar{
-    color: red;
-    border-color: red;
-    font-size: 20px;
-    border-width: 2px;
-    background-color: #1C2A4D;
-}
-.editar:hover, .editar:focus{
-    font-size: 18px;
-    transition: background-color 0.3s, color 0.4s;
-    color: #1C2A4D;
-    border: #1C2A4D;
-    background-color: #ecdba1;
-}
-.eliminar:hover, .eliminar:focus{
-    font-size: 18px;
-    transition: background-color 0.3s, color 0.4s;
-    color: #1C2A4D;
-    border: #1C2A4D;
-    background-color: red;
-}
-.btnBuscar, .btnAgregar{
-    background-color: #1C2A4D;
-    color: #ecdba1;
-    border-color: #ecdba1;
-    font-weight: 600;
-}
-.btnBuscar:hover, .btnAgregar:hover{
-    background-color: #1C2A4D;
-    color: #ecdba1;
-    border-color: #ecdba1;
-    font-weight: 600;
-    font-size: 18px;
-    transition: background-color 0.3s, color 0.4s;
-}
-@media all and (max-width: 575px){
-    .filas{
-        margin: 10px 0 25px 0;
-    }
-    .contenedor-filas > .filas:first-child{
-        display: none;
-    }
-    .inputs{
-        padding: 15px;
-    }
-}
-@media all and (min-width: 576px) and (max-width: 767px){
-    .contenedor-filas > .filas:first-child{
-        background-color: #e8652d
-    }
-    .inputs{
-        padding: 15px;
-    }
-}
-@media all and (min-width: 768px) and (max-width: 991px){
-    .contenedor-filas > .filas:first-child{
-        background-color: #e8652d
-    }
-    .filas > .columna:nth-child(6){
-        display: flex;
-    }
-    .inputs{
-        padding: 15px;
-    }
-}
-@media all and (min-width: 992px) and (max-width: 1999px){
-    .contenedor-filas > .filas:first-child{
-        background-color: #e8652d
-    }
-    .inputs{
-        padding: 15px;
-    }
-}
-@media all and (min-width: 1200px) and (max-width: 1400){
-    .contenedor-filas > .filas:first-child{
-        background-color: #e8652d
-    }
-    .inputs{
-        padding: 15px;
-    }
+@media all and (min-width: 1200px) {
+  .contenedor-filas > .filas:first-child {
+    background-color: #e8652d;
+  }
+  .inputs {
+    padding: 15px;
+  }
+  #columnaOpciones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .editar,
+  .eliminar {
+    margin-top: 15px;
+  }
+  .imgAmdin {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+  }
 }

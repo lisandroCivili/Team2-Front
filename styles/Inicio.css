@@ -1,3 +1,4 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
 
 #root {
@@ -7,15 +8,19 @@
   font-weight: 400;
   font-style: normal;
 }
-
 .mainSection {
   flex-grow: 1;
   background-color: #1C2A4D; 
 }
-
-.intro {
-  margin-bottom: 40px;
-  text-align: center;
+#cardBody *{
+  color: #1C2A4D;
+}
+.primary-font {
+  color: #ea5c2b; 
+  text-shadow: 3px 1px 4px #fff; 
+}
+#cardProductos{
+  background-color: #ea5c2b;
 }
 
 .carousel {
@@ -41,21 +46,138 @@
   object-fit: contain;
   object-position: center;
 }
-
-/* Ajustes de altura para los otros slides del carrusel */
-@media (max-width: 768px) {
+.intro {
+  margin-bottom: 40px;
+  text-align: center;
+}
+@media all and (max-width: 575px){
+  .contBanner{
+    display: none;
+  }
+  .bannerSmall{
+    width: 100%;
+  }
+  #cardBody{ 
+    height: 200px;
+  }
+  .card-img-top-nueva {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  #cardTitulo{
+    font-size: 30px;
+    font-weight: 800;
+  }
+  #cardCategoria{
+    font-size: 25px;
+  }
+  #cardPrecio{
+    font-size: 35px;
+  }
   .carousel-item img {
-    height: 150px; /* Altura para dispositivos pequeños */
+    height: 150px; 
   }
 }
-
-@media (min-width: 769px) and (max-width: 991px) {
+@media all and (min-width: 576px) and (max-width: 767px){
+  .contBanner{
+    display: none;
+  }
+  .card-img-top-nueva {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
   .carousel-item img {
-    height: 200px; /* Altura para dispositivos medianos */
+    height: 150px; 
   }
 }
-
-@media (min-width: 992px) {
+@media all and (min-width: 768px) and (max-width: 991px){
+  .contBannerSmall{
+    display: none;
+  }
+  .banner{
+    width: 100%;
+    object-fit: cover;
+  }
+  .card-img-top-nueva {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .carousel-item img {
+    height: 200px; 
+  }
+  #cardBody{ 
+    height: 180px;
+  }
+  #cardTitulo{
+    font-size: 23px;
+    font-weight: 800;
+  }
+  #cardCategoria{
+    font-size: 20px;
+  }
+  #cardPrecio{
+    font-size: 25px;
+  }
+}
+@media all and (min-width: 992px) and (max-width: 1199px){
+  .contBannerSmall{
+    display: none;
+  }
+  .card-img-top-nueva {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .banner{
+    width: 100%;
+    object-fit: cover;
+  }
+  #cardBody{ 
+    height: 180px;
+  }
+  #cardTitulo{
+    font-size: 23px;
+    font-weight: 800;
+  }
+  #cardCategoria{
+    font-size: 20px;
+  }
+  #cardPrecio{
+    font-size: 25px;
+  }
+  .carousel-item img {
+    height: 450px; /* Altura para dispositivos grandes */
+  }
+}
+@media all and (min-width: 1200px){
+  .contBannerSmall{
+    display: none;
+  }
+  .banner{
+    width: 100%;
+    object-fit: cover;
+  }
+  .card-img-top-nueva {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+  #cardBody{ 
+    height: 180px;
+  }
+  #cardTitulo{
+    font-size: 23px;
+    font-weight: 800;
+  }
+  #cardCategoria{
+    font-size: 20px;
+  }
+  #cardPrecio{
+    font-size: 25px;
+  }
   .carousel-item img {
     height: 450px; /* Altura para dispositivos grandes */
   }
