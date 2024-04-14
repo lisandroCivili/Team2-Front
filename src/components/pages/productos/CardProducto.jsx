@@ -32,7 +32,7 @@ const CardProducto = ({ producto, agregarAlCarrito }) => {
         </Card.Body>
         <Card.Footer className="text-end">
           <div className="d-flex gap-2 justify-content-center">
-            <Button className="btn" as={Link} to={`/detalleproducto/${producto.id}`}>
+            <Button className="btn" as={Link} to={`/DetalleProducto/${producto.id}`}>
               Ver más
             </Button>
             <Button className="btn" onClick={guardarSessionStorage}>
