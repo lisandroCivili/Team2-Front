@@ -5,6 +5,29 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const Registro = () => {
 
+    const onSubmit = (usuario) => {
+        usuario.perfil = "Usuario";
+        usuario.estado = "Activo";
+        registrar(usuario).then((respuesta) => {
+            const usuarioObj = {
+                perfil: "Usuario",
+                nombreUsuario: usuario.nombreUsuario,
+            };
+            if (respuesta && respuesta.mensaje === "usuario creado") {
+                sessionStorage.setItem("usuario", JSON.stringify(usuarioObj));
+                Swal.fire("Fantastico", `su usuario quedo registrado exitosamente`, "success");
+                setEstaLogueado(true);
+                reset();
+                navegacion("/");
+                registerhandleClose();
+            } else if (respuesta === null) {
+                Swal.fire("Error", "Este usuario o correo ya existe", "error");
+            } else {
+                Swal.fire("Error", "No se pudo registrar su usuario exitosamente ", "error");
+            }
+        });
+    };
+    
   return (
     <Container className='cardRegistro mx-auto p-0 row rounded-5 mt-5'>
         <h1 className='text-center my-3'>¡Registrate!</h1>
@@ -27,7 +50,7 @@ const Registro = () => {
                     <input type="password" className='form-control' id='inputRptPassword' required maxLength={100} minLength={8}/>
                 </div>
             </div>
-            <button type='submit' className='btn btn-primary mb-4'>Registrarme</button>
+            <button action='' type='submit' className='btn btn-primary mb-4'>Registrarme</button>
         </form>
     
       
