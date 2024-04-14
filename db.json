@@ -40,6 +40,19 @@
       "email": "juan2@rollingcode.com",
       "contraseña": "$2b$10$3z90qofjSOaJ56JIoPOuKuSH35EpVijdHlWJOMZuxH527BT1siENG",
       "rol": "Admin"
+    },
+    {
+      "id": "0c67",
+      "nombreUsuario": "Juan2mingo peron",
+      "email": "juan2@rollingcode.com",
+      "contraseña": "$2b$10$3z90qofjSOaJ56JIoPOuKuSH35EpVijdHlWJOMZuxH527BT1siENG"
+    },
+    {
+      "id": "76b2",
+      "nombreUsuario": "Geronimo puto",
+      "email": "lopezsardip@gmail.com",
+      "contraseña": "Soyputo4",
+      "rol": "Usuario"
     }
   ]
 }

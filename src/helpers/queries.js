@@ -93,7 +93,7 @@ export const registrar = async (usuario) => {
           itemUsuario.email === usuario.email
       );
       if (!usuarioExistente) {
-        const respuestaRegistro = await fetch(URLUsuario + "/register", {
+        const respuestaRegistro = await fetch(URLUsuario, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
