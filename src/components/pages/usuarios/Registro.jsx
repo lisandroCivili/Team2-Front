@@ -26,7 +26,7 @@ const Registro = () => {
                 sessionStorage.setItem("usuario", JSON.stringify(usuarioObj));
                 // Swal.fire("Fantastico", `su usuario quedo registrado exitosamente`, "success");
                 // setEstaLogueado(true);
-                // reset();
+                reset();
                 // navegacion("/");
                 // registerhandleClose();
             } else if (respuesta === null) {
