@@ -1,4 +1,5 @@
 const APIProductos = import.meta.env.VITE_API_PRODUCTOS
+const URLUsuario = import.meta.env.VITE_API_USUARIO;
 
 export const leerProductos = async() =>{
     try {
@@ -82,3 +83,31 @@ export const login = (usuario)=>{
         return false
     }
 }
+
+export const registrar = async (usuario) => {
+    try {
+      const respuestaListaUsuarios = await fetch(URLUsuario);
+      const listaUsuarios = await respuestaListaUsuarios.json();
+      const usuarioExistente = listaUsuarios.find(
+        (itemUsuario) =>
+          itemUsuario.nombreUsuario === usuario.nombreUsuario ||
+          itemUsuario.email === usuario.email
+      );
+      if (!usuarioExistente) {
+        const respuestaRegistro = await fetch(URLUsuario + "/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(usuario),
+        });
+        const data = await respuestaRegistro.json();
+        return data; // Devuelve la respuesta de registro, no la respuesta original
+      } else {
+        return null;
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  
