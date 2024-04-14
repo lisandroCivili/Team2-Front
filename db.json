@@ -28,11 +28,97 @@
   "usuarios": [
     {
       "id": "da26",
-      "nombreUsuario": "JuaN",
+      "nombreUsuario": "Juan",
       "email": "juan@rollingcode.com",
-      "contraseña": "$2b$10$3z90qofjSOaJ56JIoPOuKuSH35EpVijdHlWJOMZuxH527BT1siENG",
+      "contraseña": "Juancito123",
       "rol": "Admin"
+    },
+    {
+      "id": "3ff4",
+      "nombreUsuario": "pablolsardi",
+      "email": "lopezsardip@gmail.com",
+      "contraseña": "Pablo123",
+      "rol": "Usuario"
+    },
+    {
+      "id": "76d2",
+      "email": "lopezsardip@gmail.com",
+      "contraseña": "Paglo123"
+    },
+    {
+      "id": "4b5b",
+      "email": "lopezsardip@gmail.com",
+      "contraseña": "Paglo123"
+    },
+    {
+      "id": "46cb",
+      "email": "lopezsardip@gmail.com",
+      "contraseña": "Paglo123"
+    },
+    {
+      "id": "c9df",
+      "email": "lopezsardip@gmail.com",
+      "contraseña": "Pablo123"
+    },
+    {
+      "id": "b31f",
+      "email": "lopezsardip@gmail.com",
+      "contraseña": "Pablo123"
+    },
+    {
+      "id": "ca7a",
+      "email": "lopezsardip@gmail.com",
+      "contraseña": "Pablo123"
+    },
+    {
+      "id": "2810",
+      "email": "lopezsardip@gmail.com",
+      "contraseña": "Pablo123"
+    },
+    {
+      "id": "b3d6",
+      "email": "lopezsardip@gmail.com",
+      "contraseña": "Pablo123"
+    },
+    {
+      "id": "1632",
+      "email": "lopezsardip@gmail.com",
+      "contraseña": "Pablo123"
+    },
+    {
+      "id": "10f1",
+      "email": "lopezsardip@gmail.com",
+      "contraseña": "Pablo123"
+    },
+    {
+      "id": "a2b4",
+      "email": "lopezsardip@gmail.com",
+      "contraseña": "Pablo123"
+    },
+    {
+      "id": "69f7",
+      "email": "lopezsardip@gmail.com",
+      "contraseña": "Pablo1223"
+    },
+    {
+      "id": "332d",
+      "email": "lopezsardip@gmail.com",
+      "contraseña": "Pablo123"
+    },
+    {
+      "id": "c0cc",
+      "email": "juan@rollingcode.com",
+      "contraseña": "Juancito123"
+    },
+    {
+      "id": "bf84",
+      "email": "juan@rollingcode.com",
+      "contraseña": "Juancito123"
+    },
+    {
+      "id": "af5d",
+      "email": "juan@rollingcode.com",
+      "contraseña": "Juancito123"
     }
-    
   ]
 }

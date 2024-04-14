@@ -83,6 +83,26 @@ export const login = (usuario)=>{
     }
 }
 
+export const loguear = async (usuario) => {
+    try {
+      const respuesta = await fetch(URLUsuario, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(usuario),
+      });
+      const data = await respuesta.json();
+      if (respuesta.ok) {
+        return data;
+      } else {
+        return null;
+      }
+    } catch (error) {
+      console.log(error);
+    }
+};
+
 export const registrar = async (usuario) => {
     try { 
       const respuestaListaUsuarios = await fetch(URLUsuario);
@@ -108,4 +128,4 @@ export const registrar = async (usuario) => {
     } catch (error) {
       console.log(error);
     }
-  };
+};
