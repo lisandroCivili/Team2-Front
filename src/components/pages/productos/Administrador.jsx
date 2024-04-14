@@ -4,7 +4,6 @@ import { Button, Container, Row, Col,Form} from "react-bootstrap";
 import {leerProductos, mostrarProducto} from '../../../helpers/queries'
 import ItemProducto from './ItemProducto';
 import { Link } from 'react-router-dom';
-import { BiX } from 'react-icons/bi';
 
 const Administrador = () => {
 
