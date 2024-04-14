@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Container } from "react-bootstrap";
 import "../../../../styles/login.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import imgfondo from "../../../assets/pexels-valeria-boltneva-1639557.jpg";
+import imgfondo from "../../../assets/pexels-loginmin.jpg";
 
 const Login = () => {
 
