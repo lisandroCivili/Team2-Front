@@ -17,6 +17,7 @@ import Carrito from "./components/pages/pedidos/Carrito.jsx";
 import DetalleProducto from "./components/pages/productos/DetalleProducto.jsx";
 
 
+
 function App() {
   return (
     <BrowserRouter>
