@@ -1,7 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSync, faTrash, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
-const ItemCarrito = ({producto}) => {
+const ItemCarrito = ({producto, eliminarDelCarrito}) => {
+
+  const handleEliminar =()=>{
+    eliminarDelCarrito(producto.id)
+  }
+
+
   return (
     <tr>
       <td data-th="Producto">
@@ -29,7 +35,7 @@ const ItemCarrito = ({producto}) => {
       </td>
       <td className="cantidad" data-th="">
         <div className="text-right">
-          <button className="btn btn-white border-secondary bg-danger btn-md mb-1">
+          <button className="btn btn-white border-secondary bg-danger btn-md mb-1" onClick={handleEliminar}>
             <FontAwesomeIcon icon={faTrash} />
           </button>
         </div>

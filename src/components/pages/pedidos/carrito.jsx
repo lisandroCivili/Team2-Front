@@ -2,6 +2,7 @@ import '../../../../styles/carrito.css'
 import "../../../../styles/App.css"
 import React, { useEffect, useState } from 'react';
 import ItemCarrito from './ItemCarrito';
+import Swal from 'sweetalert2';
 
 
 const Carrito = () => {
@@ -13,6 +14,23 @@ const Carrito = () => {
         setProductosEnCarrito(carritoDeStorage);
         console.log(carritoDeStorage);
     },[])
+
+    const eliminarDelCarrito = (id)=>{
+        Swal.fire({
+            title: `¿Dese eliminar este producto de su carrito?`,
+            showDenyButton: true,
+            confirmButtonText: "Eliminar",
+            denyButtonText: `Cancelar`
+          }).then((result) => {
+            if (result.isConfirmed) {
+
+                const carritoActualizado = productosEnCarrito.filter(producto => producto.id !== id);
+                localStorage.setItem("carrito", JSON.stringify(carritoActualizado));
+                
+                setProductosEnCarrito(carritoActualizado);
+            }
+          });
+    }
 
 
     return (
@@ -31,7 +49,7 @@ const Carrito = () => {
                             </thead>
                             <tbody>
                                 {
-                                    productosEnCarrito.map(producto => <ItemCarrito key={producto.id} producto={producto}/>)
+                                    productosEnCarrito.map(producto => <ItemCarrito key={producto.id} producto={producto} eliminarDelCarrito={eliminarDelCarrito}/>)
                                 }
                             </tbody>
                         </table>

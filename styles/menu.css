@@ -76,9 +76,20 @@
   .logoMenu {
     height: 85px;
   }
+  #inicioBoton,#registroBoton,#adminBoton, #carritoBoton,#logoutBoton,#loginBoton{
+    font-size: 20px;
+    border-bottom: 1px #ecdba1 solid;
+  }
 }
 @media all and (min-width: 1200px) and (max-width: 1400) {
   .logoMenu {
     width: 90px;
+  }
+  .logoMenu {
+    height: 85px;
+  }
+  #inicioBoton,#registroBoton,#adminBoton, #carritoBoton,#logoutBoton,#loginBoton{
+    font-size: 20px;
+    border-bottom: 1px #ecdba1 solid;
   }
 }

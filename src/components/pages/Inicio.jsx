@@ -27,7 +27,9 @@ const Inicio = () => {
   };
 
   const agregarAlCarrito = (producto) => {
+    
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
     carrito.push(producto);
     localStorage.setItem("carrito", JSON.stringify(carrito));
   };
@@ -45,9 +47,6 @@ const Inicio = () => {
         <Carousel.Item>
           <img className="d-block w-100" src={bannerPP} alt="Second slide" />
         </Carousel.Item>
-        {/* <Carousel.Item>
-          <img className="d-block w-100" src={bannerMarca} alt="Third slide" />
-        </Carousel.Item> */}
         <Carousel.Item>
           <img
             className="d-block w-100"
