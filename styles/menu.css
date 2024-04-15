@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Tilt+Neon&display=swap");
 
 .navbar,
-.footer {
+footer {
   border-bottom: 1px #ecdba1 solid;
   background-color: #e8652d;
 }
@@ -20,6 +20,23 @@
   border-radius: 0;
   color: #e8652d;
   transition: background-color 0.3s, color 0.3s;
+}
+.iconosAtencionAlCliente{
+  color: #4b7b7b;
+  font-size: 20px;
+}
+.iconosRedes{
+  color: white;
+  font-size: 35px;
+}
+footer img{
+  width: 90px;
+  height: 90px;
+ 
+}
+.textoFooter{
+  font-size: 19px;
+  margin-top: 45px;
 }
 @media all and (max-width: 575px) {
   .logoMenu {
