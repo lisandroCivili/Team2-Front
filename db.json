@@ -1,0 +1,64 @@
+{
+  "productos": [
+    {
+      "nombreProducto": "Hamburguesa con Papas Fritas",
+      "precio": "8500",
+      "imagen": "https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg",
+      "categoria": "Combo",
+      "detalle": "Hamburguesa con cheddar y papas fritas.",
+      "id": "f0a2"
+    },
+    {
+      "nombreProducto": "Pizza con huevo",
+      "precio": "3000",
+      "imagen": "https://images.pexels.com/photos/845812/pexels-photo-845812.jpeg",
+      "categoria": "Otros",
+      "detalle": "Irresistible, fresca y llena de sabor, nuestra Pizza de Huevo te conquistará en cada bocado. Con una base crujiente y huevos frescos, es perfecta para cualquier momento del día. ¡Haz tu pedido y disfruta de esta delicia hoy mismo!",
+      "id": "dc20"
+    },
+    {
+      "nombreProducto": "Cheeseburger y coca cola chica",
+      "precio": "10000",
+      "imagen": "https://images.pexels.com/photos/2983104/pexels-photo-2983104.jpeg",
+      "categoria": "Combo",
+      "detalle": "¿Listo para una explosión de sabor? Nuestro Combo de Cheeseburger con Coca-Cola es la combinación perfecta para satisfacer tu antojo.",
+      "id": "2cd9"
+    },
+    {
+      "id": "8fa6",
+      "nombreProducto": "Helado",
+      "precio": "2500",
+      "imagen": "https://images.pexels.com/photos/1294943/pexels-photo-1294943.jpeg",
+      "categoria": "Postre",
+      "detalle": "Heladoooooooooooooooooooooooooooooooooooooooooooooo"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": "da26",
+      "nombreUsuario": "Juan",
+      "email": "juan@rollingcode.com",
+      "contraseña": "Juancito123",
+      "rol": "Admin"
+    },
+    {
+      "id": "2bad",
+      "email": "lopezsardip@gmail.com",
+      "contraseña": "Pablo123"
+    },
+    {
+      "id": "cde5",
+      "nombreUsuario": "GeronimoPuto",
+      "email": "danielasardi30@gmail.com",
+      "contraseña": "Pablo123",
+      "rol": "Usuario"
+    },
+    {
+      "id": "3112",
+      "nombreUsuario": "pablolsardi2",
+      "email": "lopezsardip2@gmail.com",
+      "contraseña": "asdA1233",
+      "rol": "Usuario"
+    }
+  ]
+}
