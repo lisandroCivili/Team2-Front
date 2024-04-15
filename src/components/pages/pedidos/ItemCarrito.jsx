@@ -4,7 +4,7 @@ import { faSync, faTrash, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 const ItemCarrito = ({producto, eliminarDelCarrito}) => {
 
   const handleEliminar =()=>{
-    eliminarDelCarrito(producto.id)
+    eliminarDelCarrito(producto._id)
   }
 
 

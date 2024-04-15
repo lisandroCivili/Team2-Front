@@ -7,7 +7,7 @@ const CardProducto = ({ producto, agregarAlCarrito }) => {
   
   const guardarSessionStorage = () => {
     let carrito = JSON.parse(sessionStorage.getItem("carrito")) || [];
-    const productoExistente = carrito.find(item => item.id === producto.id);
+    const productoExistente = carrito.find(item => item._id === producto._id);
     if (sesion.length === 0) {
       Swal.fire("!Inicie sesion o registrese para agregar productos!");
       if (productoExistente) {
@@ -45,7 +45,7 @@ const CardProducto = ({ producto, agregarAlCarrito }) => {
         </Card.Body>
         <Card.Footer className="text-end">
           <div className="d-flex gap-2 justify-content-center">
-            <Button className="btn" as={Link} to={`/DetalleProducto/${producto.id}`}>
+            <Button className="btn" as={Link} to={`/DetalleProducto/${producto._id}`}>
               Ver más
             </Button>
             <Button className="btn" onClick={guardarSessionStorage}>
