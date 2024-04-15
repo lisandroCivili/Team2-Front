@@ -3,12 +3,16 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const CardProducto = ({ producto, agregarAlCarrito }) => {
-  let carrito
+  const sesion = JSON.parse(sessionStorage.getItem("usuario")) || [];
+  
   const guardarSessionStorage = () => {
     let carrito = JSON.parse(sessionStorage.getItem("carrito")) || [];
     const productoExistente = carrito.find(item => item.id === producto.id);
-    if (productoExistente) {
-      Swal.fire("!Este producto ya se encuentra en su carrito!");
+    if (sesion.length === 0) {
+      Swal.fire("!Inicie sesion o registrese para agregar productos!");
+      if (productoExistente) {
+        Swal.fire("!Este producto ya se encuentra en su carrito!");
+      }
     }else{
 
       agregarAlCarrito(producto);
@@ -21,6 +25,7 @@ const CardProducto = ({ producto, agregarAlCarrito }) => {
         imageAlt: `${producto.nombreProducto}`
       });
     }
+    
   };
 
   return (

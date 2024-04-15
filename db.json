@@ -25,14 +25,6 @@
       "id": "2cd9"
     },
     {
-      "id": "d7b3",
-      "nombreProducto": "Brownie",
-      "precio": "3344",
-      "imagen": "https://images.pexels.com/photos/905485/pexels-photo-905485.jpeg",
-      "categoria": "Postre",
-      "detalle": "asddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
-    },
-    {
       "id": "8fa6",
       "nombreProducto": "Helado",
       "precio": "2500",
@@ -67,27 +59,6 @@
       "email": "lopezsardip2@gmail.com",
       "contraseña": "asdA1233",
       "rol": "Usuario"
-    }
-  ],
-  "pedidos": [
-    {
-      "0": {
-        "nombreProducto": "Pizza con huevo",
-        "precio": "3000",
-        "imagen": "https://images.pexels.com/photos/845812/pexels-photo-845812.jpeg",
-        "categoria": "Otros",
-        "detalle": "Irresistible, fresca y llena de sabor, nuestra Pizza de Huevo te conquistará en cada bocado. Con una base crujiente y huevos frescos, es perfecta para cualquier momento del día. ¡Haz tu pedido y disfruta de esta delicia hoy mismo!",
-        "id": "dc20"
-      },
-      "1": {
-        "nombreProducto": "Cheeseburger y coca cola chica",
-        "precio": "10000",
-        "imagen": "https://images.pexels.com/photos/2983104/pexels-photo-2983104.jpeg",
-        "categoria": "Combo",
-        "detalle": "¿Listo para una explosión de sabor? Nuestro Combo de Cheeseburger con Coca-Cola es la combinación perfecta para satisfacer tu antojo.",
-        "id": "2cd9"
-      },
-      "id": "9102"
     }
   ]
 }
