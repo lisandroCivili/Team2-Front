@@ -9,7 +9,7 @@ import {
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-const FomularioProducto = ({ editando, titulo, botonFinal }) => {
+const FomularioProducto = ({ editando, titulo}) => {
   const {
     register,
     handleSubmit,
@@ -210,7 +210,6 @@ const FomularioProducto = ({ editando, titulo, botonFinal }) => {
               {errors.detalle?.message}
             </Form.Text>
           </Form.Group>
-
           {editarBoton}
         </Form>
       </section>

@@ -10,7 +10,8 @@ footer {
 .adminBoton,
 #logoutBoton,
 #loginBoton,
-#carritoBoton {
+#carritoBoton,
+#pedidosBoton {
   color: #1c2a4d;
   font-weight: 600;
 }
@@ -43,7 +44,7 @@ footer img{
     width: 90px;
     height: 70px;
   }
-  #inicioBoton,#registroBoton,.adminBoton, #carritoBoton,#logoutBoton,#loginBoton{
+  #inicioBoton,#registroBoton,.adminBoton, #carritoBoton,#logoutBoton,#loginBoton, #pedidosBoton{
     font-size: 20px;
     border-bottom: 1px #ecdba1 solid;
   }
@@ -61,7 +62,7 @@ footer img{
   .logoMenu {
     width: 75px;
   }
-  #inicioBoton,#registroBoton,#adminBoton, #carritoBoton,#logoutBoton,#loginBoton{
+  #inicioBoton,#registroBoton,.adminBoton, #carritoBoton,#logoutBoton,#loginBoton, #pedidosBoton{
     font-size: 20px;
     border-bottom: 1px #ecdba1 solid;
   }
@@ -75,7 +76,7 @@ footer img{
   .logoMenu {
     width: 80px;
   }
-  #inicioBoton,#registroBoton,#adminBoton, #carritoBoton,#logoutBoton,#loginBoton{
+  #inicioBoton,#registroBoton,.adminBoton, #carritoBoton,#logoutBoton,#loginBoton, #pedidosBoton{
     font-size: 20px;
     border-bottom: 1px #ecdba1 solid;
   }
@@ -93,7 +94,7 @@ footer img{
   .logoMenu {
     height: 85px;
   }
-  #inicioBoton,#registroBoton,#adminBoton, #carritoBoton,#logoutBoton,#loginBoton{
+  #inicioBoton,#registroBoton,.adminBoton, #carritoBoton,#logoutBoton,#loginBoton, #pedidosBoton{
     font-size: 20px;
     border-bottom: 1px #ecdba1 solid;
   }
@@ -105,7 +106,7 @@ footer img{
   .logoMenu {
     height: 85px;
   }
-  #inicioBoton,#registroBoton,#adminBoton, #carritoBoton,#logoutBoton,#loginBoton{
+  #inicioBoton,#registroBoton,.adminBoton, #carritoBoton,#logoutBoton,#loginBoton, #pedidosBoton{
     font-size: 20px;
     border-bottom: 1px #ecdba1 solid;
   }
