@@ -1,9 +1,16 @@
 import "../../../styles/menu.css";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 
-const Menu = () => {
+const Menu = ({ usuarioLogeado, setUsuarioLogeado }) => {
+  const navegacion = useNavigate();
+  const logout = () => {
+    sessionStorage.removeItem("usuario");
+    sessionStorage.removeItem("carrito")
+    setUsuarioLogeado("");
+    navegacion("/");
+  };
   return (
     <Navbar expand="md" className="navbar">
       <Container>
@@ -15,34 +22,45 @@ const Menu = () => {
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav" >
+        <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto" id="nav">
             <NavLink className="nav-link" id="inicioBoton" to="/">
               INICIO
             </NavLink>
-            <NavLink className="nav-link" id="registroBoton" to="/registro">
-              REGISTRO
-            </NavLink>
-            {/* <NavLink className="nav-link" id="logoutBoton">
-              LOGOUT
-            </NavLink> */}
-            <NavLink className="nav-link" id="loginBoton" to="/login">
-              LOGIN
-            </NavLink>
-            <NavLink className="nav-link" id="carritoBoton" to="/carrito">
-            <i className="bi bi-cart-fill"></i>
-            </NavLink>
-            {/* <NavDropdown title="ADMINISTRADOR" className="adminBoton nav-link">
-              <NavDropdown.Item as={Link} to="/administrador">
-                Productos
-              </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/error404">
-                Pedidos
-              </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/error404">
-                Usuarios
-              </NavDropdown.Item>
-            </NavDropdown> */}
+            {usuarioLogeado === "" ? (
+              <>
+                <NavLink className="nav-link" id="loginBoton" to="/login">
+                  LOGIN
+                </NavLink>
+                <NavLink className="nav-link" id="registroBoton" to="/registro">
+                  REGISTRARSE
+                </NavLink>
+              </>
+            ) : (
+              <>
+                <NavLink className="nav-link" id="logoutBoton" onClick={logout}>
+                  LOGOUT
+                </NavLink>
+                <NavLink className="nav-link" id="carritoBoton" to="/carrito">
+                  <i className="bi bi-cart-fill"></i>
+                </NavLink>
+              </>
+            )}
+            {usuarioLogeado.rol === "Admin" ? (
+              <NavDropdown
+                title="ADMINISTRADOR"
+                className="adminBoton nav-link"
+              >
+                <NavDropdown.Item as={Link} to={"/administrador"}>
+                  Productos  
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  Usuarios
+                </NavDropdown.Item>
+              </NavDropdown>
+            ) : (
+              <></>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>

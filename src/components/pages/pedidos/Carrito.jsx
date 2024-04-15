@@ -3,35 +3,37 @@ import "../../../../styles/App.css"
 import React, { useEffect, useState } from 'react';
 import ItemCarrito from './ItemCarrito';
 import Swal from 'sweetalert2';
+import { crearPedido } from '../../../helpers/queries';
+import { Button } from 'bootstrap';
+import { Link } from 'react-router-dom';
 
 
 const Carrito = () => {
+  const [productosEnCarrito, setProductosEnCarrito] = useState([]);
 
-    const [productosEnCarrito, setProductosEnCarrito] = useState([]);
+  useEffect(() => {
+    const carritoDeStorage = JSON.parse(localStorage.getItem("carrito")) || [];
+    setProductosEnCarrito(carritoDeStorage);
+    console.log(carritoDeStorage);
+  }, []);
 
-    useEffect(()=>{
-        const carritoDeStorage = JSON.parse(localStorage.getItem("carrito")) || [];
-        setProductosEnCarrito(carritoDeStorage);
-        console.log(carritoDeStorage);
-    },[])
-
-    const eliminarDelCarrito = (id)=>{
-        Swal.fire({
-            title: `¿Dese eliminar este producto de su carrito?`,
-            showDenyButton: true,
-            confirmButtonText: "Eliminar",
-            denyButtonText: `Cancelar`
-          }).then((result) => {
-            if (result.isConfirmed) {
-
-                const carritoActualizado = productosEnCarrito.filter(producto => producto.id !== id);
-                localStorage.setItem("carrito", JSON.stringify(carritoActualizado));
-                
-                setProductosEnCarrito(carritoActualizado);
-            }
-          });
+  const eliminarDelCarrito = (id) => {
+    Swal.fire({
+      title: `¿Dese eliminar este producto de su carrito?`,
+      showDenyButton: true,
+      confirmButtonText: "Eliminar",
+      denyButtonText: `Cancelar`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const carritoActualizado = productosEnCarrito.filter(producto => producto.id !== id);
+        sessionStorage.setItem("carrito", JSON.stringify(carritoActualizado));
+        
+        setProductosEnCarrito(carritoActualizado);
     }
+  });
+}
 
+     
 
     return (
         <section className="pt-5 pb-5">
@@ -55,12 +57,6 @@ const Carrito = () => {
                         </table>
                       
                     </div>
-                </div>
-                <div className="row mt-4 d-flex align-items-center">
-                    <div className="col-sm-6 order-md-2 text-right">
-                        <a href="catalog.html" className="btn btn-primary mb-4 btn-lg pl-5 pr-5">Comprar</a>
-                    </div>
-                  
                 </div>
             </div>
         </section>
