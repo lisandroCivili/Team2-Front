@@ -23,14 +23,6 @@
       "categoria": "Combo",
       "detalle": "¿Listo para una explosión de sabor? Nuestro Combo de Cheeseburger con Coca-Cola es la combinación perfecta para satisfacer tu antojo.",
       "id": "2cd9"
-    },
-    {
-      "id": "8fa6",
-      "nombreProducto": "Helado",
-      "precio": "2500",
-      "imagen": "https://images.pexels.com/photos/1294943/pexels-photo-1294943.jpeg",
-      "categoria": "Postre",
-      "detalle": "Heladoooooooooooooooooooooooooooooooooooooooooooooo"
     }
   ],
   "usuarios": [

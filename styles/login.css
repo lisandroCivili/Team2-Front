@@ -15,7 +15,45 @@
     border-bottom-right-radius: 0px;
 }
 
-@media screen and (max-width: 991px) {
+
+@media all and (max-width: 575px) {
+    .cardLogin{
+        width: 75%;
+        height: auto;
+        margin-left: 20px;
+        margin-bottom: 45px;
+        padding-bottom: 20px;
+    }    
+
+    .imgHamburguesa{
+        border-top-left-radius: 32px;
+        border-top-right-radius: 32px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        width: 100%;
+        height: 250px;
+    }
+  
+  }
+  @media all and (min-width: 576px) and (max-width: 767px) {
+    .cardLogin{
+        width: 75%;
+        height: auto;
+        margin-left: 20px;
+        margin-bottom: 45px;
+        padding-bottom: 20px;
+    }    
+
+    .imgHamburguesa{
+        border-top-left-radius: 32px;
+        border-top-right-radius: 32px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        width: 100%;
+        height: 250px;
+    }
+  }
+  @media all and (min-width: 768px) and (max-width: 991px) {
     .cardLogin{
         width: 55%;
         height: auto;
@@ -29,5 +67,38 @@
         border-top-right-radius: 32px;
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
+        width: 100%;
+        height: 250px;
     }
-}
+   
+  
+  }
+  @media all and (min-width: 992px) and (max-width: 1199px) {
+    .cardLogin{
+        width: 55%;
+        height: auto;
+        margin-left: 20px;
+        margin-bottom: 45px;
+        padding-bottom: 20px;
+    }    
+
+    .imgHamburguesa{
+        width: 100%;
+        height: 460px;
+    }
+  }
+  @media all and (min-width: 1200px) {
+    .cardLogin{
+        width: 55%;
+        height: auto;
+        margin-left: 20px;
+        margin-bottom: 45px;
+        padding-bottom: 20px;
+    }    
+
+    .imgHamburguesa{
+        width: 100%;
+        height: 460px;
+    }
+  }
+  
