@@ -59,6 +59,13 @@
       "email": "lopezsardip2@gmail.com",
       "contraseña": "asdA1233",
       "rol": "Usuario"
+    },
+    {
+      "id": "7c73",
+      "nombreUsuario": "LisandroCivili",
+      "email": "lisandro@gmail.com",
+      "contraseña": "Holachau123",
+      "rol": "Usuario"
     }
   ]
 }
