@@ -38,7 +38,7 @@ const Login = () => {
                     "success"
                 );
                 if(respuesta.rol === "Admin"){
-                    navegacion("/administrador");
+                    navegacion("/administrador/");
                 }else{
                     navegacion("/");
                 }

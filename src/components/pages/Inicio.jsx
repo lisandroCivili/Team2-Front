@@ -28,10 +28,10 @@ const Inicio = () => {
 
   const agregarAlCarrito = (producto) => {
     
-    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    let carrito = JSON.parse(sessionStorage.getItem("carrito")) || [];
 
     carrito.push(producto);
-    localStorage.setItem("carrito", JSON.stringify(carrito));
+    sessionStorage.setItem("carrito", JSON.stringify(carrito));
   };
 
   return (
