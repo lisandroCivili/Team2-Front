@@ -72,7 +72,7 @@ const Inicio = () => {
         <Row>
           {productos.map((producto) => (
             <CardProducto
-              key={producto.id}
+              key={producto._id}
               producto={producto}
               agregarAlCarrito={agregarAlCarrito}
             />

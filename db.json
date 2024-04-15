@@ -58,6 +58,13 @@
       "email": "lisandro@gmail.com",
       "contraseña": "Holachau123",
       "rol": "Usuario"
+    },
+    {
+      "id": "cffb",
+      "nombreUsuario": "LisandroCivili2",
+      "email": "lichadlv25@gmail.com",
+      "contraseña": "Holachau123",
+      "rol": "Usuario"
     }
   ]
 }

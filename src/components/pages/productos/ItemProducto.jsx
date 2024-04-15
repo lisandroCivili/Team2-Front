@@ -17,7 +17,7 @@ const ItemProducto = ({producto, setProductos}) => {
           cancelButtonText: "Cancelar"
         }).then(async(result) => {
           if (result.isConfirmed) {
-            const respuesta = await borrarProducto(producto.id)
+            const respuesta = await borrarProducto(producto._id)
             if (respuesta.status === 200) {
               Swal.fire({
                 title: "Producto eliminado",
@@ -48,7 +48,7 @@ const ItemProducto = ({producto, setProductos}) => {
             <Col sm={2} className="columna border-bottom p-2 d-flex align-items-center justify-content-center fs-5">{producto.categoria}</Col>
             <Col sm={2} id='imgColumnaAdmin' className="columna border-bottom p-2 d-flex align-items-center justify-content-center"><img src={producto.imagen} alt="" className="imgAmdin"/></Col>
             <Col sm={2} id='columnaOpciones' className="columna border border-top-0 p-2">
-                <Link className='btn editar' to={'/administrador/editarProducto/'+producto.id}>
+                <Link className='btn editar' to={'/administrador/editarProducto/'+producto._id}>
                     <i className="bi bi-pencil-square"></i>
                 </Link>
                 <Button className='btn eliminar' onClick={eliminarProducto}>

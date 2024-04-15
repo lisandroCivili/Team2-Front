@@ -25,7 +25,7 @@ const Carrito = () => {
       denyButtonText: `Cancelar`,
     }).then((result) => {
       if (result.isConfirmed) {
-        const carritoActualizado = productosEnCarrito.filter(producto => producto.id !== id);
+        const carritoActualizado = productosEnCarrito.filter(producto => producto._id !== id);
         sessionStorage.setItem("carrito", JSON.stringify(carritoActualizado));
         
         setProductosEnCarrito(carritoActualizado);
@@ -51,7 +51,7 @@ const Carrito = () => {
                             </thead>
                             <tbody>
                                 {
-                                    productosEnCarrito.map(producto => <ItemCarrito key={producto.id} producto={producto} eliminarDelCarrito={eliminarDelCarrito}/>)
+                                    productosEnCarrito.map(producto => <ItemCarrito key={producto._id} producto={producto} eliminarDelCarrito={eliminarDelCarrito}/>)
                                 }
                             </tbody>
                         </table>
