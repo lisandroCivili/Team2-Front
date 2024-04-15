@@ -23,7 +23,7 @@ const Login = () => {
 
     const onSubmit = async(usuario) => {
         const respuesta = await loguear(usuario)
-        console.log(respuesta);
+        
         if (respuesta) {
                 const usuario = {
                     rol: respuesta.rol,

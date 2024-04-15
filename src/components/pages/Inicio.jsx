@@ -22,7 +22,7 @@ const Inicio = () => {
       const datos = await respuesta.json();
       setProductos(datos);
     } else {
-      console.log("No se encontraron productos");
+      
     }
   };
 
