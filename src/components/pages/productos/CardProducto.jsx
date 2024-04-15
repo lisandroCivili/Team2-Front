@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 const CardProducto = ({ producto, agregarAlCarrito }) => {
   let carrito
   const guardarSessionStorage = () => {
-    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    let carrito = JSON.parse(sessionStorage.getItem("carrito")) || [];
     const productoExistente = carrito.find(item => item.id === producto.id);
     if (productoExistente) {
       Swal.fire("!Este producto ya se encuentra en su carrito!");

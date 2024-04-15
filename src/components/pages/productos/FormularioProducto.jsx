@@ -208,9 +208,6 @@ const FomularioProducto = ({editando, titulo, botonFinal}) => {
               {errors.detalle?.message}
             </Form.Text>
           </Form.Group>
-          {/* <Button type="submit" variant="success" className="agregarBoton">
-            AGREGAR
-          </Button> */}
           {editarBoton}
         </Form>
       </section>
