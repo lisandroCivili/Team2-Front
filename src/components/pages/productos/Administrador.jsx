@@ -4,7 +4,6 @@ import { Button, Container, Row, Col,Form} from "react-bootstrap";
 import {leerProductos, mostrarProducto} from '../../../helpers/queries'
 import ItemProducto from './ItemProducto';
 import { Link } from 'react-router-dom';
-import { BiX } from 'react-icons/bi';
 
 const Administrador = () => {
 
@@ -54,7 +53,6 @@ const Administrador = () => {
         <Button className="btn btnAgregar float-end" as={Link} to="/administrador/agregarProducto">
             <i className="bi bi-plus-circle"></i>
         </Button>
-        InputGr
         <Form.Group controlId="formBusqueda" className="mb-3">
           <Form.Label className='display-6'>Buscar un producto</Form.Label>
           <Row>
@@ -86,7 +84,7 @@ const Administrador = () => {
             <Col sm={2} className="columna border p-3 text-center fs-4">Precio</Col>
             <Col sm={2} className="columna border-top border-bottom p-3 text-center fs-4">Categoria</Col>
             <Col sm={2} className="columna border p-3 text-center fs-4">Imagen</Col>
-            <Col sm={2} className="columna border p-3 text-center fs-4">Opciones</Col>
+            <Col sm={2} className="columna border p-3 fs-4">Opciones</Col>
         </Row>
         {
           filtro.length > 0 ? (

@@ -1,17 +1,26 @@
 import { Col, Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const CardProducto = ({ producto, agregarAlCarrito }) => {
+  let carrito
   const guardarSessionStorage = () => {
-    agregarAlCarrito(producto);
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    const productoExistente = carrito.find(item => item.id === producto.id);
+    if (productoExistente) {
+      Swal.fire("!Este producto ya se encuentra en su carrito!");
+    }else{
 
-      Swal.fire({
-      text:`Se agregó ${producto.nombreProducto} al carrito.`,
-      imageUrl: `${producto.imagen}`,
-      imageHeight: 150,
-      imageWidth: 200,
-      imageAlt: `${producto.nombreProducto}`
-    });
+      agregarAlCarrito(producto);
+  
+        Swal.fire({
+        text:`Se agregó ${producto.nombreProducto} al carrito.`,
+        imageUrl: `${producto.imagen}`,
+        imageHeight: 150,
+        imageWidth: 200,
+        imageAlt: `${producto.nombreProducto}`
+      });
+    }
   };
 
   return (
@@ -31,7 +40,7 @@ const CardProducto = ({ producto, agregarAlCarrito }) => {
         </Card.Body>
         <Card.Footer className="text-end">
           <div className="d-flex gap-2 justify-content-center">
-            <Button className="btn">
+            <Button className="btn" as={Link} to={`/DetalleProducto/${producto.id}`}>
               Ver más
             </Button>
             <Button className="btn" onClick={guardarSessionStorage}>

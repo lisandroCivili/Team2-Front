@@ -1,11 +1,10 @@
 import { Container, Row, Carousel } from "react-bootstrap";
 import CardProducto from "./productos/CardProducto";
 import { useEffect, useState } from "react";
-import banner from "../../assets/bannerFastFood.png";
 import bannerPP from "../../assets/bannerPP-min.jpg";
 import bannerFF from "../../assets/bannerFF-min.jpg";
 import bannerPapitas from "../../assets/banner_papitas-min.jpg";
-import DetalleProducto from "./productos/DetalleProducto";
+import bannerMarca from "../../assets/banner.png"
 import "../../../styles/Inicio.css";
 import { leerProductos } from "../../helpers/queries";
 
@@ -28,7 +27,9 @@ const Inicio = () => {
   };
 
   const agregarAlCarrito = (producto) => {
+    
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
     carrito.push(producto);
     localStorage.setItem("carrito", JSON.stringify(carrito));
   };
@@ -39,15 +40,12 @@ const Inicio = () => {
         <Carousel.Item className="first-slide">
           <img
             className="d-block w-100 img-fluid"
-            src={banner}
+            src={bannerMarca}
             alt="First slide"
           />
         </Carousel.Item>
         <Carousel.Item>
           <img className="d-block w-100" src={bannerPP} alt="Second slide" />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img className="d-block w-100" src={bannerFF} alt="Third slide" />
         </Carousel.Item>
         <Carousel.Item>
           <img

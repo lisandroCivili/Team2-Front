@@ -1,4 +1,5 @@
 const APIProductos = import.meta.env.VITE_API_PRODUCTOS
+
 const URLUsuario = import.meta.env.VITE_API_USUARIO;
 
 export const leerProductos = async() =>{
@@ -19,7 +20,7 @@ export const crearProducto = async(nuevoProducto) =>{
             },
             body: JSON.stringify(nuevoProducto)
         });
-        return respuesta
+        return respuesta    
     } catch (error) {
         console.log(error)
     }
@@ -38,8 +39,6 @@ export const borrarProducto = async(id) =>{
 
 export const obtenerProducto = async(id) =>{
     try {
-        // const respuesta = await fetch(APIProductos+'/'+id)
-        // const respuesta = await fetch(`${APIProductos}?nombreProducto=${nombreProducto}`)
         const respuesta = await fetch(`${APIProductos}/${id}`);
         return respuesta
     } catch (error) {
@@ -54,7 +53,6 @@ export const mostrarProducto = async(nombreProducto) =>{
         console.log(error)
     }
 }
-
 export const editarProducto = async(nuevosDatosProducto, id) =>{
     try {
         const respuesta = await fetch(APIProductos+'/'+id, {
@@ -69,12 +67,10 @@ export const editarProducto = async(nuevosDatosProducto, id) =>{
         console.log(error)
     }
 }
-
 const userAdmin = {
     email:"admin@lisandrocivili.com",
     password: "123Aa$123"
 }
-
 export const login = (usuario)=>{
     if (usuario.mail === userAdmin.email && usuario.pass === userAdmin.password) {
         sessionStorage.setItem('loginRC', JSON.stringify(usuario.mail))
@@ -111,3 +107,49 @@ export const registrar = async (usuario) => {
     }
   };
   
+
+export const loguear = async (usuario) => {
+    try {
+        const respuesta = await fetch(URLUsuario);
+        const solucion = await respuesta.json();
+        const coincidencia = solucion.find((user)=>
+            usuario.email === user.email && usuario.contraseña === user.contraseña
+        );
+      if(coincidencia){
+        return coincidencia;
+      }else{
+        throw new Error("Login failes");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+};
+
+
+
+export const registrar = async (usuario) => {
+    try { 
+      const respuestaListaUsuarios = await fetch(URLUsuario);
+      const listaUsuarios = await respuestaListaUsuarios.json();
+      const usuarioExistente = listaUsuarios.find(
+        (itemUsuario) => 
+          itemUsuario.nombreUsuario === usuario.nombreUsuario ||
+          itemUsuario.email === usuario.email
+      );
+      if (!usuarioExistente) {
+        const respuestaRegistro = await fetch(URLUsuario, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(usuario),
+        });
+        const data = await respuestaRegistro.json();
+        return data; // Devuelve la respuesta de registro, no la respuesta original
+      } else {
+        return null;
+      }
+    } catch (error) {
+      console.log(error);
+    }
+};
