@@ -1,4 +1,3 @@
-
 import React from "react";
 import "bootstrap-icons/font/bootstrap-icons.min.css";
 import "../styles/App.css"
@@ -38,7 +37,7 @@ function App() {
           }></Route>
          
       </Routes>
-    <Footer/>
+      <Footer />
     </BrowserRouter>
 }
 

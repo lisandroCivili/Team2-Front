@@ -1,93 +1,95 @@
 import { Form, Button } from "react-bootstrap";
-import { useForm} from "react-hook-form";
-import Swal from 'sweetalert2'
-import { crearProducto, editarProducto, obtenerProducto } from "../../../helpers/queries";
+import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
+import {
+  crearProducto,
+  editarProducto,
+  obtenerProducto,
+} from "../../../helpers/queries";
 import { useEffect } from "react";
-import {useParams} from 'react-router-dom'
+import { useParams } from "react-router-dom";
 
-
-const FomularioProducto = ({editando, titulo, botonFinal}) => {
-
+const FomularioProducto = ({ editando, titulo, botonFinal }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
-    setValue
+    setValue,
   } = useForm();
 
-  const {id} = useParams()
+  const { id } = useParams();
 
-  useEffect(()=>{
+  useEffect(() => {
     if (editando) {
-      cargarDatosProducto()
+      cargarDatosProducto();
     }
-  }, [])
+  }, []);
 
-  const cargarDatosProducto = async()=>{
-    const respuesta = await obtenerProducto(id)
+  const cargarDatosProducto = async () => {
+    const respuesta = await obtenerProducto(id);
     if (respuesta.status === 200) {
-      const datos = await respuesta.json()
-      setValue('nombreProducto', datos.nombreProducto)
-      setValue('precio', datos.precio)
-      setValue('imagen', datos.imagen)
-      setValue('categoria', datos.categoria)
-      setValue('detalle', datos.detalle)
-    }else{
-      console.log('No se obtuvieron datos')
+      const datos = await respuesta.json();
+      setValue("nombreProducto", datos.nombreProducto);
+      setValue("precio", datos.precio);
+      setValue("imagen", datos.imagen);
+      setValue("categoria", datos.categoria);
+      setValue("detalle", datos.detalle);
+    } else {
+      console.log("No se obtuvieron datos");
     }
-  }
+  };
 
-  const datosValidados = async(producto)=>{
+  const datosValidados = async (producto) => {
     if (editando) {
-      const respuesta = await editarProducto(producto, id)
+      const respuesta = await editarProducto(producto, id);
       if (respuesta.status === 200) {
         Swal.fire({
           title: "Edicion confirmada",
           text: `El producto ${producto.nombreProducto} se editó con exito.`,
-          icon: "success"
+          icon: "success",
         });
-      }else{
+      } else {
         Swal.fire({
           title: "No se pudo editar.",
           text: "Por favor intentalo nuevamente en unos minutos.",
-          icon: "error"
+          icon: "error",
         });
       }
-      }else{
-        const respuesta = await crearProducto(producto)
-        if (respuesta.status === 201) {
-          Swal.fire({
-            title: "Producto agregado",
-            text: `Se agrego el producto`,
-            icon: "success"
-          });
-          reset()
-        }else{
-          Swal.fire({
-            title: "Ocurrio un error",
-            text: "No se pudo agregar el producto, intente nuevamente en unos minutos.",
-            icon: "error"
-          });
-        }
+    } else {
+      const respuesta = await crearProducto(producto);
+      if (respuesta.status === 201) {
+        Swal.fire({
+          title: "Producto agregado",
+          text: `Se agrego el producto`,
+          icon: "success",
+        });
+        reset();
+      } else {
+        Swal.fire({
+          title: "Ocurrio un error",
+          text: "No se pudo agregar el producto, intente nuevamente en unos minutos.",
+          icon: "error",
+        });
+      }
     }
-  }
-  let botonFormulario
-  let editarBoton
+  };
+  let botonFormulario;
+  let editarBoton;
   if (editando) {
-    botonFormulario = 'Editar'
+    botonFormulario = "Editar";
     editarBoton = (
       <Button type="submit" variant="success" className="agregarBoton">
-          {botonFormulario}
+        {botonFormulario}
       </Button>
-    )
-  }else{
-    botonFormulario = 'Agregar'
+    );
+  } else {
+    botonFormulario = "Agregar";
     editarBoton = (
       <Button type="submit" variant="success" className="agregarBoton">
-          {botonFormulario}
+        {botonFormulario}
       </Button>
-    )
+    );
   }
 
   return (
@@ -99,7 +101,7 @@ const FomularioProducto = ({editando, titulo, botonFinal}) => {
           <Form.Group className="mb-3" controlId="formNombreProducto">
             <Form.Label className="labels">NOMBRE DEL PRODUCTO*</Form.Label>
             <Form.Control
-            className="inputs"
+              className="inputs"
               type="text"
               placeholder="Ej: Hamburguesa con papas"
               {...register("nombreProducto", {
@@ -123,7 +125,7 @@ const FomularioProducto = ({editando, titulo, botonFinal}) => {
           <Form.Group className="mb-3" controlId="formPrecio">
             <Form.Label className="labels">PRECIO*</Form.Label>
             <Form.Control
-            className="inputs"
+              className="inputs"
               type="number"
               placeholder="Ej: 6"
               {...register("precio", {
@@ -145,7 +147,7 @@ const FomularioProducto = ({editando, titulo, botonFinal}) => {
           <Form.Group className="mb-3" controlId="formImagen">
             <Form.Label className="labels">IMAGEN URL*</Form.Label>
             <Form.Control
-            className="inputs"
+              className="inputs"
               type="text"
               placeholder="Ej: https://images.pexels.com/photos/3090274/pexels-photo-3090274.jpeg"
               {...register("imagen", {
@@ -164,7 +166,7 @@ const FomularioProducto = ({editando, titulo, botonFinal}) => {
           <Form.Group className="mb-3" controlId="formCategoria">
             <Form.Label className="labels">CATEGORIA*</Form.Label>
             <Form.Select
-            className="inputs"
+              className="inputs"
               {...register("categoria", {
                 required: "Debe seleccionar una categoria.",
               })}
@@ -186,7 +188,7 @@ const FomularioProducto = ({editando, titulo, botonFinal}) => {
           <Form.Group className="mb-3" controlId="formDetalle">
             <Form.Label className="labels">DETALLE*</Form.Label>
             <Form.Control
-            className="inputs"
+              className="inputs"
               type="text"
               placeholder="Describe el producto..."
               as="textarea"
@@ -208,6 +210,10 @@ const FomularioProducto = ({editando, titulo, botonFinal}) => {
               {errors.detalle?.message}
             </Form.Text>
           </Form.Group>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 743825c73b9f933a85a82ed50fd5a1ffc1059259
           {editarBoton}
         </Form>
       </section>
