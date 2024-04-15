@@ -32,5 +32,33 @@
       "categoria": "Postre",
       "detalle": "asddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
     }
+  ],
+  "usuarios": [
+    {
+      "id": "da26",
+      "nombreUsuario": "Juan",
+      "email": "juan@rollingcode.com",
+      "contraseña": "Juancito123",
+      "rol": "Admin"
+    },
+    {
+      "id": "2bad",
+      "email": "lopezsardip@gmail.com",
+      "contraseña": "Pablo123"
+    },
+    {
+      "id": "cde5",
+      "nombreUsuario": "GeronimoPuto",
+      "email": "danielasardi30@gmail.com",
+      "contraseña": "Pablo123",
+      "rol": "Usuario"
+    },
+    {
+      "id": "3112",
+      "nombreUsuario": "pablolsardi2",
+      "email": "lopezsardip2@gmail.com",
+      "contraseña": "asdA1233",
+      "rol": "Usuario"
+    }
   ]
 }
