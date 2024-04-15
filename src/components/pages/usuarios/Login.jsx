@@ -23,7 +23,7 @@ const Login = () => {
 
     const onSubmit = async(usuario) => {
         const respuesta = await loguear(usuario)
-        console.log(respuesta);
+        
         if (respuesta) {
                 const usuario = {
                     rol: respuesta.rol,
@@ -52,7 +52,7 @@ const Login = () => {
           <Container className="cardLogin mx-auto p-0 row rounded-5 mt-5">
             <div className="col-12 col-lg-6 h-100 p-0">
               <img
-                className="imgHamburguesa img-fluid object-fit-cover h-100 "
+                className="imgHamburguesa img-fluid object-fit-cover"
                 src={imgfondo}
                 alt="hamburguesa"
               />

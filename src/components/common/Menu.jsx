@@ -54,9 +54,6 @@ const Menu = ({ usuarioLogeado, setUsuarioLogeado }) => {
                 <NavDropdown.Item as={Link} to={"/administrador"}>
                   Productos  
                 </NavDropdown.Item>
-                <NavDropdown.Item>
-                  Usuarios
-                </NavDropdown.Item>
               </NavDropdown>
             ) : (
               <></>
