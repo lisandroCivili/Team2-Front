@@ -85,23 +85,22 @@ export const login = (usuario)=>{
 
 export const loguear = async (usuario) => {
     try {
-      const respuesta = await fetch(URLUsuario, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(usuario),
-      });
-      const data = await respuesta.json();
-      if (respuesta.ok) {
-        return data;
-      } else {
-        return null;
+        const respuesta = await fetch(URLUsuario);
+        const solucion = await respuesta.json();
+        const coincidencia = solucion.find((user)=>
+            usuario.email === user.email && usuario.contraseña === user.contraseña
+        );
+      if(coincidencia){
+        return coincidencia;
+      }else{
+        throw new Error("Login failes");
       }
     } catch (error) {
       console.log(error);
     }
 };
+
+
 
 export const registrar = async (usuario) => {
     try { 

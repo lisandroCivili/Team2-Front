@@ -27,14 +27,14 @@ const Registro = () => {
             };
             if (respuesta) {
                 sessionStorage.setItem("usuario", JSON.stringify(usuarioObj));
-                Swal.fire("Fantastico", `su usuario quedo registrado exitosamente`, "success");
+                Swal.fire("¡Fantástico!", `Su usuario quedó registrado exitosamente`, "success");
                 reset();
                 navegacion("/");
 
             } else if (respuesta === null) {
                 Swal.fire("Error", "Este usuario o correo ya existe", "error");
             } else {
-                Swal.fire("Error", "No se pudo registrar su usuario exitosamente ", "error");
+                Swal.fire("Error", "No se pudo registrar su usuario", "error");
             }
         });
     };
@@ -93,6 +93,16 @@ const Registro = () => {
                                 message:
                                     "Su contraseña debe tener entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.",
                             },
+                            min:{
+                                value: 8,
+                                message:
+                                    "La contraseña debe tener un mínimo de 8 caracteres",
+                            },
+                            max:{
+                                value: 16,
+                                message:
+                                    "La contraseña debe tener un máximo de 16 caracteres",
+                            }
                         })}
                     />
                     <Form.Text className="text-danger">
