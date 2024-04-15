@@ -1,10 +1,12 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm} from "react-hook-form";
 import Swal from 'sweetalert2'
-import { crearProducto } from "../../../helpers/queries";
+import { crearProducto, editarProducto, obtenerProducto } from "../../../helpers/queries";
+import { useEffect } from "react";
+import {useParams} from 'react-router-dom'
 
 
-const FomularioProducto = () => {
+const FomularioProducto = ({editando, titulo, botonFinal}) => {
 
   const {
     register,
@@ -14,28 +16,84 @@ const FomularioProducto = () => {
     setValue
   } = useForm();
 
+  const {id} = useParams()
+
+  useEffect(()=>{
+    if (editando) {
+      cargarDatosProducto()
+    }
+  }, [])
+
+  const cargarDatosProducto = async()=>{
+    const respuesta = await obtenerProducto(id)
+    if (respuesta.status === 200) {
+      const datos = await respuesta.json()
+      setValue('nombreProducto', datos.nombreProducto)
+      setValue('precio', datos.precio)
+      setValue('imagen', datos.imagen)
+      setValue('categoria', datos.categoria)
+      setValue('detalle', datos.detalle)
+    }else{
+      console.log('No se obtuvieron datos')
+    }
+  }
+
   const datosValidados = async(producto)=>{
-    const respuesta = await crearProducto(producto)
-      if (respuesta.status === 201) {
+    if (editando) {
+      const respuesta = await editarProducto(producto, id)
+      if (respuesta.status === 200) {
         Swal.fire({
-          title: "Producto agregado",
-          text: `Se agrego el producto`,
+          title: "Edicion confirmada",
+          text: `El producto ${producto.nombreProducto} se editó con exito.`,
           icon: "success"
         });
-        reset()
       }else{
         Swal.fire({
-          title: "Ocurrio un error",
-          text: "No se puedo agregar el producto, intente nuevamente en unos minutos.",
+          title: "No se pudo editar.",
+          text: "Por favor intentalo nuevamente en unos minutos.",
           icon: "error"
         });
       }
+      }else{
+        const respuesta = await crearProducto(producto)
+        if (respuesta.status === 201) {
+          Swal.fire({
+            title: "Producto agregado",
+            text: `Se agrego el producto`,
+            icon: "success"
+          });
+          reset()
+        }else{
+          Swal.fire({
+            title: "Ocurrio un error",
+            text: "No se pudo agregar el producto, intente nuevamente en unos minutos.",
+            icon: "error"
+          });
+        }
+    }
+  }
+  let botonFormulario
+  let editarBoton
+  if (editando) {
+    botonFormulario = 'Editar'
+    editarBoton = (
+      <Button type="submit" variant="success" className="agregarBoton">
+          {botonFormulario}
+      </Button>
+    )
+  }else{
+    botonFormulario = 'Agregar'
+    editarBoton = (
+      <Button type="submit" variant="success" className="agregarBoton">
+          {botonFormulario}
+      </Button>
+    )
   }
 
   return (
     <div>
       <section className="container mainSection">
-        <h1 className="display-4 mt-5 tituloForm">TITULO</h1>
+        <h1 className="display-4 mt-5 tituloForm">{titulo}</h1>
         <hr />
         <Form className="my-4" onSubmit={handleSubmit(datosValidados)}>
           <Form.Group className="mb-3" controlId="formNombreProducto">
@@ -75,7 +133,7 @@ const FomularioProducto = () => {
                   message: "El precio debe ser $1000 como minimo.",
                 },
                 max: {
-                  value: 7000,
+                  value: 10000,
                   message: "El precio debe ser $7000 como máximo.",
                 },
               })}
@@ -150,9 +208,10 @@ const FomularioProducto = () => {
               {errors.detalle?.message}
             </Form.Text>
           </Form.Group>
-          <Button type="submit" variant="success" className="agregarBoton">
+          {/* <Button type="submit" variant="success" className="agregarBoton">
             AGREGAR
-          </Button>
+          </Button> */}
+          {editarBoton}
         </Form>
       </section>
     </div>

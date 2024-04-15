@@ -5,34 +5,50 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: "Roboto", sans-serif; 
   font-weight: 400;
   font-style: normal;
 }
-
 .mainSection {
   flex-grow: 1;
   background-color: #1C2A4D; 
 }
-
+#cardBody *{
+  color: #1C2A4D;
+}
 .primary-font {
   color: #ea5c2b; 
   text-shadow: 3px 1px 4px #fff; 
 }
-.card {
-  width: var(--max);
+#cardProductos{
+  background-color: #ea5c2b;
 }
 
-.card-img-top-nueva {
+.carousel {
+  margin-bottom: 40px;
+}
+
+.carousel-item img {
   width: 100%;
-  height: 400px;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
-.img-thumbnail {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+/* Ajustes para el primer slide del carrusel */
+.first-slide img {
+  width: 100%;
+  height: 100vh; /* Ajusta la altura del primer slide al 100% de la altura de la ventana */
+  object-fit: contain;
+  object-position: center;
+}
+.intro {
+  margin-bottom: 40px;
+  text-align: center;
 }
 @media all and (max-width: 575px){
   .contBanner{
@@ -41,10 +57,39 @@
   .bannerSmall{
     width: 100%;
   }
+  #cardBody{ 
+    height: 200px;
+  }
+  .card-img-top-nueva {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  #cardTitulo{
+    font-size: 30px;
+    font-weight: 800;
+  }
+  #cardCategoria{
+    font-size: 25px;
+  }
+  #cardPrecio{
+    font-size: 35px;
+  }
+  .carousel-item img {
+    height: 150px; 
+  }
 }
 @media all and (min-width: 576px) and (max-width: 767px){
   .contBanner{
     display: none;
+  }
+  .card-img-top-nueva {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .carousel-item img {
+    height: 150px; 
   }
 }
 @media all and (min-width: 768px) and (max-width: 991px){
@@ -55,23 +100,85 @@
     width: 100%;
     object-fit: cover;
   }
+  .card-img-top-nueva {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .carousel-item img {
+    height: 200px; 
+  }
+  #cardBody{ 
+    height: 180px;
+  }
+  #cardTitulo{
+    font-size: 23px;
+    font-weight: 800;
+  }
+  #cardCategoria{
+    font-size: 20px;
+  }
+  #cardPrecio{
+    font-size: 25px;
+  }
 }
-@media all and (min-width: 992px) and (max-width: 1999px){
+@media all and (min-width: 992px) and (max-width: 1199px){
   .contBannerSmall{
     display: none;
   }
-
+  .card-img-top-nueva {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
   .banner{
     width: 100%;
     object-fit: cover;
   }
+  #cardBody{ 
+    height: 180px;
+  }
+  #cardTitulo{
+    font-size: 23px;
+    font-weight: 800;
+  }
+  #cardCategoria{
+    font-size: 20px;
+  }
+  #cardPrecio{
+    font-size: 25px;
+  }
+  .carousel-item img {
+    height: 450px; /* Altura para dispositivos grandes */
+  }
 }
-@media all and (min-width: 1200px) and (max-width: 1400){
+@media all and (min-width: 1200px){
   .contBannerSmall{
     display: none;
   }
   .banner{
     width: 100%;
     object-fit: cover;
+  }
+  .card-img-top-nueva {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+  #cardBody{ 
+    height: 180px;
+  }
+  #cardTitulo{
+    font-size: 23px;
+    font-weight: 800;
+  }
+  #cardCategoria{
+    font-size: 20px;
+  }
+  #cardPrecio{
+    font-size: 25px;
+  }
+  .carousel-item img {
+    height: 450px; /* Altura para dispositivos grandes */
   }
 }
