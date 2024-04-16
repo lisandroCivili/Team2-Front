@@ -21,7 +21,7 @@ const Registro = () => {
         registrar(usuario).then((respuesta) => {
             const usuarioObj = {
                 email: usuario.email,
-                rol: "Usuario",
+                rol: usuario.rol,
                 nombreUsuario: usuario.nombreUsuario,
                 contraseña: usuario.contraseña,
             };
@@ -52,11 +52,11 @@ const Registro = () => {
                         {...register("nombreUsuario", {
                             required: "El nombre de usuario es obligatorio",
                             minLength: {
-                                value: 2,
+                                value: 5,
                                 message: "La cantidad minima de caracteres es de 2 digitos",
                             },
                             maxLength: {
-                                value: 100,
+                                value: 30,
                                 message: "La cantidad maxima de caracteres es de 2 digitos",
                             },
                         })}
