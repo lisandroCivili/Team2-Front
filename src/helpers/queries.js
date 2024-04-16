@@ -121,8 +121,8 @@ export const registrar = async (usuario) => {
         },
         body: JSON.stringify(usuario),
       });
-      const data = await respuestaRegistro.json();
-      return data;
+      // const data = await respuestaRegistro.json();
+      return respuestaRegistro;
     } else {
       return null;
     }
