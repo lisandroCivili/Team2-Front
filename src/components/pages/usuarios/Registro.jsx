@@ -17,11 +17,10 @@ const Registro = () => {
     } = useForm();
 
     const onSubmit = (usuario) => {
-        usuario.rol = "Usuario";
         registrar(usuario).then((respuesta) => {
             const usuarioObj = {
                 email: usuario.email,
-                rol: usuario.rol,
+                rol: "Usuario",
                 nombreUsuario: usuario.nombreUsuario,
                 contraseña: usuario.contraseña,
             };
