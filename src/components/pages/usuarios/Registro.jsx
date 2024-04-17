@@ -40,7 +40,7 @@ const Registro = () => {
             }
         } catch (error) {
             console.error("Error al registrar usuario:", error);
-            Swal.fire("Error", "Hubo un error al intentar registrar su usuario", "error");
+            Swal.fire("Error", error.message, "error");
         }
     };
 
