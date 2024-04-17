@@ -36,7 +36,7 @@ const Registro = () => {
             } else if (respuesta === null) {
                 Swal.fire("Error", "Este usuario o correo ya existe", "error");
             } else {
-                Swal.fire("Error", "No se pudo registrar su usuario", "error");
+                Swal.fire("Error", respuesta.error.message, "error");
             }
         } catch (error) {
             console.error("Error al registrar usuario:", error);
