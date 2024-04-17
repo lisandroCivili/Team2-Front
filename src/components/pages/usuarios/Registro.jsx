@@ -16,26 +16,32 @@ const Registro = () => {
         reset,
     } = useForm();
 
-    const onSubmit = (usuario) => {
-        registrar(usuario).then((respuesta) => {
+    const onSubmit = async (usuario) => {
+        try {
+            const respuesta = await registrar(usuario);
+    
             const usuarioObj = {
                 email: usuario.email,
                 rol: "Usuario",
                 nombreUsuario: usuario.nombreUsuario,
                 contraseña: usuario.contraseña,
             };
+    
             if (respuesta) {
                 sessionStorage.setItem("usuario", JSON.stringify(usuarioObj));
                 Swal.fire("¡Fantástico!", `Su usuario quedó registrado exitosamente`, "success");
                 reset();
                 navegacion("/");
-
+    
             } else if (respuesta === null) {
                 Swal.fire("Error", "Este usuario o correo ya existe", "error");
             } else {
                 Swal.fire("Error", "No se pudo registrar su usuario", "error");
             }
-        });
+        } catch (error) {
+            console.error("Error al registrar usuario:", error);
+            Swal.fire("Error", "Hubo un error al intentar registrar su usuario", "error");
+        }
     };
 
     return (
