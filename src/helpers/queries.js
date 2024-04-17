@@ -26,6 +26,32 @@ export const crearProducto = async (nuevoProducto) => {
   }
 };
 
+export const registrar = async (usuario) => {
+  try {
+    const respuestaListaUsuarios = await fetch(URLUsuario);
+    const listaUsuarios = await respuestaListaUsuarios.json();
+    const usuarioExistente = listaUsuarios.find(
+      (itemUsuario) =>
+        itemUsuario.nombreUsuario === usuario.nombreUsuario ||
+        itemUsuario.email === usuario.email
+    );
+    if (!usuarioExistente) {
+      const respuestaRegistro = await fetch(URLUsuario, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(usuario),
+      });
+      const data = await respuestaRegistro.json();
+      return data;
+    } else {
+      return null;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
 export const borrarProducto = async (id) => {
   try {
     const respuesta = await fetch(APIProductos + "/" + id, {
@@ -104,32 +130,6 @@ export const loguear = async (usuario) => {
   }
 };
 
-export const registrar = async (usuario) => {
-  try {
-    const respuestaListaUsuarios = await fetch(URLUsuario);
-    const listaUsuarios = await respuestaListaUsuarios.json();
-    const usuarioExistente = listaUsuarios.find(
-      (itemUsuario) =>
-        itemUsuario.nombreUsuario === usuario.nombreUsuario ||
-        itemUsuario.email === usuario.email
-    );
-    if (!usuarioExistente) {
-      const respuestaRegistro = await fetch(URLUsuario, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(usuario),
-      });
-      // const data = await respuestaRegistro.json();
-      return respuestaRegistro;
-    } else {
-      return null;
-    }
-  } catch (error) {
-    console.log(error);
-  }
-};
 
 // QUERIES PEDIDOS
 
