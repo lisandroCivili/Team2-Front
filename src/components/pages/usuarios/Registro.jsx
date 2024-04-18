@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useForm } from "react-hook-form";
 import { registrar } from "../../../helpers/queries.js";
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 
 const Registro = () => {
@@ -15,11 +16,11 @@ const Registro = () => {
         formState: { errors },
         reset,
     } = useForm();
-
+    const navegacion = useNavigate()
     const onSubmit = async (usuario) => {
         try {
-            const respuesta = await registrar(usuario);
-    
+            const respuesta = await registrar({...usuario,rol:"Usuario"});
+            console.log(respuesta);
             const usuarioObj = {
                 email: usuario.email,
                 rol: "Usuario",
@@ -36,11 +37,11 @@ const Registro = () => {
             } else if (respuesta === null) {
                 Swal.fire("Error", "Este usuario o correo ya existe", "error");
             } else {
-                Swal.fire("Error", respuesta.error.message, "error");
+                Swal.fire("Error", "prueba", "error");
             }
         } catch (error) {
-            console.error("Error al registrar usuario:", error);
-            Swal.fire("Error", error.message, "error");
+            console.error("Error al registrar usuario:");
+            Swal.fire("Error", "no se pudo crear el usuario", "error");
         }
     };
 

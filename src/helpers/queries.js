@@ -1,6 +1,6 @@
 const APIProductos = import.meta.env.VITE_API_PRODUCTOS;
 const URLUsuario = import.meta.env.VITE_API_USUARIO;
-const URLPedidos = import.meta.env.VITE_API_PEDIDO;
+const URLUsuarioGet = import.meta.env.VITE_API_USUARIO_GET;
 
 export const leerProductos = async () => {
   try {
@@ -28,12 +28,14 @@ export const crearProducto = async (nuevoProducto) => {
 
 export const registrar = async (usuario) => {
   try {
-    const respuestaListaUsuarios = await fetch(URLUsuario);
+    const respuestaListaUsuarios = await fetch(URLUsuarioGet);
+    console.log(respuestaListaUsuarios)
     const listaUsuarios = await respuestaListaUsuarios.json();
-    const usuarioExistente = listaUsuarios.find(
+    console.log(listaUsuarios)
+    const usuarioExistente = listaUsuarios.usuarios.find(
       (itemUsuario) =>
-        itemUsuario.nombreUsuario === usuario.nombreUsuario ||
-        itemUsuario.email === usuario.email
+      itemUsuario.nombreUsuario === usuario.nombreUsuario ||
+      itemUsuario.email === usuario.email
     );
     if (!usuarioExistente) {
       const respuestaRegistro = await fetch(URLUsuario, {
@@ -43,8 +45,8 @@ export const registrar = async (usuario) => {
         },
         body: JSON.stringify(usuario),
       });
-      // const data = await respuestaRegistro.json();
-      return respuestaRegistro;
+      const data = await respuestaRegistro.json();
+      return data;
     } else {
       return null;
     }
@@ -52,6 +54,8 @@ export const registrar = async (usuario) => {
     console.log(error);
   }
 };
+
+
 export const borrarProducto = async (id) => {
   try {
     const respuesta = await fetch(APIProductos + "/" + id, {
