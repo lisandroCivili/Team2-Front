@@ -12,9 +12,8 @@ const Carrito = () => {
   const [productosEnCarrito, setProductosEnCarrito] = useState([]);
 
   useEffect(() => {
-    const carritoDeStorage = JSON.parse(localStorage.getItem("carrito")) || [];
+    const carritoDeStorage = JSON.parse(sessionStorage.getItem("carrito")) || [];
     setProductosEnCarrito(carritoDeStorage);
-    console.log(carritoDeStorage);
   }, []);
 
   const eliminarDelCarrito = (id) => {
