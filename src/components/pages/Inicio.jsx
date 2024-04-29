@@ -29,7 +29,7 @@ const Inicio = () => {
   const agregarAlCarrito = (producto) => {
     
     let carrito = JSON.parse(sessionStorage.getItem("carrito")) || [];
-
+    console.log(carrito)
     carrito.push(producto);
     sessionStorage.setItem("carrito", JSON.stringify(carrito));
   };

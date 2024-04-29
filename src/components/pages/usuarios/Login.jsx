@@ -10,7 +10,6 @@ import { useNavigate } from "react-router-dom";
 
 
 
-
 const Login = () => {
     const navegacion = useNavigate()
     const {
@@ -25,6 +24,7 @@ const Login = () => {
         const respuesta = await loguear(usuario)
         
         if (respuesta) {
+          console.log(respuesta)
                 const usuario = {
                     rol: respuesta.rol,
                     nombreUsuario: respuesta.nombreUsuario,

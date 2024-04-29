@@ -2,6 +2,7 @@ const APIProductos = import.meta.env.VITE_API_PRODUCTOS;
 const URLUsuario = import.meta.env.VITE_API_USUARIO;
 const URLUsuarioGet = import.meta.env.VITE_API_USUARIO_GET;
 
+
 export const leerProductos = async () => {
   try {
     const respuesta = await fetch(APIProductos);
@@ -26,34 +27,6 @@ export const crearProducto = async (nuevoProducto) => {
   }
 };
 
-export const registrar = async (usuario) => {
-  try {
-    const respuestaListaUsuarios = await fetch(URLUsuarioGet);
-    console.log(respuestaListaUsuarios)
-    const listaUsuarios = await respuestaListaUsuarios.json();
-    console.log(listaUsuarios)
-    const usuarioExistente = listaUsuarios.usuarios.find(
-      (itemUsuario) =>
-      itemUsuario.nombreUsuario === usuario.nombreUsuario ||
-      itemUsuario.email === usuario.email
-    );
-    if (!usuarioExistente) {
-      const respuestaRegistro = await fetch(URLUsuario, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(usuario),
-      });
-      const data = await respuestaRegistro.json();
-      return data;
-    } else {
-      return null;
-    }
-  } catch (error) {
-    console.log(error);
-  }
-};
 
 
 export const borrarProducto = async (id) => {
@@ -102,35 +75,53 @@ export const editarProducto = async (nuevosDatosProducto, id) => {
   }
 };
 // QUERIES USUARIO
-const userAdmin = {
-  email: "admin@lisandrocivili.com",
-  password: "123Aa$123",
-};
 
-export const login = (usuario) => {
-  if (usuario.mail === userAdmin.email && usuario.pass === userAdmin.password) {
-    sessionStorage.setItem("loginRC", JSON.stringify(usuario.mail));
-    return true;
-  } else {
-    return false;
-  }
-};
 
-export const loguear = async (usuario) => {
-  try {
-    const respuesta = await fetch(URLUsuario);
-    const solucion = await respuesta.json();
-    const coincidencia = solucion.find(
-      (user) =>
-        usuario.email === user.email && usuario.contraseña === user.contraseña
+export const registrar = async (usuario) => {
+  try { 
+    const respuestaListaUsuarios = await fetch(URLUsuarioGet);
+    console.log(respuestaListaUsuarios)
+    const listaUsuarios = await respuestaListaUsuarios.json();
+    console.log(listaUsuarios)
+    const usuarioExistente = listaUsuarios.usuarios.find(
+      (itemUsuario) =>
+      itemUsuario.nombreUsuario === usuario.nombreUsuario ||
+      itemUsuario.email === usuario.email
     );
-    if (coincidencia) {
-      return coincidencia;
+    if (!usuarioExistente) {
+      const respuestaRegistro = await fetch(URLUsuario, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(usuario),
+      });
+      const data = await respuestaRegistro.json();
+      return data;
     } else {
-      throw new Error("Login failes");
+      return null;
     }
   } catch (error) {
     console.log(error);
+  }
+};
+export const loguear = async (usuario) => {
+  try {
+    const respuesta = await fetch(URLUsuarioGet, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(usuario),
+    });
+    if (respuesta.ok) {
+      return respuesta.json(); 
+    } else {
+      throw new Error(`Error al iniciar sesión: ${respuesta.statusText}`);
+    }
+  } catch (error) {
+    console.error("Error en el login:", error);
+    throw error;
   }
 };
 
