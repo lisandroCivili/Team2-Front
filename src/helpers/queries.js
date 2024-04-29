@@ -27,34 +27,6 @@ export const crearProducto = async (nuevoProducto) => {
   }
 };
 
-export const registrar = async (usuario) => {
-  try { 
-    const respuestaListaUsuarios = await fetch(URLUsuarioGet);
-    console.log(respuestaListaUsuarios)
-    const listaUsuarios = await respuestaListaUsuarios.json();
-    console.log(listaUsuarios)
-    const usuarioExistente = listaUsuarios.usuarios.find(
-      (itemUsuario) =>
-      itemUsuario.nombreUsuario === usuario.nombreUsuario ||
-      itemUsuario.email === usuario.email
-    );
-    if (!usuarioExistente) {
-      const respuestaRegistro = await fetch(URLUsuario, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(usuario),
-      });
-      const data = await respuestaRegistro.json();
-      return data;
-    } else {
-      return null;
-    }
-  } catch (error) {
-    console.log(error);
-  }
-};
 
 
 export const borrarProducto = async (id) => {
@@ -105,6 +77,34 @@ export const editarProducto = async (nuevosDatosProducto, id) => {
 // QUERIES USUARIO
 
 
+export const registrar = async (usuario) => {
+  try { 
+    const respuestaListaUsuarios = await fetch(URLUsuarioGet);
+    console.log(respuestaListaUsuarios)
+    const listaUsuarios = await respuestaListaUsuarios.json();
+    console.log(listaUsuarios)
+    const usuarioExistente = listaUsuarios.usuarios.find(
+      (itemUsuario) =>
+      itemUsuario.nombreUsuario === usuario.nombreUsuario ||
+      itemUsuario.email === usuario.email
+    );
+    if (!usuarioExistente) {
+      const respuestaRegistro = await fetch(URLUsuario, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(usuario),
+      });
+      const data = await respuestaRegistro.json();
+      return data;
+    } else {
+      return null;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
 export const loguear = async (usuario) => {
   try {
     const respuesta = await fetch(URLUsuarioGet, {
