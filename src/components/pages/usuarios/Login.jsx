@@ -34,7 +34,7 @@ const Login = () => {
                 sessionStorage.setItem("usuario", JSON.stringify(usuario));
                 Swal.fire(
                     `¡Bienvenido!`,
-                    `Iniciaste sesión correctamente.`,
+                    `Iniciaste sesion correctamente.`,
                     "success"
                 );
                 if(respuesta.rol === "Admin"){

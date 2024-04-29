@@ -105,6 +105,7 @@ export const registrar = async (usuario) => {
     console.log(error);
   }
 };
+
 export const loguear = async (usuario) => {
   try {
     const respuesta = await fetch(URLUsuarioGet, {
