@@ -8,13 +8,16 @@ const CardProducto = ({ producto, agregarAlCarrito }) => {
   const guardarSessionStorage = () => {
     let carrito = JSON.parse(sessionStorage.getItem("carrito")) || [];
     const productoExistente = carrito.find(item => item._id === producto._id);
+    console.log(productoExistente)
     if (sesion.length === 0) {
       Swal.fire("!Inicie sesion o registrese para agregar productos!");
-      if (productoExistente) {
-        Swal.fire("!Este producto ya se encuentra en su carrito!");
-      }
-    }else{
-
+      return
+    }
+    if (productoExistente) {
+      Swal.fire("!Este producto ya se encuentra en su carrito!");
+      return
+    }
+    
       agregarAlCarrito(producto);
   
         Swal.fire({
@@ -24,7 +27,7 @@ const CardProducto = ({ producto, agregarAlCarrito }) => {
         imageWidth: 200,
         imageAlt: `${producto.nombreProducto}`
       });
-    }
+    
     
   };
 

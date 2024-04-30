@@ -31,8 +31,7 @@ const Carrito = () => {
     }
   });
 }
-
-     
+    
 
     return (
         <section className="pt-5 pb-5">
