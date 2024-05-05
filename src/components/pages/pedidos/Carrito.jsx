@@ -9,12 +9,14 @@ import { Link, NavLink } from "react-router-dom";
 
 const Carrito = () => {
   const [productosEnCarrito, setProductosEnCarrito] = useState([]);
-  const [cantProductos, setcantProductos] = useState(1);
+
+  const [precioTotal, setPrecioTotal] = useState(0);
+
   const carritoDeStorage = JSON.parse(sessionStorage.getItem("carrito")) || [];
   useEffect(() => {
     setProductosEnCarrito(carritoDeStorage);
   }, []);
-
+  
   const eliminarDelCarrito = (id) => {
     Swal.fire({
       title: `¿Dese eliminar este producto de su carrito?`,
@@ -62,8 +64,6 @@ const Carrito = () => {
                       key={producto._id}
                       producto={producto}
                       eliminarDelCarrito={eliminarDelCarrito}
-                      setcantProductos={setcantProductos}
-                      cantProductos={cantProductos}
                     />
                   ))}
                 </tbody>

@@ -4,12 +4,12 @@ import {
   faTrash,
   faArrowLeft,
 } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
-const ItemCarrito = ({producto,eliminarDelCarrito,setcantProductos,cantProductos,}) => {
+const ItemCarrito = ({producto, eliminarDelCarrito}) => {
 
-  const [cantidad, setCantidad] = useState(cantProductos);
+  const [cantidad, setCantidad] = useState(1);
   const [precioTotalIndividual, setPrecioTotalIndividual] = useState(producto.precio * cantidad);
 
   const handleEliminar = () => {
