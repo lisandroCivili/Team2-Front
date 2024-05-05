@@ -52,7 +52,7 @@ const Menu = ({ usuarioLogeado, setUsuarioLogeado }) => {
                 </NavLink>
               </>
             )}
-            {!estaLogeado && usuarioLogeado.rol === "Admin" ? (
+            {estaLogeado && usuarioLogeado.rol === "Admin" ? (
               <NavDropdown
                 title="ADMINISTRADOR"
                 className="adminBoton nav-link"
