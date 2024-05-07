@@ -57,7 +57,7 @@ const FomularioProducto = ({ editando, titulo}) => {
         });
       }
     } else {
-      const respuesta = await crearProducto(producto);
+      const respuesta = await crearProducto({...producto, cantidad:1});
       if (respuesta.status === 201) {
         Swal.fire({
           title: "Producto agregado",

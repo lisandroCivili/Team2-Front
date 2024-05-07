@@ -7,7 +7,7 @@ import {
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
-const ItemCarrito = ({producto, eliminarDelCarrito}) => {
+const ItemCarrito = ({producto, eliminarDelCarrito,setCantidades}) => {
 
   const [cantidad, setCantidad] = useState(1);
   const [precioTotalIndividual, setPrecioTotalIndividual] = useState(producto.precio * cantidad);
@@ -26,8 +26,20 @@ const ItemCarrito = ({producto, eliminarDelCarrito}) => {
       Swal.fire("¡Maximo 5 por cada producto!");
     }
     setCantidad(nuevaCantidad);
+    setCantidades(nuevaCantidad)
     setPrecioTotalIndividual(producto.precio * nuevaCantidad);
+
   };
+  useEffect(()=>{
+    const productoActualizado = { ...producto, cantidad: cantidad };
+    const carritoActualizado = JSON.parse(
+      sessionStorage.getItem("carrito") || "[]"
+    ).map((item) =>
+      item._id === producto._id ? productoActualizado : item
+    );
+    sessionStorage.setItem("carrito", JSON.stringify(carritoActualizado));
+
+  }, [cantidad])
 
   return (
     <tr>

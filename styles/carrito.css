@@ -5,6 +5,12 @@ img{
 .volverAInicio{
     color: #e8652d;
 }
+.precioTotal{
+    background-color: white;
+}
+.precio{
+    color: black;
+}
 @media all and (max-width: 575px){
     .carritoVacio{
         width: 100%;
@@ -18,6 +24,19 @@ img{
     }
     .volverAInicio{
         font-size: 30px;
+    }
+    .precioTotal{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 60px;
+    }
+    .precio{
+        margin-right: 10px;
+        font-size: 20px;
+    }
+    .finalizarCompra{
+        padding: 2px;
     }
   }
   @media all and (min-width: 576px) and (max-width: 767px){
@@ -33,6 +52,19 @@ img{
     }
     .volverAInicio{
         font-size: 30px;
+    }
+    .precioTotal{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 40px;
+    }
+    .precio{
+        margin-right: 10px;
+        font-size: 20px;
+    }
+    .finalizarCompra{
+        padding: 2px;
     }
   }
   @media all and (min-width: 768px) and (max-width: 991px){
@@ -51,6 +83,19 @@ img{
     }
     .volverAInicio{
         font-size: 40px;
+    }
+    .precioTotal{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 55px;
+    }
+    .precio{
+        margin-right: 10px;
+        font-size: 30px;
+    }
+    .finalizarCompra{
+        padding: 5px;
     }
    
   }
@@ -71,6 +116,16 @@ img{
     .volverAInicio{
         font-size: 50px;
     }
+    .precioTotal{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 45px;
+    }
+    .precio{
+        margin-right: 10px;
+        font-size: 30px;
+    }   
   }
     
   @media all and (min-width: 1200px){
@@ -89,6 +144,16 @@ img{
     }
     .volverAInicio{
         font-size: 40px;
+    }
+    .precioTotal{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 70px;
+    }
+    .precio{
+        margin-right: 10px;
+        font-size: 30px;
     }
   }
   

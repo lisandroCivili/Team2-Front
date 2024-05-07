@@ -7,19 +7,34 @@ import carritoVacio from "../../../assets/carrito-vacio.webp";
 import { Button } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 
+
 const Carrito = () => {
   const [productosEnCarrito, setProductosEnCarrito] = useState([]);
-
+  const [cantidades, setCantidades] = useState(0)
   const [precioTotal, setPrecioTotal] = useState(0);
 
-  const carritoDeStorage = JSON.parse(sessionStorage.getItem("carrito")) || [];
   useEffect(() => {
-    setProductosEnCarrito(carritoDeStorage);
-  }, []);
-  
+  const carritoDeStorage = JSON.parse(sessionStorage.getItem("carrito")) || [];
+  setProductosEnCarrito(carritoDeStorage);
+}, [cantidades]);
+
+useEffect(() => {
+  const total = productosEnCarrito.reduce((total, producto) => {
+    return total + (producto.precio * producto.cantidad);
+  }, 0);
+  setPrecioTotal(total);
+}, [productosEnCarrito]);
+
+  const actualizarPrecioTotal = (carritoActualizado) => {
+    const total = carritoActualizado.reduce((total, producto) => {
+      return total + (producto.precio * producto.cantidad);
+    }, 0);
+    setPrecioTotal(total);
+  };
+
   const eliminarDelCarrito = (id) => {
     Swal.fire({
-      title: `¿Dese eliminar este producto de su carrito?`,
+      title: `¿Desea eliminar este producto de su carrito?`,
       showDenyButton: true,
       confirmButtonText: "Eliminar",
       denyButtonText: `Cancelar`,
@@ -29,8 +44,8 @@ const Carrito = () => {
           (producto) => producto._id !== id
         );
         sessionStorage.setItem("carrito", JSON.stringify(carritoActualizado));
-
         setProductosEnCarrito(carritoActualizado);
+        actualizarPrecioTotal(carritoActualizado);
       }
     });
   };
@@ -40,34 +55,41 @@ const Carrito = () => {
       <div className="container">
         <div className="row w-100">
           <div className="col-lg-12 col-md-12 col-12">
-            {carritoDeStorage.length === 0 ? (
+            {productosEnCarrito.length === 0 ? (
               <div className="carritoVacio">
                 <img src={carritoVacio} alt="" />
-                <p>Todavia no tiene ningun pedido!</p>
+                <p>Todavía no tiene ningún pedido!</p>
                 <NavLink className="volverAInicio" to="/">
                   Ir a agregar productos
                 </NavLink>
               </div>
             ) : (
-              <table id="table1" className=" table  table-responsive ">
-                <thead>
-                  <tr>
-                    <th id="th1">Producto</th>
-                    <th id="th2">Precio</th>
-                    <th id="th3">Cantidad</th>
-                    <th id="th4"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {productosEnCarrito.map((producto) => (
-                    <ItemCarrito
-                      key={producto._id}
-                      producto={producto}
-                      eliminarDelCarrito={eliminarDelCarrito}
-                    />
-                  ))}
-                </tbody>
-              </table>
+              <div>
+                <table id="table1" className="table table-responsive">
+                  <thead>
+                    <tr>
+                      <th id="th1">Producto</th>
+                      <th id="th2">Precio</th>
+                      <th id="th3">Cantidad</th>
+                      <th id="th4"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {productosEnCarrito.map((producto) => (
+                      <ItemCarrito
+                        key={producto._id}
+                        producto={producto}
+                        eliminarDelCarrito={eliminarDelCarrito}
+                        setCantidades={setCantidades}
+                      />
+                    ))}
+                  </tbody>
+                </table>
+                <div className="precioTotal">
+                  <Button className="h-75 finalizarCompra">Finalizar compra</Button>
+                  <p className="precio">Precio Total: ${precioTotal}</p>
+                </div>
+              </div>
             )}
           </div>
         </div>
