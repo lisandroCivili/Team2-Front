@@ -23,7 +23,7 @@ function App() {
 
 
   return <BrowserRouter>
-    <Menu usuarioLogeado={usuarioLogeado} setUsuarioLogeado={setUsuarioLogeado}/>
+    <Menu />
       <Routes>
           <Route exact path="/" element={<Inicio/>}></Route>
           <Route path="/detalleproducto/:id" element={<DetalleProducto/>} ></Route>
