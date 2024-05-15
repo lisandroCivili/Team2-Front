@@ -46,6 +46,7 @@ const Administrador = () => {
     <Container>
       <div className="d-flex justify-content-between align-items-center mt-5">
         <h1 className="display-4">Productos disponibles</h1>
+        <Button className='btn btnAgregar' as={Link} to="/administrador/pedidos">Pedidos pendientes</Button>
       </div>
       <hr />
       

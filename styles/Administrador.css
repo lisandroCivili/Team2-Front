@@ -77,13 +77,12 @@ body {
   font-size: 18px;
   transition: background-color 0.3s, color 0.4s;
 }
+
 @media all and (max-width: 575px) {
   .filas {
     margin: 10px 0 25px 0;
   }
-  .contenedor-filas > .filas:first-child {
-    display: none;
-  }
+
   .inputs {
     padding: 15px;
   }
@@ -99,7 +98,17 @@ body {
   .eliminar {
     margin-top: 15px;
   }
-
+  #cardBody{
+    padding: 6px;
+    margin-top: 5px;
+  }
+  .etiqueta{
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  .titulo{
+    font-size: 20px;
+  }
 }
 @media all and (min-width: 576px) and (max-width: 767px) {
   .contenedor-filas > .filas:first-child {
