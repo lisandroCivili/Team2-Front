@@ -1,6 +1,8 @@
 const APIProductos = import.meta.env.VITE_API_PRODUCTOS;
 const URLUsuario = import.meta.env.VITE_API_USUARIO;
 const URLUsuarioGet = import.meta.env.VITE_API_USUARIO_GET;
+const URLPedidoNuevo = import.meta.env.VITE_API_PEDIDOS_NUEVO;
+const URLPedidos = import.meta.env.VITE_API_PEDIDOS;
 
 
 export const leerProductos = async () => {
@@ -131,7 +133,7 @@ export const loguear = async (usuario) => {
 
 export const crearPedido = async (nuevoPedido) => {
   try {
-    const respuesta = await fetch(URLPedidos, {
+    const respuesta = await fetch(URLPedidoNuevo, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -143,9 +145,10 @@ export const crearPedido = async (nuevoPedido) => {
     console.log(error);
   }
 };
+
 export const leerPedido = async () => {
   try {
-    const respuesta = await fetch(APIPedido);
+    const respuesta = await fetch(URLPedidos);
     return respuesta;
   } catch (error) {
     console.log(error);
