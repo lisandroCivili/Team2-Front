@@ -2,9 +2,15 @@ import "../../../styles/menu.css";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
+import { useEffect, useState } from "react";
 
 const Menu = ({ usuarioLogeado, setUsuarioLogeado }) => {
   const navegacion = useNavigate();
+  const [estaLogeado, setEstaLogeado] = useState(false);
+  useEffect(() => {
+    setEstaLogeado(usuarioLogeado !== null && usuarioLogeado !== "");
+  }, [usuarioLogeado]);
+  
   const logout = () => {
     sessionStorage.removeItem("usuario");
     sessionStorage.removeItem("carrito")
@@ -27,7 +33,7 @@ const Menu = ({ usuarioLogeado, setUsuarioLogeado }) => {
             <NavLink className="nav-link" id="inicioBoton" to="/">
               INICIO
             </NavLink>
-            {usuarioLogeado === "" ? (
+            {!estaLogeado ? (
               <>
                 <NavLink className="nav-link" id="loginBoton" to="/login">
                   LOGIN
@@ -46,7 +52,7 @@ const Menu = ({ usuarioLogeado, setUsuarioLogeado }) => {
                 </NavLink>
               </>
             )}
-            {usuarioLogeado.rol === "Admin" ? (
+            {estaLogeado && usuarioLogeado.rol === "Admin" ? (
               <NavDropdown
                 title="ADMINISTRADOR"
                 className="adminBoton nav-link"
