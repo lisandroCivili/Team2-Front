@@ -146,7 +146,7 @@ export const crearPedido = async (nuevoPedido) => {
   }
 };
 
-export const leerPedido = async () => {
+export const leerPedidos = async () => {
   try {
     const respuesta = await fetch(URLPedidos);
     return respuesta;

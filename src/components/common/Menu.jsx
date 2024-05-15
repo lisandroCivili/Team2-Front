@@ -4,18 +4,21 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { useEffect, useState } from "react";
 
-const Menu = ({ usuarioLogeado, setUsuarioLogeado }) => {
+const Menu = () => {
   const navegacion = useNavigate();
   const [estaLogeado, setEstaLogeado] = useState(false);
+  
   useEffect(() => {
-    setEstaLogeado(usuarioLogeado !== null && usuarioLogeado !== "");
-  }, [usuarioLogeado]);
+    const usuario = JSON.parse(sessionStorage.getItem("usuario")) || "";
+    setEstaLogeado(usuario)
+  }, []);
+
   
   const logout = () => {
     sessionStorage.removeItem("usuario");
     sessionStorage.removeItem("carrito")
-    setUsuarioLogeado("");
-    navegacion("/");
+    setUsuarioLogeado(false);
+    navegacion("/login");
   };
   return (
     <Navbar expand="md" className="navbar">
@@ -52,15 +55,21 @@ const Menu = ({ usuarioLogeado, setUsuarioLogeado }) => {
                 </NavLink>
               </>
             )}
-            {estaLogeado && usuarioLogeado.rol === "Admin" ? (
-              <NavDropdown
-                title="ADMINISTRADOR"
-                className="adminBoton nav-link"
-              >
-                <NavDropdown.Item as={Link} to={"/administrador"}>
-                  Productos  
-                </NavDropdown.Item>
-              </NavDropdown>
+            {estaLogeado && estaLogeado.rol === "Admin" ? (
+              <NavLink className="nav-link" id="adminBoton" to="/administrador">
+              ADMINISTRADOR
+            </NavLink>
+              // <NavDropdown
+              //   title="ADMINISTRADOR"
+              //   className="adminBoton nav-link"
+              // >
+              //   <NavDropdown.Item as={Link} to={"/administrador"}>
+              //     Productos  
+              //   </NavDropdown.Item>
+              //   <NavDropdown.Item as={Link} to={"/pedidos"}>
+              //     Pedidos  
+              //   </NavDropdown.Item>
+              // </NavDropdown>
             ) : (
               <></>
             )}
