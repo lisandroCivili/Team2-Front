@@ -77,7 +77,32 @@ body {
   font-size: 18px;
   transition: background-color 0.3s, color 0.4s;
 }
-
+.accordion-collapse{
+  background-color: #1c2a4d;
+}
+.accordion{
+  --bs-accordion-bg: #e8652d;
+}
+.titulo{
+  color: #1c2a4d;
+}
+.etiqueta{
+  color: #ecdba1;
+}
+.btnEntregado {
+  background-color: #19e012;
+  color: #1c2a4d;
+  border-color: #1c2a4d;
+  font-weight: 600;
+}
+.btnEntregado:hover {
+  background-color: #1c2a4d;
+  color: #ecdba1;
+  border-color: #ecdba1;
+  font-weight: 600;
+  font-size: 18px;
+  transition: background-color 0.3s, color 0.4s;
+}
 @media all and (max-width: 575px) {
   .filas {
     margin: 10px 0 25px 0;
@@ -107,7 +132,10 @@ body {
     margin-bottom: 5px;
   }
   .titulo{
-    font-size: 20px;
+    font-size: 23px;
+  }
+  .accordion-button{
+    padding: 8px;
   }
 }
 @media all and (min-width: 576px) and (max-width: 767px) {
@@ -129,6 +157,7 @@ body {
   .eliminar {
     margin-top: 15px;
   }
+
 }
 @media all and (min-width: 768px) and (max-width: 991px) {
   .contenedor-filas > .filas:first-child {
