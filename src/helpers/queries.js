@@ -154,3 +154,14 @@ export const leerPedidos = async () => {
     console.log(error);
   }
 };
+
+export const borrarPedido = async (id) => {
+  try {
+    const respuesta = await fetch(URLPedidos + "/" + id, {
+      method: "DELETE",
+    });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
