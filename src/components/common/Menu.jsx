@@ -8,10 +8,15 @@ const Menu = () => {
   const navegacion = useNavigate();
   const [estaLogeado, setEstaLogeado] = useState(false);
   
+  const usuario = JSON.parse(sessionStorage.getItem("usuario")) || "";
+  let usuarioCorrecto = true
+  if (!usuario) {
+    usuarioCorrecto = false
+  }
+
   useEffect(() => {
-    const usuario = JSON.parse(sessionStorage.getItem("usuario")) || "";
     setEstaLogeado(usuario)
-  }, []);
+  }, [usuarioCorrecto]);
 
   
   const logout = () => {
