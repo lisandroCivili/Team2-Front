@@ -50,6 +50,9 @@
   margin-bottom: 40px;
   text-align: center;
 }
+
+
+
 @media all and (max-width: 575px){
   .contBanner{
     display: none;
@@ -78,6 +81,13 @@
   .carousel-item img {
     height: 150px; 
   }
+  .sinStock{
+    width: 100%;
+    margin: 10px 0 10px 0;
+  }
+  .sinStock img{
+    width: 100%;
+  }
 }
 @media all and (min-width: 576px) and (max-width: 767px){
   .contBanner{
@@ -90,6 +100,13 @@
   }
   .carousel-item img {
     height: 150px; 
+  }
+  .sinStock{
+    width: 100%;
+    margin: 10px 0 10px 0;
+  }
+  .sinStock img{
+    width: 100%;
   }
 }
 @media all and (min-width: 768px) and (max-width: 991px){
@@ -121,6 +138,18 @@
   #cardPrecio{
     font-size: 25px;
   }
+  
+  .sinStock{
+    width: 75%;
+    height: 200px;
+    margin: 5px 0 10px 0;
+    display: flex;
+    justify-content: center;
+  }
+  .sinStock img{
+    width: 100%;
+    height: 100%;
+  }
 }
 @media all and (min-width: 992px) and (max-width: 1199px){
   .contBannerSmall{
@@ -151,6 +180,13 @@
   .carousel-item img {
     height: 450px; 
   }
+  .sinStock{
+    width: 100%;
+    margin: 10px 0 10px 0;
+  }
+  .sinStock img{
+    width: 100%;
+  }
 }
 @media all and (min-width: 1200px){
   .contBannerSmall{
@@ -180,5 +216,14 @@
   }
   .carousel-item img {
     height: 450px; 
+  }
+  .sinStock{
+    width: 80%;
+    height: 250px;
+    margin: 10px 0 10px 0;
+  }
+  .sinStock img{
+    width: 100%;
+    height: 100%;
   }
 }
