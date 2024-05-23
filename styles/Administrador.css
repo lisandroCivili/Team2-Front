@@ -107,7 +107,9 @@ body {
   .filas {
     margin: 10px 0 25px 0;
   }
-
+  .filas-none-sm{
+    display: none;
+  }
   .inputs {
     padding: 15px;
   }
@@ -137,10 +139,20 @@ body {
   .accordion-button{
     padding: 8px;
   }
+  .cont-titulos-admin > :nth-child(1),
+  .cont-titulos-admin > :nth-child(2){
+    width: 30%;
+  }
+  .disponibles{
+    font-size: 25px;
+  }
 }
 @media all and (min-width: 576px) and (max-width: 767px) {
   .contenedor-filas > .filas:first-child {
     background-color: #e8652d;
+  }
+  .filas-none-sm{
+    display: none;
   }
   .inputs {
     padding: 15px;
@@ -157,7 +169,6 @@ body {
   .eliminar {
     margin-top: 15px;
   }
-
 }
 @media all and (min-width: 768px) and (max-width: 991px) {
   .contenedor-filas > .filas:first-child {

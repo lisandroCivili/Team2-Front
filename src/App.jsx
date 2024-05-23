@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "bootstrap-icons/font/bootstrap-icons.min.css";
 import "../styles/App.css"
 import "../styles/menu.css"
@@ -18,17 +18,13 @@ import RutasAdmin from "./components/routes/RutasAdmin.jsx";
 
 function App() {
 
-  const usuario = JSON.parse(sessionStorage.getItem("usuario")) || "";
-  const [usuarioLogeado, setUsuarioLogeado] = useState(usuario);
-
-
   return <BrowserRouter>
-    <Menu />
+    <Menu/>
       <Routes>
           <Route exact path="/" element={<Inicio/>}></Route>
           <Route path="/detalleproducto/:id" element={<DetalleProducto/>} ></Route>
           <Route exact path="/registro" element={<Registro/>}></Route>
-          <Route exact path="/login" element={<Login setUsuarioLogeado={setUsuarioLogeado}/>}></Route>
+          <Route exact path="/login" element={<Login />}></Route>
           <Route exact path="/carrito" element={<Carrito/>}></Route>
           <Route exact path="/administrador/*" element={
             <RutasProtegidas>

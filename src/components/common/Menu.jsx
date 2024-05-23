@@ -8,10 +8,15 @@ const Menu = () => {
   const navegacion = useNavigate();
   const [estaLogeado, setEstaLogeado] = useState(false);
   
+  const usuario = JSON.parse(sessionStorage.getItem("usuario")) || "";
+  let usuarioCorrecto = true
+  if (!usuario) {
+    usuarioCorrecto = false
+  }
+
   useEffect(() => {
-    const usuario = JSON.parse(sessionStorage.getItem("usuario")) || "";
     setEstaLogeado(usuario)
-  }, []);
+  }, [usuarioCorrecto]);
 
   
   const logout = () => {
@@ -23,7 +28,7 @@ const Menu = () => {
   return (
     <Navbar expand="md" className="navbar">
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand as={Link} to="/" href="#home">
           <img
             src={logo}
             className="d-inline-block align-top logoMenu"
@@ -59,17 +64,6 @@ const Menu = () => {
               <NavLink className="nav-link" id="adminBoton" to="/administrador">
               ADMINISTRADOR
             </NavLink>
-              // <NavDropdown
-              //   title="ADMINISTRADOR"
-              //   className="adminBoton nav-link"
-              // >
-              //   <NavDropdown.Item as={Link} to={"/administrador"}>
-              //     Productos  
-              //   </NavDropdown.Item>
-              //   <NavDropdown.Item as={Link} to={"/pedidos"}>
-              //     Pedidos  
-              //   </NavDropdown.Item>
-              // </NavDropdown>
             ) : (
               <></>
             )}

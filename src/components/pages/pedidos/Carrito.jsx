@@ -5,11 +5,13 @@ import ItemCarrito from "./ItemCarrito";
 import Swal from "sweetalert2";
 import carritoVacio from "../../../assets/carrito-vacio.webp";
 import { Button, Form } from "react-bootstrap";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { crearPedido } from "../../../helpers/queries";
 import { useForm } from "react-hook-form";
 
 const Carrito = () => {
+
+  const navegacion = useNavigate();
 
   const [productosEnCarrito, setProductosEnCarrito] = useState([]);
   const [cantidades, setCantidades] = useState(0);
