@@ -1,5 +1,5 @@
 import "../../../styles/menu.css";
-import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
+import { Navbar, Nav, Container, NavDropdown, Dropdown, ButtonGroup, Button } from "react-bootstrap";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { useEffect, useState } from "react";
@@ -39,16 +39,20 @@ const Menu = () => {
           <Nav className="me-auto navContBotones" id="nav">
             <div className="botonesIzq">
               <NavLink className="nav-link" id="inicioBoton" to="/">
-              <i class="bi bi-house-door-fill iconoInicio"></i>
+              <i className="bi bi-house-door-fill iconoInicio"></i>
               </NavLink>
               {estaLogeado && estaLogeado.rol === "Admin" ? (
-                <NavLink
-                  className="nav-link"
-                  id="adminBoton"
-                  to="/administrador"
-                >
-                  Administración
-                </NavLink>
+                <Dropdown as={ButtonGroup}>
+                <NavLink id="adminBoton" to="/administrador">Administración</NavLink>
+          
+                <Dropdown.Toggle split id="dropdown-split-basic" className="flechaDropdown"/>
+          
+                <Dropdown.Menu className="desplegable">
+                  <Dropdown.Item href="#/action-1">Productos</Dropdown.Item>
+                  <Dropdown.Item href="#/action-2">Pedidos pendientes</Dropdown.Item>
+                  <Dropdown.Item href="#/action-3">Lista usuarios</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
               ) : (
                 <></>
               )}
@@ -56,10 +60,10 @@ const Menu = () => {
             {!estaLogeado ? (
               <>
                 <NavLink className="nav-link" id="loginBoton" to="/login">
-                  LOGIN
+                  Ingresar
                 </NavLink>
                 <NavLink className="nav-link" id="registroBoton" to="/registro">
-                  REGISTRARSE
+                  Registrarse
                 </NavLink>
               </>
             ) : (

@@ -79,6 +79,7 @@ footer img{
   #inicioBoton,#registroBoton,#adminBoton, #carritoBoton,#logoutBoton,#loginBoton, #pedidosBoton{
     font-size: 20px;
     border-bottom: 1px #ecdba1 solid;
+    text-decoration: none;
   }
   .logoMenu {
     height: 85px;
@@ -86,8 +87,36 @@ footer img{
   .navbar{
     align-items: center;
   }
-  .contBotones{
+  .navContBotones{
     display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .botonesIzq,.botonesDer{
+    display: flex;
+    gap: 30px;
+  } 
+  .flechaDropdown{
+    --bs-btn-bg: #e8652d !important;
+    --bs-btn-border-color: #e8652d !important;
+    --bs-btn-color: #1c2a4d !important;   
+    --bs-btn-font-size: 1.5rem !important;
+    --bs-btn-active-bg: #e8652da4 !important;
+    --bs-btn-active-border-color: #e8652da4 !important;
+  }
+  .flechaDropdown:hover{
+    background-color: #e8652da4!important;
+  }
+  #adminBoton{
+    display: flex;
+    align-items: center;
+  }
+  .desplegable{
+    --bs-dropdown-bg: #e8652d !important;
+  }
+  .dropdown-item{
+    color: #1c2a4d !important;
+    font-size: 20px;
   }
 }
 @media all and (min-width: 992px) and (max-width: 1999px) {
@@ -100,6 +129,7 @@ footer img{
   #inicioBoton,#registroBoton,#adminBoton, #carritoBoton,#logoutBoton,#loginBoton, #pedidosBoton{
     font-size: 25px;
     border-bottom: 1px #ecdba1 solid;
+    text-decoration: none ; 
   }
   .navContBotones{
     display: flex;
@@ -108,14 +138,32 @@ footer img{
   }
   .botonesIzq,.botonesDer{
     display: flex;
-  }
-  .botonesDer{
     gap: 30px;
   }
-  .botonesIzq{
-    gap: 30px;
+  .flechaDropdown{
+    --bs-btn-bg: #e8652d !important;
+    --bs-btn-border-color: #e8652d !important;
+    --bs-btn-color: #1c2a4d !important;   
+    --bs-btn-font-size: 1.5rem !important;
+    --bs-btn-active-bg: #e8652da4 !important;
+    --bs-btn-active-border-color: #e8652da4 !important;
+    --bs-btn-disabled-bg: #e8652da4 !important;
+    --bs-btn-disabled-border-color: #e8652da4 !important;
   }
-  
+  .flechaDropdown:hover{
+    background-color: #e8652da4!important;
+  }
+  #adminBoton{
+    display: flex;
+    align-items: center;
+  }
+  .desplegable{
+    --bs-dropdown-bg: #e8652d !important;
+  }
+  .dropdown-item{
+    color: #1c2a4d !important;
+    font-size: 20px;
+  }
 }
 @media all and (min-width: 1200px) and (max-width: 1400) {
   .logoMenu {
@@ -127,6 +175,7 @@ footer img{
   #inicioBoton,#registroBoton,#adminBoton, #carritoBoton,#logoutBoton,#loginBoton, #pedidosBoton{
     font-size: 20px;
     border-bottom: 1px #ecdba1 solid;
+    text-decoration: none ; 
   }
   .navContBotones{
     display: flex;
@@ -135,5 +184,28 @@ footer img{
   }
   .botonesIzq,.botonesDer{
     display: flex;
+    gap: 30px;
   } 
+  .flechaDropdown{
+    --bs-btn-bg: #e8652d !important;
+    --bs-btn-border-color: #e8652d !important;
+    --bs-btn-color: #1c2a4d !important;   
+    --bs-btn-font-size: 1.5rem !important;
+    --bs-btn-active-bg: #e8652da4 !important;
+    --bs-btn-active-border-color: #e8652da4 !important;
+  }
+  .flechaDropdown:hover{
+    background-color: #e8652da4!important;
+  }
+  #adminBoton{
+    display: flex;
+    align-items: center;
+  }
+  .desplegable{
+    --bs-dropdown-bg: #e8652d !important;
+  }
+  .dropdown-item{
+    color: #1c2a4d !important;
+    font-size: 20px;
+  }
 }

@@ -227,6 +227,7 @@ body {
     height: 130px;
     object-fit: cover;
   }
+
 }
 @media all and (min-width: 1200px) {
   .contenedor-filas > .filas:first-child {
