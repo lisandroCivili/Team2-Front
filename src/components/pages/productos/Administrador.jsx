@@ -39,7 +39,7 @@ const Administrador = () => {
         as={Link}
         to="/administrador/agregarProducto"
       >
-        <i className="bi bi-plus-circle"></i>
+        Agregar producto
       </Button>
       </div>
       <hr />

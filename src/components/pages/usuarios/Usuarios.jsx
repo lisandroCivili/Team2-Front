@@ -1,184 +1,58 @@
 import "../../../../styles/Administrador.css";
 import { Button, Container, Row, Col, Form } from "react-bootstrap";
+import { listarUsuarios } from "../../../helpers/queries";
+import ItemUsuario from "./ItemUsuario";
+import { useEffect, useState } from "react";
 
 const Usuarios = () => {
+  const [usuarios, setUsuarios] = useState([]);
+
+  useEffect(() => {
+    recibirUsuarios();
+  }, [usuarios]);
+
+  const recibirUsuarios = async () => {
+    const respuesta = await listarUsuarios();
+    if (respuesta.status === 200) {
+      const datos = await respuesta.json();
+      setUsuarios(datos.usuarios);
+    } else {
+      console.log("No se encontraron productos");
+    }
+  };
+
+
   return (
     <Container>
       <div className="d-flex justify-content-between align-items-center mt-5">
         <h1 className="display-4">Listado de usuarios</h1>
-        <Button className="btn btnAgregar float-end">
-          <i className="bi bi-plus-circle"></i>
-        </Button>
       </div>
       <hr />
       <div className="contenedor-filas">
-        <Row className="filas">
+        <Row className="filas filasTitulosSM">
           <Col
-            sm={2}
-            className="columna border border-success p-3 text-center fs-4"
+            sm={4}
+            className="columna border-top border-success p-3 text-center fs-4"
           >
-            Nombre
+            Usuario
           </Col>
           <Col
-            sm={2}
+            sm={4}
             className="columna border-top border-bottom border-success p-3 text-center fs-4"
           >
             Email
           </Col>
           <Col
-            sm={2}
-            className="columna border border-success p-3 text-center fs-4"
-          >
-            Password
-          </Col>
-          <Col
-            sm={2}
+            sm={4}
             className="columna border-top border-bottom border-success p-3 text-center fs-4"
           >
-            Perfil
-          </Col>
-          <Col
-            sm={2}
-            className="columna border border-success p-3 text-center fs-4"
-          >
-            Estado
+            Rol
           </Col>
         </Row>
         <Row className="filas">
-          <Col
-            sm={2}
-            className="columna border-bottom border-success p-2 text-center"
-          >
-            Papas
-          </Col>
-          <Col
-            sm={2}
-            className="columna border-bottom border-success p-2 text-center"
-          >
-            Estado
-          </Col>
-          <Col
-            sm={2}
-            className="columna border-bottom border-success p-2 text-center"
-          >
-            Precio
-          </Col>
-          <Col
-            sm={2}
-            className="columna border-bottom border-success p-2 text-center"
-          >
-            Categoria
-          </Col>
-          <Col
-            sm={2}
-            className="columna border border-top-0 border-success p-2 text-center"
-          >
-            <Form>
-              <Form.Check type="switch" id="custom-switch" />
-            </Form>
-          </Col>
-        </Row>
-        <Row className="filas">
-          <Col
-            sm={2}
-            className="columna border-bottom border-success p-2 text-center"
-          >
-            Hamburguesa
-          </Col>
-          <Col
-            sm={2}
-            className="columna border-bottom border-success p-2 text-center"
-          >
-            Estado
-          </Col>
-          <Col
-            sm={2}
-            className="columna border-bottom border-success p-2 text-center"
-          >
-            Precio
-          </Col>
-          <Col
-            sm={2}
-            className="columna border-bottom border-success p-2 text-center"
-          >
-            Categoria
-          </Col>
-          <Col
-            sm={2}
-            className="columna border border-top-0 border-success p-2 text-center"
-          >
-            <Form>
-              <Form.Check type="switch" id="custom-switch" />
-            </Form>
-          </Col>
-        </Row>
-        <Row className="filas">
-          <Col
-            sm={2}
-            className="columna border-bottom border-success p-2 text-center"
-          >
-            Panchos
-          </Col>
-          <Col
-            sm={2}
-            className="columna border-bottom border-success p-2 text-center"
-          >
-            Estado
-          </Col>
-          <Col
-            sm={2}
-            className="columna border-bottom border-success p-2 text-center"
-          >
-            Precio
-          </Col>
-          <Col
-            sm={2}
-            className="columna border-bottom border-success p-2 text-center"
-          >
-            Categoria
-          </Col>
-          <Col
-            sm={2}
-            className="columna border border-top-0 border-success p-2 text-center"
-          >
-            <Form>
-              <Form.Check type="switch" id="custom-switch" />
-            </Form>
-          </Col>
-        </Row>
-        <Row className="filas">
-          <Col
-            sm={2}
-            className="columna border-bottom border-success p-2 text-center"
-          >
-            Patas
-          </Col>
-          <Col
-            sm={2}
-            className="columna border-bottom border-success p-2 text-center"
-          >
-            Estado
-          </Col>
-          <Col
-            sm={2}
-            className="columna border-bottom border-success p-2 text-center"
-          >
-            Precio
-          </Col>
-          <Col
-            sm={2}
-            className="columna border-bottom border-success p-2 text-center"
-          >
-            Categoria
-          </Col>
-          <Col
-            sm={2}
-            className="columna border border-top-0 border-success p-2 text-center"
-          >
-            <Form>
-              <Form.Check type="switch" id="custom-switch" />
-            </Form>
-          </Col>
+          {usuarios.map((usuario)=>(
+            <ItemUsuario key={usuario._id} usuario={usuario}></ItemUsuario>
+          ))}
         </Row>
       </div>
     </Container>
