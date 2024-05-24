@@ -15,7 +15,6 @@
     border-bottom-right-radius: 0px;
 }
 
-
 @media all and (max-width: 575px) {
     .cardLogin{
         width: 75%;
@@ -35,6 +34,7 @@
     }
     .textoErrorLogin{
         font-size: 15px;
+        font-weight: 700;
     }
   }
   @media all and (min-width: 576px) and (max-width: 767px) {
@@ -55,10 +55,8 @@
         height: 250px;
     }
     .textoErrorLogin{
-        font-size: 40px;
-    }
-    .textoErrorLogin{
-        font-size: 18px;
+        font-size: 15px;
+        font-weight: 700;
     }
   }
   @media all and (min-width: 768px) and (max-width: 991px) {
@@ -79,7 +77,8 @@
         height: 250px;
     }
     .textoErrorLogin{
-        font-size: 18px;
+        font-size: 15px;
+        font-weight: 700;
     }
   
   }
@@ -96,6 +95,10 @@
         width: 100%;
         height: 460px;
     }
+    .textoErrorLogin{
+        font-size: 15px;
+        font-weight: 700;
+    }
   }
   @media all and (min-width: 1200px) {
     .cardLogin{
@@ -109,6 +112,10 @@
     .imgHamburguesa{
         width: 100%;
         height: 460px;
+    }
+    .textoErrorLogin{
+        font-size: 15px;
+        font-weight: 700;
     }
   }
   
