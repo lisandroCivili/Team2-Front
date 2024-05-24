@@ -84,10 +84,10 @@ const Carrito = () => {
   }
  }
 
+
   return (
-    <section className="pt-5 pb-5">
-      <div className="container">
-        <div className="row w-100">
+    <section className="pt-5 pb-5 sectionarrito">
+      <div className="contenedorItemsCarrito">
           <div className="col-lg-12 col-md-12 col-12">
             {productosEnCarrito.length === 0 ? (
               <div className="carritoVacio">
@@ -126,7 +126,6 @@ const Carrito = () => {
               </div>
             )}
           </div>
-        </div>
       </div>
     </section>
   );
