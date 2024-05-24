@@ -19,7 +19,7 @@ const Registro = () => {
     const navegacion = useNavigate()
     const onSubmit = async (usuario) => {
         try {
-            const respuesta = await registrar({...usuario,rol:"Usuario"});
+            const respuesta = await registrar({...usuario, rol:"Usuario"});
             console.log(respuesta);
             const usuarioObj = {
                 email: usuario.email,

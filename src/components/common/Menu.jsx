@@ -68,6 +68,7 @@ const Menu = () => {
               </>
             ) : (
               <div className="botonesDer">
+                <h2 className="bienvenidoText">¡Bienvenido {usuario.nombreUsuario}!, que vas a pedir hoy?</h2>
                 <NavLink className="nav-link" id="carritoBoton" to="/carrito">
                   <i className="bi bi-cart-fill iconoCarrito"></i>
                 </NavLink>
