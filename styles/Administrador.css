@@ -146,6 +146,12 @@ body {
   .disponibles{
     font-size: 25px;
   }
+  .filasTitulosSM{
+    display: none;
+  }
+  .filasDatosSM{
+    margin-bottom: 40px;
+  }
 }
 @media all and (min-width: 576px) and (max-width: 767px) {
   .contenedor-filas > .filas:first-child {
@@ -221,6 +227,7 @@ body {
     height: 130px;
     object-fit: cover;
   }
+
 }
 @media all and (min-width: 1200px) {
   .contenedor-filas > .filas:first-child {

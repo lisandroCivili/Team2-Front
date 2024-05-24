@@ -13,6 +13,7 @@ import Carrito from "./components/pages/pedidos/Carrito.jsx";
 import DetalleProducto from "./components/pages/productos/DetalleProducto.jsx";
 import RutasProtegidas from "./components/routes/RutasProtegidas.jsx";
 import RutasAdmin from "./components/routes/RutasAdmin.jsx";
+import Usuarios from "./components/pages/usuarios/Usuarios.jsx";
 
 
 
@@ -26,6 +27,7 @@ function App() {
           <Route exact path="/registro" element={<Registro/>}></Route>
           <Route exact path="/login" element={<Login />}></Route>
           <Route exact path="/carrito" element={<Carrito/>}></Route>
+          <Route exact path="/listaUsuarios" element={<Usuarios/>}></Route>
           <Route exact path="/administrador/*" element={
             <RutasProtegidas>
               <RutasAdmin></RutasAdmin>
