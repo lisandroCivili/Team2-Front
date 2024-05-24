@@ -67,7 +67,7 @@ const Registro = () => {
                             },
                         })}
                     />
-                    <Form.Text className="text-danger">
+                    <Form.Text className="textoErrorRegister">
                         {errors.nombreUsuario?.message}
                     </Form.Text>
                 </Form.Group>
@@ -85,7 +85,7 @@ const Registro = () => {
                             },
                         })}
                     />
-                    <Form.Text className="text-danger">{errors.email?.message}</Form.Text>
+                    <Form.Text className="textoErrorRegister">{errors.email?.message}</Form.Text>
                 </Form.Group>
                 <Form.Group className="mb-3">
                     <Form.Label>Contraseña</Form.Label>
@@ -111,7 +111,7 @@ const Registro = () => {
                             }
                         })}
                     />
-                    <Form.Text className="text-danger">
+                    <Form.Text className="textoErrorRegister">
                         {errors.contraseña?.message}
                     </Form.Text>
                 </Form.Group>
