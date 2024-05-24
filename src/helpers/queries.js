@@ -118,12 +118,9 @@ export const loguear = async (usuario) => {
     });
     if (respuesta.ok) {
       return respuesta.json(); 
-    } else {
-      throw new Error(`Error al iniciar sesión: ${respuesta.statusText}`);
-    }
+    } 
   } catch (error) {
     console.error("Error en el login:", error);
-    throw error;
   }
 };
 
