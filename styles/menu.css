@@ -86,6 +86,9 @@ footer img{
   .navbar{
     align-items: center;
   }
+  .contBotones{
+    display: flex;
+  }
 }
 @media all and (min-width: 992px) and (max-width: 1999px) {
   .logoMenu {
@@ -95,9 +98,24 @@ footer img{
     height: 85px;
   }
   #inicioBoton,#registroBoton,#adminBoton, #carritoBoton,#logoutBoton,#loginBoton, #pedidosBoton{
-    font-size: 20px;
+    font-size: 25px;
     border-bottom: 1px #ecdba1 solid;
   }
+  .navContBotones{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .botonesIzq,.botonesDer{
+    display: flex;
+  }
+  .botonesDer{
+    gap: 30px;
+  }
+  .botonesIzq{
+    gap: 30px;
+  }
+  
 }
 @media all and (min-width: 1200px) and (max-width: 1400) {
   .logoMenu {
@@ -110,4 +128,12 @@ footer img{
     font-size: 20px;
     border-bottom: 1px #ecdba1 solid;
   }
+  .navContBotones{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .botonesIzq,.botonesDer{
+    display: flex;
+  } 
 }
