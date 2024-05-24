@@ -1,5 +1,5 @@
 import "../../../styles/menu.css";
-import { Navbar, Nav, Container, NavDropdown, Dropdown, ButtonGroup, Button } from "react-bootstrap";
+import { Navbar, Nav, Container, NavDropdown, Dropdown, ButtonGroup, Button} from "react-bootstrap";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { useEffect, useState } from "react";
@@ -48,9 +48,9 @@ const Menu = () => {
                 <Dropdown.Toggle split id="dropdown-split-basic" className="flechaDropdown"/>
           
                 <Dropdown.Menu className="desplegable">
-                  <Dropdown.Item href="#/action-1">Productos</Dropdown.Item>
-                  <Dropdown.Item href="#/action-2">Pedidos pendientes</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">Lista usuarios</Dropdown.Item>
+                  <Dropdown.Item as={Link} to="/administrador">Productos</Dropdown.Item>
+                  <Dropdown.Item as={Link} to="/administrador/pedidos">Pedidos pendientes</Dropdown.Item>
+                  <Dropdown.Item as={Link} to="/listaUsuarios">Lista usuarios</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
               ) : (
