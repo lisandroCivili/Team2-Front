@@ -45,14 +45,14 @@ const ItemCarrito = ({producto, eliminarDelCarrito,setCantidades}) => {
     <tr>
       <td data-th="Producto">
         <div className="row">
-          <div className="col-md-3 text-left">
+          <div className="col-md-6 col-lg-5 text-left">
             <img
               src={producto.imagen}
               alt={producto.nombreProducto}
               className=" d-none d-md-block rounded mb-2 shadow "
             />
           </div>
-          <div className="col-md-9 text-center ">
+          <div className="col-md-6 col-lg-5 text-center ">
             <h3>{producto.nombreProducto}</h3>
           </div>
         </div>
@@ -69,7 +69,7 @@ const ItemCarrito = ({producto, eliminarDelCarrito,setCantidades}) => {
         />
       </td>
       <td className="cantidad" data-th="">
-        <div className="text-right">
+        <div className="text-center">
           <button
             className="btn btn-white border-secondary bg-danger btn-md mb-1"
             onClick={handleEliminar}
