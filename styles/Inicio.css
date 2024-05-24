@@ -22,7 +22,12 @@
 #cardProductos{
   background-color: #ea5c2b;
 }
-
+.botonCardProducto{
+  --bs-btn-bg: #1c2a4d !important;
+  --bs-btn-border-color: #1c2a4d !important;
+  --bs-btn-hover-bg: #464c5c !important;
+  --bs-btn-hover-border-color: #1c2a4d !important;
+}
 .carousel {
   margin-bottom: 40px;
 }

@@ -47,6 +47,7 @@ footer img{
   #inicioBoton,#registroBoton,#adminBoton, #carritoBoton,#logoutBoton,#loginBoton, #pedidosBoton{
     font-size: 20px;
     border-bottom: 1px #ecdba1 solid;
+    text-decoration: none ;
   }
   .nav{
     display: flex;
@@ -57,6 +58,28 @@ footer img{
     width: 70px;
     height: 65px;
   }
+  #adminBoton{
+    display: flex;
+    align-items: center;
+  }
+  .flechaDropdown{
+    --bs-btn-bg: #e8652d !important;
+    --bs-btn-border-color: #e8652d !important;
+    --bs-btn-color: #1c2a4d !important;   
+    --bs-btn-font-size: 1.5rem !important;
+    --bs-btn-active-bg: #e8652da4 !important;
+    --bs-btn-active-border-color: #e8652da4 !important;
+    --bs-btn-disabled-bg: #e8652da4 !important;
+    --bs-btn-disabled-border-color: #e8652da4 !important;
+    --bs-btn-hover-bg: #e8652da4 !important;
+  }
+  .desplegable{
+    --bs-dropdown-bg: #e8652d !important;
+  }
+  .dropdown-item{
+    color: #1c2a4d !important;
+    font-size: 20px;
+  }
 }
 @media all and (min-width: 576px) and (max-width: 767px) {
   .logoMenu {
@@ -65,11 +88,34 @@ footer img{
   #inicioBoton,#registroBoton,#adminBoton, #carritoBoton,#logoutBoton,#loginBoton, #pedidosBoton{
     font-size: 20px;
     border-bottom: 1px #ecdba1 solid;
+    text-decoration: none ;
   }
   .nav{
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  #adminBoton{
+    display: flex;
+    align-items: center;
+  }
+  .flechaDropdown{
+    --bs-btn-bg: #e8652d !important;
+    --bs-btn-border-color: #e8652d !important;
+    --bs-btn-color: #1c2a4d !important;   
+    --bs-btn-font-size: 1.5rem !important;
+    --bs-btn-active-bg: #e8652da4 !important;
+    --bs-btn-active-border-color: #e8652da4 !important;
+    --bs-btn-disabled-bg: #e8652da4 !important;
+    --bs-btn-disabled-border-color: #e8652da4 !important;
+    --bs-btn-hover-bg: #e8652da4 !important;
+  }
+  .desplegable{
+    --bs-dropdown-bg: #e8652d !important;
+  }
+  .dropdown-item{
+    color: #1c2a4d !important;
+    font-size: 20px;
   }
 }
 @media all and (min-width: 768px) and (max-width: 991px) {
@@ -103,6 +149,7 @@ footer img{
     --bs-btn-font-size: 1.5rem !important;
     --bs-btn-active-bg: #e8652da4 !important;
     --bs-btn-active-border-color: #e8652da4 !important;
+    --bs-btn-hover-bg: #e8652da4 !important;
   }
   .flechaDropdown:hover{
     background-color: #e8652da4!important;
@@ -149,6 +196,7 @@ footer img{
     --bs-btn-active-border-color: #e8652da4 !important;
     --bs-btn-disabled-bg: #e8652da4 !important;
     --bs-btn-disabled-border-color: #e8652da4 !important;
+    --bs-btn-hover-bg: #e8652da4 !important;
   }
   .flechaDropdown:hover{
     background-color: #e8652da4!important;
@@ -193,6 +241,7 @@ footer img{
     --bs-btn-font-size: 1.5rem !important;
     --bs-btn-active-bg: #e8652da4 !important;
     --bs-btn-active-border-color: #e8652da4 !important;
+    --bs-btn-hover-bg: #e8652da4 !important;
   }
   .flechaDropdown:hover{
     background-color: #e8652da4!important;
