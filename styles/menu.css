@@ -5,6 +5,7 @@ footer {
   border-bottom: 1px #ecdba1 solid;
   background-color: #e8652d;
 }
+
 #inicioBoton,
 #registroBoton,
 #adminBoton,
@@ -15,6 +16,7 @@ footer {
   color: #1c2a4d;
   font-weight: 600;
 }
+
 .nav-link:hover,
 .nav-link:focus {
   background-color: #ecdba1;
@@ -22,92 +24,87 @@ footer {
   color: #e8652d;
   transition: background-color 0.3s, color 0.3s;
 }
-.iconosAtencionAlCliente{
+
+.iconosAtencionAlCliente {
   color: #4b7b7b;
   font-size: 20px;
 }
-.iconosRedes{
+
+.iconosRedes {
   color: white;
   font-size: 35px;
 }
-footer img{
+
+footer img {
   width: 90px;
   height: 90px;
- 
 }
-.textoFooter{
+
+.textoFooter {
   font-size: 19px;
   margin-top: 45px;
 }
-@media all and (max-width: 575px) {
-  .logoMenu {
-    width: 90px;
-    height: 70px;
+
+
+@media (max-width: 576px) {
+  .textoFooter {
+    font-size: 14px;
+    margin-top: 10px;
   }
-  #inicioBoton,#registroBoton,#adminBoton, #carritoBoton,#logoutBoton,#loginBoton, #pedidosBoton{
-    font-size: 20px;
-    border-bottom: 1px #ecdba1 solid;
+
+  .iconosAtencionAlCliente {
+    font-size: 16px;
   }
-  .nav{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .logoMenu {
-    width: 70px;
-    height: 65px;
+
+  .iconosRedes {
+    font-size: 25px;
   }
 }
-@media all and (min-width: 576px) and (max-width: 767px) {
-  .logoMenu {
-    width: 75px;
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .textoFooter {
+    font-size: 16px;
+    margin-top: 20px;
   }
-  #inicioBoton,#registroBoton,#adminBoton, #carritoBoton,#logoutBoton,#loginBoton, #pedidosBoton{
-    font-size: 20px;
-    border-bottom: 1px #ecdba1 solid;
+
+  .iconosAtencionAlCliente {
+    font-size: 18px;
   }
-  .nav{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-}
-@media all and (min-width: 768px) and (max-width: 991px) {
-  .logoMenu {
-    width: 80px;
-  }
-  #inicioBoton,#registroBoton,#adminBoton, #carritoBoton,#logoutBoton,#loginBoton, #pedidosBoton{
-    font-size: 20px;
-    border-bottom: 1px #ecdba1 solid;
-  }
-  .logoMenu {
-    height: 85px;
-  }
-  .navbar{
-    align-items: center;
+
+  .iconosRedes {
+    font-size: 30px;
   }
 }
-@media all and (min-width: 992px) and (max-width: 1999px) {
-  .logoMenu {
-    width: 90px;
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .textoFooter {
+    font-size: 18px;
+    margin-top: 25px;
   }
-  .logoMenu {
-    height: 85px;
+
+  .iconosAtencionAlCliente {
+    font-size: 18px;
   }
-  #inicioBoton,#registroBoton,#adminBoton, #carritoBoton,#logoutBoton,#loginBoton, #pedidosBoton{
-    font-size: 20px;
-    border-bottom: 1px #ecdba1 solid;
-  }
-}
-@media all and (min-width: 1200px) and (max-width: 1400) {
-  .logoMenu {
-    width: 90px;
-  }
-  .logoMenu {
-    height: 85px;
-  }
-  #inicioBoton,#registroBoton,#adminBoton, #carritoBoton,#logoutBoton,#loginBoton, #pedidosBoton{
-    font-size: 20px;
-    border-bottom: 1px #ecdba1 solid;
+
+  .iconosRedes {
+    font-size: 30px;
   }
 }
+
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .textoFooter {
+    font-size: 19px;
+    margin-top: 30px;
+  }
+
+  .iconosAtencionAlCliente {
+    font-size: 20px;
+  }
+
+  .iconosRedes {
+    font-size: 35px;
+  }
+}
+
