@@ -3,6 +3,7 @@ import Administrador from "../../components/pages/productos/Administrador";
 import FormularioProducto from "../pages/productos/FormularioProducto"
 import { Route, Routes } from 'react-router-dom';
 import Pedidos from '../pages/pedidos/Pedidos';
+import Usuarios from '../pages/usuarios/Usuarios';
 
 const RutasAdmin = () => {
     return (

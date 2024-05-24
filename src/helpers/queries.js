@@ -76,15 +76,14 @@ export const editarProducto = async (nuevosDatosProducto, id) => {
     console.log(error);
   }
 };
+
 // QUERIES USUARIO
 
 
 export const registrar = async (usuario) => {
   try { 
     const respuestaListaUsuarios = await fetch(URLUsuarioGet);
-    console.log(respuestaListaUsuarios)
     const listaUsuarios = await respuestaListaUsuarios.json();
-    console.log(listaUsuarios)
     const usuarioExistente = listaUsuarios.usuarios.find(
       (itemUsuario) =>
       itemUsuario.nombreUsuario === usuario.nombreUsuario ||
@@ -127,6 +126,16 @@ export const loguear = async (usuario) => {
     throw error;
   }
 };
+
+export const listarUsuarios = async () => {
+  try {
+    const respuesta = await fetch(URLUsuarioGet);
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 
 
 // QUERIES PEDIDOS
