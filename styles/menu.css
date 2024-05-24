@@ -80,6 +80,9 @@ footer img{
     color: #1c2a4d !important;
     font-size: 20px;
   }
+  .bienvenidoText{
+    display: none;
+  }
 }
 @media all and (min-width: 576px) and (max-width: 767px) {
   .logoMenu {
@@ -116,6 +119,9 @@ footer img{
   .dropdown-item{
     color: #1c2a4d !important;
     font-size: 20px;
+  }
+  .bienvenidoText{
+    font-size: 10px;
   }
 }
 @media all and (min-width: 768px) and (max-width: 991px) {
@@ -165,6 +171,12 @@ footer img{
     color: #1c2a4d !important;
     font-size: 20px;
   }
+  .bienvenidoText{
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    color: #1c2a4d;
+  }
 }
 @media all and (min-width: 992px) and (max-width: 1999px) {
   .logoMenu {
@@ -212,6 +224,12 @@ footer img{
     color: #1c2a4d !important;
     font-size: 20px;
   }
+  .bienvenidoText{
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    color: #1c2a4d;
+  }
 }
 @media all and (min-width: 1200px) and (max-width: 1400) {
   .logoMenu {
@@ -256,5 +274,11 @@ footer img{
   .dropdown-item{
     color: #1c2a4d !important;
     font-size: 20px;
+  }
+  .bienvenidoText{
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    color: #1c2a4d;
   }
 }
