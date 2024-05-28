@@ -24,7 +24,6 @@ const Login = () => {
         const respuesta = await loguear(usuario)
         
         if (respuesta) {
-          console.log(respuesta)
                 const usuario = {
                     rol: respuesta.rol,
                     nombreUsuario: respuesta.nombreUsuario,
