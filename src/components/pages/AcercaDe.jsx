@@ -2,10 +2,10 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "../../../styles/acercade.css";
 
-import imagen1 from "../../../assets/hombrear.jpg";
-import imagen2 from "../../../assets/hombre-joven-barba-telefono-inteligente_25030-29862.jpg";
-import imagen3 from "../../../assets/hombre-joven-barba-telefono-inteligente_25030-29860.jpg";
-import imagen4 from "../../../assets/mujer-joven-blanco_25030-39547.jpg";
+import imagen1 from "../../../src/assets/hombrear.jpg";
+import imagen2 from "../../../src/assets/hombre-joven-barba-telefono-inteligente_25030-29862.jpg";
+import imagen3 from "../../../src/assets/hombre-joven-barba-telefono-inteligente_25030-29860.jpg";
+import imagen4 from "../../../src/assets/mujer-joven-blanco_25030-39547.jpg";
 
 const AcercaDe = () => {
   const nombres = ["Lisandro", "Pablo", "Ramiro", "Cynthia"];
@@ -20,12 +20,12 @@ const AcercaDe = () => {
   return (
     <main>
       <Container>
-        <Row xs={1} md={2} lg={4} className="container">
+        <Row xs={1} md={2} lg={4} className="containerCardNos">
           {nombres.map((nombre, index) => (
             <Col key={index}>
-              <div className="card">
+              <div className="cardNosotros">
                 <img src={imagenes[index]} alt={nombre} />
-                <div className="content">
+                <div className="contenidoCardNos">
                   <h3>{nombre}</h3>
                   <p>{parrafos[index]}</p>
                 </div>
