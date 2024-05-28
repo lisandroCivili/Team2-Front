@@ -7,6 +7,7 @@ import bannerMarca from "../../assets/banner.png"
 import sinStock from "../../assets/sin-stock.png"
 import "../../../styles/Inicio.css";
 import { leerProductos } from "../../helpers/queries";
+import { Link } from "react-router-dom";
 
 
 const Inicio = () => {
@@ -56,6 +57,7 @@ const Inicio = () => {
       </Carousel>
 
       <Container className="mt-5 containerMain">
+        <Link to="/nosotros" className="nosotros">CONOCÉ SOBRE NOSOTROS AQUI</Link>
         <div className="intro">
           <h1>BIENVENIDO A FLASH FOOD</h1>
           <p>
