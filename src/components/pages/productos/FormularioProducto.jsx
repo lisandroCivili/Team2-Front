@@ -36,7 +36,7 @@ const FomularioProducto = ({ editando, titulo}) => {
       setValue("categoria", datos.categoria);
       setValue("detalle", datos.detalle);
     } else {
-      console.log("No se obtuvieron datos");
+      throw new Error("No se obtuvieron datos");
     }
   };
 

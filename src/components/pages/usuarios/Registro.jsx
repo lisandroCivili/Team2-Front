@@ -20,7 +20,6 @@ const Registro = () => {
     const onSubmit = async (usuario) => {
         try {
             const respuesta = await registrar({...usuario, rol:"Usuario"});
-            console.log(respuesta);
             const usuarioObj = {
                 email: usuario.email,
                 rol: "Usuario",

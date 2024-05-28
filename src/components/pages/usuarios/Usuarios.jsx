@@ -17,7 +17,7 @@ const Usuarios = () => {
       const datos = await respuesta.json();
       setUsuarios(datos.usuarios);
     } else {
-      console.log("No se encontraron usuarios");
+      throw new Error("No se encontraron usuarios");
     }
   };
 

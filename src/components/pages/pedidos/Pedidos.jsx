@@ -19,7 +19,7 @@ const Pedidos = () => {
       const datos = await respuesta.json()
       setPedidos(datos.pedidos)
     }else{
-      console.log('No se encontraron productos')
+      throw new Error('No se encontraron productos')
     }
   }
   

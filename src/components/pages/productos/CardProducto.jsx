@@ -8,7 +8,6 @@ const CardProducto = ({ producto, agregarAlCarrito }) => {
   const guardarSessionStorage = () => {
     let carrito = JSON.parse(sessionStorage.getItem("carrito")) || [];
     const productoExistente = carrito.find(item => item._id === producto._id);
-    console.log(productoExistente)
     if (sesion.length === 0) {
       Swal.fire("!Inicie sesion o registrese para agregar productos!");
       return

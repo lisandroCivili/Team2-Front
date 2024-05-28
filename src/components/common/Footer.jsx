@@ -41,7 +41,7 @@ function Footer() {
               <li>
                 <a href="#" className="text-decoration-none text-light">
                 <FaLocationDot className='iconosAtencionAlCliente'/>
-                  Narnia
+                  San Miguel de Tucumán
                 </a>
               </li>
             </ul>
