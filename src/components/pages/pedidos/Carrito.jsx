@@ -70,8 +70,9 @@ const Carrito = () => {
   try {
     const respuesta = await crearPedido(pedido);
     if (respuesta.ok) {
-      const data = await respuesta.json(); // Extraer el cuerpo de la respuesta JSON
-      Swal.fire('¡Pedido realizado!', `Tu número de pedido es:`, 'success');
+      const data = await respuesta.json(); 
+      let codigoPedido = data.pedidos._id.slice(0,4)
+      Swal.fire('¡Pedido realizado!', `Tu número de pedido es: ${codigoPedido}`, 'success');
       sessionStorage.removeItem('carrito');
       setProductosEnCarrito([]);
       setPrecioTotal(0);
