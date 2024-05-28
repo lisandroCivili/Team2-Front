@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const Administrador = () => {
   const [productos, setProductos] = useState([]);
-  
+
   useEffect(() => {
     recibirProductos();
   }, []);
@@ -18,29 +18,30 @@ const Administrador = () => {
       const datos = await respuesta.json();
       setProductos(datos);
     } else {
-      console.log("No se encontraron productos");
+      throw new Errorconsole.log("No se encontraron productos");
     }
   };
 
-  
   return (
     <Container>
       <div className="d-flex justify-content-between align-items-center mt-5 cont-titulos-admin">
         <h1 className="display-4 disponibles">Productos disponibles</h1>
-        <Button
-          className="btn btnAgregar"
-          as={Link}
-          to="/administrador/pedidos"
-        >
-          Pedidos pendientes 
-        </Button>
-      <Button
-        className="btn btnAgregar float-end"
-        as={Link}
-        to="/administrador/agregarProducto"
-      >
-        Agregar producto
-      </Button>
+        <div className="d-flex flex-column flex-sm-row">
+          <Button
+            className="btn btnAgregar mb-2 mb-sm-0 me-sm-2"
+            as={Link}
+            to="/administrador/pedidos"
+          >
+            Pedidos pendientes
+          </Button>
+          <Button
+            className="btn btnAgregar"
+            as={Link}
+            to="/administrador/agregarProducto"
+          >
+            Agregar producto
+          </Button>
+        </div>
       </div>
       <hr />
       <div className="contenedor-filas">
