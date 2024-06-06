@@ -42,22 +42,10 @@
       "rol": "Admin"
     },
     {
-      "id": "2bad",
+      "id": "6a91",
+      "nombreUsuario": "pablolsardi",
       "email": "lopezsardip@gmail.com",
-      "contraseña": "Pablo123"
-    },
-    {
-      "id": "cde5",
-      "nombreUsuario": "GeronimoPuto",
-      "email": "danielasardi30@gmail.com",
       "contraseña": "Pablo123",
-      "rol": "Usuario"
-    },
-    {
-      "id": "3112",
-      "nombreUsuario": "pablolsardi2",
-      "email": "lopezsardip2@gmail.com",
-      "contraseña": "asdA1233",
       "rol": "Usuario"
     }
   ]
