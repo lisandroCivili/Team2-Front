@@ -8,11 +8,6 @@ import { loguear } from "../../../helpers/queries.js";
 import Swal from 'sweetalert2';
 import { useNavigate } from "react-router-dom";
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 099ce956e5d7d8b66d879a3b6da386b46cb9228b
 const Login = () => {
     const navegacion = useNavigate()
     const {
