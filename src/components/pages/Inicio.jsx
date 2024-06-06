@@ -2,11 +2,12 @@ import { Container, Row, Carousel } from "react-bootstrap";
 import CardProducto from "./productos/CardProducto";
 import { useEffect, useState } from "react";
 import bannerPP from "../../assets/bannerPP-min.jpg";
-import bannerFF from "../../assets/bannerFF-min.jpg";
 import bannerPapitas from "../../assets/banner_papitas-min.jpg";
 import bannerMarca from "../../assets/banner.png"
+import sinStock from "../../assets/sin-stock.png"
 import "../../../styles/Inicio.css";
 import { leerProductos } from "../../helpers/queries";
+import { Link } from "react-router-dom";
 
 
 const Inicio = () => {
@@ -22,14 +23,13 @@ const Inicio = () => {
       const datos = await respuesta.json();
       setProductos(datos);
     } else {
-      console.log("No se encontraron productos");
+      throw new Error("No se encontraron productos")
     }
   };
 
   const agregarAlCarrito = (producto) => {
     
     let carrito = JSON.parse(sessionStorage.getItem("carrito")) || [];
-
     carrito.push(producto);
     sessionStorage.setItem("carrito", JSON.stringify(carrito));
   };
@@ -56,7 +56,8 @@ const Inicio = () => {
         </Carousel.Item>
       </Carousel>
 
-      <Container className="mt-5 text-center">
+      <Container className="mt-5 containerMain">
+        <Link to="/nosotros" className="nosotros">CONOCÉ SOBRE NOSOTROS AQUI</Link>
         <div className="intro">
           <h1>BIENVENIDO A FLASH FOOD</h1>
           <p>
@@ -69,15 +70,21 @@ const Inicio = () => {
         </div>
         <h1 className="display-4">Nuestros Productos</h1>
         <hr />
+        {productos.length === 0 ? (
+          <div className="sinStock"><img alt="Sin Stock" srcSet={sinStock} /></div>
+        ):(
         <Row>
           {productos.map((producto) => (
             <CardProducto
-              key={producto.id}
+              key={producto._id}
               producto={producto}
               agregarAlCarrito={agregarAlCarrito}
             />
           ))}
         </Row>
+
+          
+        )}
       </Container>
     </section>
   );

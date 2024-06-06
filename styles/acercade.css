@@ -4,14 +4,14 @@ body {
   color: #ecdba1;
 }
 
-.container {
+.containerCardNos {
   margin-top: 7%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.card {
+.cardNosotros {
   position: relative;
   width: 250px;
   height: 350px;
@@ -26,43 +26,43 @@ body {
   align-items: center;
 }
 
-.card img {
+.cardNosotros img {
   width: 70%;
   height: auto;
   border-radius: 50%;
 }
 
-.card .content {
+.cardNosotros .contenidoCardNos {
   text-align: center;
   padding: 20px;
 }
 
-.card h3 {
+.cardNosotros h3 {
   font-size: 20px;
   margin-bottom: 10px;
   color: #e8652d;
 }
 
-.card p {
+.cardNosotros p {
   font-size: 16px;
   margin-bottom: 20px;
   color: #e8652d;
 }
 
 @media (max-width: 1199px) {
-  .card {
+  .cardNosotros {
     width: 200px;
   }
 }
 
 @media (max-width: 990px) {
-  .card {
+  .cardNosotros {
     width: 150px;
   }
 }
 
 @media (max-width: 767px) {
-  .card {
+  .cardNosotros {
     width: 100%;
     margin: 10px 0;
   }

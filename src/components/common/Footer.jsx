@@ -41,7 +41,7 @@ function Footer() {
               <li>
                 <a href="#" className="text-decoration-none text-light">
                 <FaLocationDot className='iconosAtencionAlCliente'/>
-                  Narnia
+                  San Miguel de Tucumán
                 </a>
               </li>
             </ul>
@@ -49,13 +49,13 @@ function Footer() {
           <div className="col-md-4 col-lg-4 text-light text-center p-4">
             <h3>Nuestras Redes</h3>
             <div>
-              <a href="#" className="mx-2 mx-md-1">
+              <a href="/error404" className="mx-2 mx-md-1">
               <FaInstagramSquare className='iconosRedes'/>
               </a>
-              <a href="#" className="mx-2 mx-md-1">
+              <a href="/error404" className="mx-2 mx-md-1">
               <FaFacebook className='iconosRedes'/>
               </a>
-              <a href="#"className='mx-2 mx-md-1'>
+              <a href="/error404"className='mx-2 mx-md-1'>
               <FaTiktok className='iconosRedes'/>
 
               </a>

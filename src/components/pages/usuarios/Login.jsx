@@ -9,6 +9,10 @@ import Swal from 'sweetalert2';
 import { useNavigate } from "react-router-dom";
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 099ce956e5d7d8b66d879a3b6da386b46cb9228b
 const Login = () => {
     const navegacion = useNavigate()
     const {
@@ -21,7 +25,7 @@ const Login = () => {
 
     const onSubmit = async(usuario) => {
         const respuesta = await loguear(usuario)
-        console.log(respuesta);
+        
         if (respuesta) {
                 const usuario = {
                     rol: respuesta.rol,
@@ -32,7 +36,7 @@ const Login = () => {
                 sessionStorage.setItem("usuario", JSON.stringify(usuario));
                 Swal.fire(
                     `¡Bienvenido!`,
-                    `Iniciaste sesión correctamente.`,
+                    `Iniciaste sesion correctamente.`,
                     "success"
                 );
                 if(respuesta.rol === "Admin"){
@@ -50,7 +54,7 @@ const Login = () => {
           <Container className="cardLogin mx-auto p-0 row rounded-5 mt-5">
             <div className="col-12 col-lg-6 h-100 p-0">
               <img
-                className="imgHamburguesa img-fluid object-fit-cover h-100 "
+                className="imgHamburguesa img-fluid object-fit-cover"
                 src={imgfondo}
                 alt="hamburguesa"
               />
@@ -68,13 +72,13 @@ const Login = () => {
                       required: "El email es un dato obligatorio",
                       pattern: {
                         value:
-                          /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
+                        /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                         message:
                           "El email debe cumplir con el formato mail@dominio.com",
                       },
                     })}
                   />
-                  <Form.Text className="text-danger">
+                  <Form.Text className="textoErrorLogin">
                     {errors.email?.message}
                   </Form.Text>
                 </Form.Group>
@@ -90,11 +94,11 @@ const Login = () => {
                       pattern: {
                         value: /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/,
                         message:
-                          "Su contraseña debe tener entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.",
+                          'Entre 8 y 16 caracteres, al menos 1 digito, 1 minusc. y 1 mayusc.',
                       },
                     })}
                   />
-                  <Form.Text className="text-danger">
+                  <Form.Text className="textoErrorLogin">
                     {errors.contraseña?.message}
                   </Form.Text>
                 </Form.Group>

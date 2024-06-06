@@ -1,6 +1,9 @@
 const APIProductos = import.meta.env.VITE_API_PRODUCTOS;
 const URLUsuario = import.meta.env.VITE_API_USUARIO;
-const URLPedidos = import.meta.env.VITE_API_PEDIDO;
+const URLUsuarioGet = import.meta.env.VITE_API_USUARIO_GET;
+const URLPedidoNuevo = import.meta.env.VITE_API_PEDIDOS_NUEVO;
+const URLPedidos = import.meta.env.VITE_API_PEDIDOS;
+
 
 export const leerProductos = async () => {
   try {
@@ -25,6 +28,8 @@ export const crearProducto = async (nuevoProducto) => {
     console.log(error);
   }
 };
+
+
 
 export const borrarProducto = async (id) => {
   try {
@@ -71,47 +76,18 @@ export const editarProducto = async (nuevosDatosProducto, id) => {
     console.log(error);
   }
 };
+
 // QUERIES USUARIO
-const userAdmin = {
-  email: "admin@lisandrocivili.com",
-  password: "123Aa$123",
-};
 
-export const login = (usuario) => {
-  if (usuario.mail === userAdmin.email && usuario.pass === userAdmin.password) {
-    sessionStorage.setItem("loginRC", JSON.stringify(usuario.mail));
-    return true;
-  } else {
-    return false;
-  }
-};
-
-export const loguear = async (usuario) => {
-  try {
-    const respuesta = await fetch(URLUsuario);
-    const solucion = await respuesta.json();
-    const coincidencia = solucion.find(
-      (user) =>
-        usuario.email === user.email && usuario.contraseña === user.contraseña
-    );
-    if (coincidencia) {
-      return coincidencia;
-    } else {
-      throw new Error("Login failes");
-    }
-  } catch (error) {
-    console.log(error);
-  }
-};
 
 export const registrar = async (usuario) => {
-  try {
-    const respuestaListaUsuarios = await fetch(URLUsuario);
+  try { 
+    const respuestaListaUsuarios = await fetch(URLUsuarioGet);
     const listaUsuarios = await respuestaListaUsuarios.json();
-    const usuarioExistente = listaUsuarios.find(
+    const usuarioExistente = listaUsuarios.usuarios.find(
       (itemUsuario) =>
-        itemUsuario.nombreUsuario === usuario.nombreUsuario ||
-        itemUsuario.email === usuario.email
+      itemUsuario.nombreUsuario === usuario.nombreUsuario ||
+      itemUsuario.email === usuario.email
     );
     if (!usuarioExistente) {
       const respuestaRegistro = await fetch(URLUsuario, {
@@ -131,11 +107,39 @@ export const registrar = async (usuario) => {
   }
 };
 
+export const loguear = async (usuario) => {
+  try {
+    const respuesta = await fetch(URLUsuarioGet, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(usuario),
+    });
+    if (respuesta.ok) {
+      return respuesta.json(); 
+    } 
+  } catch (error) {
+    console.error("Error en el login:", error);
+  }
+};
+
+export const listarUsuarios = async () => {
+  try {
+    const respuesta = await fetch(URLUsuarioGet);
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
+
 // QUERIES PEDIDOS
 
 export const crearPedido = async (nuevoPedido) => {
   try {
-    const respuesta = await fetch(URLPedidos, {
+    const respuesta = await fetch(URLPedidoNuevo, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -147,9 +151,21 @@ export const crearPedido = async (nuevoPedido) => {
     console.log(error);
   }
 };
-export const leerPedido = async () => {
+
+export const leerPedidos = async () => {
   try {
-    const respuesta = await fetch(APIPedido);
+    const respuesta = await fetch(URLPedidos);
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const borrarPedido = async (id) => {
+  try {
+    const respuesta = await fetch(URLPedidos + "/" + id, {
+      method: "DELETE",
+    });
     return respuesta;
   } catch (error) {
     console.log(error);

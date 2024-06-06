@@ -23,14 +23,6 @@
       "categoria": "Combo",
       "detalle": "¿Listo para una explosión de sabor? Nuestro Combo de Cheeseburger con Coca-Cola es la combinación perfecta para satisfacer tu antojo.",
       "id": "2cd9"
-    },
-    {
-      "id": "8fa6",
-      "nombreProducto": "Helado",
-      "precio": "2500",
-      "imagen": "https://images.pexels.com/photos/1294943/pexels-photo-1294943.jpeg",
-      "categoria": "Postre",
-      "detalle": "Heladoooooooooooooooooooooooooooooooooooooooooooooo"
     }
   ],
   "usuarios": [
@@ -47,6 +39,30 @@
       "email": "lopezsardip@gmail.com",
       "contraseña": "Pablo123",
       "rol": "Usuario"
+<<<<<<< HEAD
+=======
+    },
+    {
+      "id": "3112",
+      "nombreUsuario": "pablolsardi2",
+      "email": "lopezsardip2@gmail.com",
+      "contraseña": "asdA1233",
+      "rol": "Usuario"
+    },
+    {
+      "id": "7c73",
+      "nombreUsuario": "LisandroCivili",
+      "email": "lisandro@gmail.com",
+      "contraseña": "Holachau123",
+      "rol": "Usuario"
+    },
+    {
+      "id": "cffb",
+      "nombreUsuario": "LisandroCivili2",
+      "email": "lichadlv25@gmail.com",
+      "contraseña": "Holachau123",
+      "rol": "Usuario"
+>>>>>>> 099ce956e5d7d8b66d879a3b6da386b46cb9228b
     }
   ]
 }

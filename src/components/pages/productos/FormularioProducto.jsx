@@ -36,7 +36,7 @@ const FomularioProducto = ({ editando, titulo}) => {
       setValue("categoria", datos.categoria);
       setValue("detalle", datos.detalle);
     } else {
-      console.log("No se obtuvieron datos");
+      throw new Error("No se obtuvieron datos");
     }
   };
 
@@ -57,7 +57,7 @@ const FomularioProducto = ({ editando, titulo}) => {
         });
       }
     } else {
-      const respuesta = await crearProducto(producto);
+      const respuesta = await crearProducto({...producto, cantidad:1});
       if (respuesta.status === 201) {
         Swal.fire({
           title: "Producto agregado",

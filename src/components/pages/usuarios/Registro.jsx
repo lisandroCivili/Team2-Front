@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useForm } from "react-hook-form";
 import { registrar } from "../../../helpers/queries.js";
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 
 const Registro = () => {
@@ -15,28 +16,32 @@ const Registro = () => {
         formState: { errors },
         reset,
     } = useForm();
-
-    const onSubmit = (usuario) => {
-        usuario.rol = "Usuario";
-        registrar(usuario).then((respuesta) => {
+    const navegacion = useNavigate()
+    const onSubmit = async (usuario) => {
+        try {
+            const respuesta = await registrar({...usuario, rol:"Usuario"});
             const usuarioObj = {
                 email: usuario.email,
                 rol: "Usuario",
                 nombreUsuario: usuario.nombreUsuario,
                 contraseña: usuario.contraseña,
             };
+    
             if (respuesta) {
                 sessionStorage.setItem("usuario", JSON.stringify(usuarioObj));
                 Swal.fire("¡Fantástico!", `Su usuario quedó registrado exitosamente`, "success");
                 reset();
                 navegacion("/");
-
+    
             } else if (respuesta === null) {
                 Swal.fire("Error", "Este usuario o correo ya existe", "error");
             } else {
-                Swal.fire("Error", "No se pudo registrar su usuario", "error");
+                Swal.fire("Error", "prueba", "error");
             }
-        });
+        } catch (error) {
+            console.error("Error al registrar usuario:");
+            Swal.fire("Error", "no se pudo crear el usuario", "error");
+        }
     };
 
     return (
@@ -52,16 +57,16 @@ const Registro = () => {
                         {...register("nombreUsuario", {
                             required: "El nombre de usuario es obligatorio",
                             minLength: {
-                                value: 2,
+                                value: 5,
                                 message: "La cantidad minima de caracteres es de 2 digitos",
                             },
                             maxLength: {
-                                value: 100,
+                                value: 30,
                                 message: "La cantidad maxima de caracteres es de 2 digitos",
                             },
                         })}
                     />
-                    <Form.Text className="text-danger">
+                    <Form.Text className="textoErrorRegister">
                         {errors.nombreUsuario?.message}
                     </Form.Text>
                 </Form.Group>
@@ -73,13 +78,13 @@ const Registro = () => {
                         {...register("email", {
                             required: "El email es un dato obligatorio",
                             pattern: {
-                                value: /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
+                                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                                 message:
                                     "El email debe cumplir con el formato mail@dominio.com",
                             },
                         })}
                     />
-                    <Form.Text className="text-danger">{errors.email?.message}</Form.Text>
+                    <Form.Text className="textoErrorRegister">{errors.email?.message}</Form.Text>
                 </Form.Group>
                 <Form.Group className="mb-3">
                     <Form.Label>Contraseña</Form.Label>
@@ -105,7 +110,7 @@ const Registro = () => {
                             }
                         })}
                     />
-                    <Form.Text className="text-danger">
+                    <Form.Text className="textoErrorRegister">
                         {errors.contraseña?.message}
                     </Form.Text>
                 </Form.Group>

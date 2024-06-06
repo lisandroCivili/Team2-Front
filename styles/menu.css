@@ -7,7 +7,7 @@ footer {
 }
 #inicioBoton,
 #registroBoton,
-.adminBoton,
+#adminBoton,
 #logoutBoton,
 #loginBoton,
 #carritoBoton,
@@ -44,9 +44,10 @@ footer img{
     width: 90px;
     height: 70px;
   }
-  #inicioBoton,#registroBoton,.adminBoton, #carritoBoton,#logoutBoton,#loginBoton, #pedidosBoton{
+  #inicioBoton,#registroBoton,#adminBoton, #carritoBoton,#logoutBoton,#loginBoton, #pedidosBoton{
     font-size: 20px;
     border-bottom: 1px #ecdba1 solid;
+    text-decoration: none ;
   }
   .nav{
     display: flex;
@@ -57,34 +58,124 @@ footer img{
     width: 70px;
     height: 65px;
   }
+  #adminBoton{
+    display: flex;
+    align-items: center;
+  }
+  .flechaDropdown{
+    --bs-btn-bg: #e8652d !important;
+    --bs-btn-border-color: #e8652d !important;
+    --bs-btn-color: #1c2a4d !important;   
+    --bs-btn-font-size: 1.5rem !important;
+    --bs-btn-active-bg: #e8652da4 !important;
+    --bs-btn-active-border-color: #e8652da4 !important;
+    --bs-btn-disabled-bg: #e8652da4 !important;
+    --bs-btn-disabled-border-color: #e8652da4 !important;
+    --bs-btn-hover-bg: #e8652da4 !important;
+  }
+  .desplegable{
+    --bs-dropdown-bg: #e8652d !important;
+  }
+  .dropdown-item{
+    color: #1c2a4d !important;
+    font-size: 20px;
+  }
+  .bienvenidoText{
+    display: none;
+  }
 }
 @media all and (min-width: 576px) and (max-width: 767px) {
   .logoMenu {
     width: 75px;
   }
-  #inicioBoton,#registroBoton,.adminBoton, #carritoBoton,#logoutBoton,#loginBoton, #pedidosBoton{
+  #inicioBoton,#registroBoton,#adminBoton, #carritoBoton,#logoutBoton,#loginBoton, #pedidosBoton{
     font-size: 20px;
     border-bottom: 1px #ecdba1 solid;
+    text-decoration: none ;
   }
   .nav{
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+  #adminBoton{
+    display: flex;
+    align-items: center;
+  }
+  .flechaDropdown{
+    --bs-btn-bg: #e8652d !important;
+    --bs-btn-border-color: #e8652d !important;
+    --bs-btn-color: #1c2a4d !important;   
+    --bs-btn-font-size: 1.5rem !important;
+    --bs-btn-active-bg: #e8652da4 !important;
+    --bs-btn-active-border-color: #e8652da4 !important;
+    --bs-btn-disabled-bg: #e8652da4 !important;
+    --bs-btn-disabled-border-color: #e8652da4 !important;
+    --bs-btn-hover-bg: #e8652da4 !important;
+  }
+  .desplegable{
+    --bs-dropdown-bg: #e8652d !important;
+  }
+  .dropdown-item{
+    color: #1c2a4d !important;
+    font-size: 20px;
+  }
+  .bienvenidoText{
+    font-size: 10px;
+  }
 }
 @media all and (min-width: 768px) and (max-width: 991px) {
   .logoMenu {
     width: 80px;
   }
-  #inicioBoton,#registroBoton,.adminBoton, #carritoBoton,#logoutBoton,#loginBoton, #pedidosBoton{
+  #inicioBoton,#registroBoton,#adminBoton, #carritoBoton,#logoutBoton,#loginBoton, #pedidosBoton{
     font-size: 20px;
     border-bottom: 1px #ecdba1 solid;
+    text-decoration: none;
   }
   .logoMenu {
     height: 85px;
   }
   .navbar{
     align-items: center;
+  }
+  .navContBotones{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .botonesIzq,.botonesDer{
+    display: flex;
+    gap: 30px;
+  } 
+  .flechaDropdown{
+    --bs-btn-bg: #e8652d !important;
+    --bs-btn-border-color: #e8652d !important;
+    --bs-btn-color: #1c2a4d !important;   
+    --bs-btn-font-size: 1.5rem !important;
+    --bs-btn-active-bg: #e8652da4 !important;
+    --bs-btn-active-border-color: #e8652da4 !important;
+    --bs-btn-hover-bg: #e8652da4 !important;
+  }
+  .flechaDropdown:hover{
+    background-color: #e8652da4!important;
+  }
+  #adminBoton{
+    display: flex;
+    align-items: center;
+  }
+  .desplegable{
+    --bs-dropdown-bg: #e8652d !important;
+  }
+  .dropdown-item{
+    color: #1c2a4d !important;
+    font-size: 20px;
+  }
+  .bienvenidoText{
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    color: #1c2a4d;
   }
 }
 @media all and (min-width: 992px) and (max-width: 1999px) {
@@ -94,9 +185,50 @@ footer img{
   .logoMenu {
     height: 85px;
   }
-  #inicioBoton,#registroBoton,.adminBoton, #carritoBoton,#logoutBoton,#loginBoton, #pedidosBoton{
-    font-size: 20px;
+  #inicioBoton,#registroBoton,#adminBoton, #carritoBoton,#logoutBoton,#loginBoton, #pedidosBoton{
+    font-size: 25px;
     border-bottom: 1px #ecdba1 solid;
+    text-decoration: none ; 
+  }
+  .navContBotones{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .botonesIzq,.botonesDer{
+    display: flex;
+    gap: 30px;
+  }
+  .flechaDropdown{
+    --bs-btn-bg: #e8652d !important;
+    --bs-btn-border-color: #e8652d !important;
+    --bs-btn-color: #1c2a4d !important;   
+    --bs-btn-font-size: 1.5rem !important;
+    --bs-btn-active-bg: #e8652da4 !important;
+    --bs-btn-active-border-color: #e8652da4 !important;
+    --bs-btn-disabled-bg: #e8652da4 !important;
+    --bs-btn-disabled-border-color: #e8652da4 !important;
+    --bs-btn-hover-bg: #e8652da4 !important;
+  }
+  .flechaDropdown:hover{
+    background-color: #e8652da4!important;
+  }
+  #adminBoton{
+    display: flex;
+    align-items: center;
+  }
+  .desplegable{
+    --bs-dropdown-bg: #e8652d !important;
+  }
+  .dropdown-item{
+    color: #1c2a4d !important;
+    font-size: 20px;
+  }
+  .bienvenidoText{
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    color: #1c2a4d;
   }
 }
 @media all and (min-width: 1200px) and (max-width: 1400) {
@@ -106,8 +238,47 @@ footer img{
   .logoMenu {
     height: 85px;
   }
-  #inicioBoton,#registroBoton,.adminBoton, #carritoBoton,#logoutBoton,#loginBoton, #pedidosBoton{
+  #inicioBoton,#registroBoton,#adminBoton, #carritoBoton,#logoutBoton,#loginBoton, #pedidosBoton{
     font-size: 20px;
     border-bottom: 1px #ecdba1 solid;
+    text-decoration: none ; 
+  }
+  .navContBotones{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .botonesIzq,.botonesDer{
+    display: flex;
+    gap: 30px;
+  } 
+  .flechaDropdown{
+    --bs-btn-bg: #e8652d !important;
+    --bs-btn-border-color: #e8652d !important;
+    --bs-btn-color: #1c2a4d !important;   
+    --bs-btn-font-size: 1.5rem !important;
+    --bs-btn-active-bg: #e8652da4 !important;
+    --bs-btn-active-border-color: #e8652da4 !important;
+    --bs-btn-hover-bg: #e8652da4 !important;
+  }
+  .flechaDropdown:hover{
+    background-color: #e8652da4!important;
+  }
+  #adminBoton{
+    display: flex;
+    align-items: center;
+  }
+  .desplegable{
+    --bs-dropdown-bg: #e8652d !important;
+  }
+  .dropdown-item{
+    color: #1c2a4d !important;
+    font-size: 20px;
+  }
+  .bienvenidoText{
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    color: #1c2a4d;
   }
 }

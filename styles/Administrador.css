@@ -77,11 +77,37 @@ body {
   font-size: 18px;
   transition: background-color 0.3s, color 0.4s;
 }
+.accordion-collapse{
+  background-color: #1c2a4d;
+}
+.accordion{
+  --bs-accordion-bg: #e8652d;
+}
+.titulo{
+  color: #1c2a4d;
+}
+.etiqueta{
+  color: #ecdba1;
+}
+.btnEntregado {
+  background-color: #19e012;
+  color: #1c2a4d;
+  border-color: #1c2a4d;
+  font-weight: 600;
+}
+.btnEntregado:hover {
+  background-color: #1c2a4d;
+  color: #ecdba1;
+  border-color: #ecdba1;
+  font-weight: 600;
+  font-size: 18px;
+  transition: background-color 0.3s, color 0.4s;
+}
 @media all and (max-width: 575px) {
   .filas {
     margin: 10px 0 25px 0;
   }
-  .contenedor-filas > .filas:first-child {
+  .filas-none-sm{
     display: none;
   }
   .inputs {
@@ -99,11 +125,40 @@ body {
   .eliminar {
     margin-top: 15px;
   }
-
+  #cardBody{
+    padding: 6px;
+    margin-top: 5px;
+  }
+  .etiqueta{
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  .titulo{
+    font-size: 23px;
+  }
+  .accordion-button{
+    padding: 8px;
+  }
+  .cont-titulos-admin > :nth-child(1),
+  .cont-titulos-admin > :nth-child(2){
+    width: 30%;
+  }
+  .disponibles{
+    font-size: 25px;
+  }
+  .filasTitulosSM{
+    display: none;
+  }
+  .filasDatosSM{
+    margin-bottom: 40px;
+  }
 }
 @media all and (min-width: 576px) and (max-width: 767px) {
   .contenedor-filas > .filas:first-child {
     background-color: #e8652d;
+  }
+  .filas-none-sm{
+    display: none;
   }
   .inputs {
     padding: 15px;
@@ -172,6 +227,7 @@ body {
     height: 130px;
     object-fit: cover;
   }
+
 }
 @media all and (min-width: 1200px) {
   .contenedor-filas > .filas:first-child {
