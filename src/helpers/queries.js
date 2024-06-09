@@ -12,6 +12,9 @@ export const leerProductos = async () => {
   } catch (error) {
     console.log(error);
   }
+  if (condition) {
+    
+  }
 };
 
 export const crearProducto = async (nuevoProducto) => {
