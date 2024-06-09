@@ -34,16 +34,13 @@
       "rol": "Admin"
     },
     {
-      "id": "2bad",
+      "id": "6a91",
+      "nombreUsuario": "pablolsardi",
       "email": "lopezsardip@gmail.com",
-      "contraseña": "Pablo123"
-    },
-    {
-      "id": "cde5",
-      "nombreUsuario": "GeronimoPuto",
-      "email": "danielasardi30@gmail.com",
       "contraseña": "Pablo123",
       "rol": "Usuario"
+<<<<<<< HEAD
+=======
     },
     {
       "id": "3112",
@@ -65,6 +62,7 @@
       "email": "lichadlv25@gmail.com",
       "contraseña": "Holachau123",
       "rol": "Usuario"
+>>>>>>> 099ce956e5d7d8b66d879a3b6da386b46cb9228b
     }
   ]
 }

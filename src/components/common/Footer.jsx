@@ -27,19 +27,19 @@ function Footer() {
             <h3 className="text-light">Atencion al Cliente</h3>
             <ul className="list-unstyled">
               <li>
-                <a href="#" className="text-decoration-none text-light">
+                <a href="/error404" className="text-decoration-none text-light">
                 <BsFillTelephoneFill className='iconosAtencionAlCliente'/>
                   123-456-7890
                 </a>
               </li>
               <li>
-                <a href="#" className="text-decoration-none text-light">
+                <a href="/error404" className="text-decoration-none text-light">
                 <BsFillTelephoneFill className='iconosAtencionAlCliente'/>
                   123-456-7890
                 </a>
               </li>
               <li>
-                <a href="#" className="text-decoration-none text-light">
+                <a href="https://maps.app.goo.gl/AZbZnJzLub4roVGL6" target="_blank" rel="noopener noreferrer"className="text-decoration-none text-light">
                 <FaLocationDot className='iconosAtencionAlCliente'/>
                   San Miguel de Tucumán
                 </a>
