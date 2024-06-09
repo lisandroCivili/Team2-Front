@@ -12,6 +12,9 @@ export const leerProductos = async () => {
   } catch (error) {
     console.log(error);
   }
+  if (condition) {
+    
+  }
 };
 
 export const crearProducto = async (nuevoProducto) => {
@@ -133,7 +136,16 @@ export const listarUsuarios = async () => {
   }
 };
 
-
+export const borrarUsuario = async (id) => {
+  try {
+    const respuesta = await fetch(URLUsuarioGet + "/" + id, {
+      method: "DELETE",
+    });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};    
 
 // QUERIES PEDIDOS
 

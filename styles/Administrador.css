@@ -61,6 +61,36 @@ body {
   border: #1c2a4d;
   background-color: red;
 }
+.editarUsuario {
+  color: #ecdba1;
+  border-color: #ecdba1;
+  font-size: 20px;
+  border-width: 2px;
+  background-color: #1c2a4d;
+}
+.eliminarUsuario {
+  color: red;
+  border-color: red;
+  font-size: 20px;
+  border-width: 2px;
+  background-color: #1c2a4d;
+}
+.editarUsuario:hover,
+.editarUsuario:focus {
+  font-size: 18px;
+  transition: background-color 0.3s, color 0.4s;
+  color: #1c2a4d;
+  border: #1c2a4d;
+  background-color: #ecdba1;
+}
+.eliminarUsuario:hover,
+.eliminarUsuario:focus {
+  font-size: 18px;
+  transition: background-color 0.3s, color 0.4s;
+  color: #1c2a4d;
+  border: #1c2a4d;
+  background-color: red;
+}
 .btnBuscar,
 .btnAgregar {
   background-color: #1c2a4d;
@@ -103,6 +133,9 @@ body {
   font-size: 18px;
   transition: background-color 0.3s, color 0.4s;
 }
+
+
+
 @media all and (max-width: 575px) {
   .filas {
     margin: 10px 0 25px 0;
@@ -152,7 +185,11 @@ body {
   .filasDatosSM{
     margin-bottom: 40px;
   }
+  .datosUsuario{
+    font-size: 25px;
+  }
 }
+
 @media all and (min-width: 576px) and (max-width: 767px) {
   .contenedor-filas > .filas:first-child {
     background-color: #e8652d;
@@ -174,6 +211,9 @@ body {
   }
   .eliminar {
     margin-top: 15px;
+  }
+  .datosUsuario{
+    font-size: 18px;
   }
 }
 @media all and (min-width: 768px) and (max-width: 991px) {
@@ -203,7 +243,9 @@ body {
   .navbar {
     height: 95px;
   }
- 
+  .datosUsuario{
+    font-size: 18px;
+  }
 
 }
 @media all and (min-width: 992px) and (max-width: 1199px) {
@@ -227,7 +269,9 @@ body {
     height: 130px;
     object-fit: cover;
   }
-
+  .datosUsuario{
+    font-size: 20px;
+  }
 }
 @media all and (min-width: 1200px) {
   .contenedor-filas > .filas:first-child {
@@ -249,5 +293,8 @@ body {
     width: 100%;
     height: 130px;
     object-fit: cover;
+  }
+  .datosUsuario{
+    font-size: 25px;
   }
 }
