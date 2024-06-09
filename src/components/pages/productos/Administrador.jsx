@@ -18,7 +18,7 @@ const Administrador = () => {
       const datos = await respuesta.json();
       setProductos(datos);
     } else {
-      throw new Errorconsole.log("No se encontraron productos");
+      throw new Error.log("No se encontraron productos");
     }
   };
 
