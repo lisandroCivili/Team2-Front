@@ -31,27 +31,33 @@ const Usuarios = () => {
       <div className="contenedor-filas">
         <Row className="filas filasTitulosSM">
           <Col
-            sm={4}
+            sm={3}
             className="columna border-top border-success p-3 text-center fs-4"
           >
             Usuario
           </Col>
           <Col
-            sm={4}
+            sm={3}
             className="columna border-top border-bottom border-success p-3 text-center fs-4"
           >
             Email
           </Col>
           <Col
-            sm={4}
+            sm={3}
             className="columna border-top border-bottom border-success p-3 text-center fs-4"
           >
             Rol
           </Col>
+          <Col
+            sm={3}
+            className="columna border-top border-bottom border-success p-3 text-center fs-4"
+          >
+            Acciones
+          </Col>
         </Row>
         <Row className="filas">
           {usuarios.map((usuario)=>(
-            <ItemUsuario key={usuario._id} usuario={usuario}></ItemUsuario>
+            <ItemUsuario key={usuario._id} usuario={usuario} setUsuarios={setUsuarios}></ItemUsuario>
           ))}
         </Row>
       </div>
