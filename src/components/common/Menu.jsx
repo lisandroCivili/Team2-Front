@@ -13,7 +13,7 @@ const Menu = () => {
   if (!usuario) {
     usuarioCorrecto = false;
   }
-
+  
   useEffect(() => {
     setEstaLogeado(usuario);
   }, [usuarioCorrecto]);

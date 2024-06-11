@@ -39,6 +39,8 @@ footer img{
   font-size: 19px;
   margin-top: 45px;
 }
+
+
 @media all and (max-width: 575px) {
   .logoMenu {
     width: 90px;
@@ -83,6 +85,12 @@ footer img{
   .bienvenidoText{
     display: none;
   }
+  .contLogoFooter{
+    height: 150px;
+  }
+  .logoFooter{
+    width: 50%;
+  }
 }
 @media all and (min-width: 576px) and (max-width: 767px) {
   .logoMenu {
@@ -122,6 +130,12 @@ footer img{
   }
   .bienvenidoText{
     font-size: 10px;
+  }
+  .contLogoFooter{
+    height: 150px;
+  }
+  .logoFooter{
+    width: 50%;
   }
 }
 @media all and (min-width: 768px) and (max-width: 991px) {
@@ -177,6 +191,12 @@ footer img{
     align-items: center;
     color: #1c2a4d;
   }
+  .contLogoFooter{
+    height: 180px;
+  }
+  .logoFooter{
+    width: 80%;
+  }
 }
 @media all and (min-width: 992px) and (max-width: 1999px) {
   .logoMenu {
@@ -230,6 +250,12 @@ footer img{
     align-items: center;
     color: #1c2a4d;
   }
+  .contLogoFooter{
+    height: 180px;
+  }
+  .logoFooter{
+    width: 55%;
+  }
 }
 @media all and (min-width: 1200px) and (max-width: 1400) {
   .logoMenu {
@@ -280,5 +306,11 @@ footer img{
     display: flex;
     align-items: center;
     color: #1c2a4d;
+  }
+  .contLogoFooter{
+    height: 180px;
+  }
+  .logoFooter{
+    width: 80%;
   }
 }
